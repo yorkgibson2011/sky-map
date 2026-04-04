@@ -1,5 +1,4 @@
-// src/utils/StarData.ts
-
+// Auto-generated Star Data from HYG Database
 export interface StarDefinition {
   name: string;
   RA: number;
@@ -8,583 +7,17194 @@ export interface StarDefinition {
 }
 
 export const STAR_DATA: StarDefinition[] = [
-  {name:"polaris", RA:2.53, Dec:89.26, VM : 0},
-  {name:"polarisAus", RA:21.146, Dec:-88.95, VM : 0},
-  /*URSA MAJOR*/
-  {name : "ε UMa", RA : 12.900, Dec : 55.950, VM : 1.76},
-  {name : "α UMa", RA : 11.050, Dec : 61.750, VM : 1.81},
-  {name : "η UMa", RA : 13.783, Dec : 49.300, VM : 1.85},
-  {name : "Mizar", RA : 13.383, Dec : 54.917, VM : 2.23},
-  {name : "β UMa", RA : 11.017, Dec : 56.367, VM : 2.34},
-  {name : "γ UMa", RA : 11.883, Dec : 53.683, VM : 2.41},
-  {name : "ψ UMa", RA : 11.150, Dec : 44.483, VM : 3},
-  {name : "μ UMa", RA : 10.367, Dec : 41.483, VM : 3.06},
-  {name : "ι UMa", RA : 8.983, Dec : 48.033, VM : 3.12},
-  {name : "θ UMa", RA : 9.533, Dec : 51.667, VM : 3.17},
-  {name : "δ UMa", RA : 12.250, Dec : 57.017, VM : 3.32},
-  {name : "ο UMa", RA : 8.500, Dec : 60.717, VM : 3.35},
-  {name : "λ UMa", RA : 10.283, Dec : 42.900, VM : 3.45},
-  {name : "ν UMa", RA : 11.300, Dec : 33.083, VM : 3.49},
-  /*ORION*/
-  {name : "Rigel", RA : 5.233, Dec : -8.200, VM : 0.18},
-  {name : "Betelgeuse", RA : 5.917, Dec : 7.400, VM : 0.58},
-  {name : "γ Ori", RA : 5.417, Dec : 6.333, VM : 1.64},
-  {name : "ε Ori", RA : 5.600, Dec : -1.200, VM : 1.69},
-  {name : "ζ Ori A", RA : 5.667, Dec : -1.933, VM : 1.74},
-  {name : "κ Ori", RA : 5.783, Dec : -9.667, VM : 2.07},
-  {name : "δ Ori A", RA : 5.533, Dec : -0.283, VM : 2.25},
-  {name : "ι Ori", RA : 5.583, Dec : -5.900, VM : 2.75},
-  {name : "π3 Ori", RA : 4.817, Dec : 6.950, VM : 3.19},
-  /*CANIS MAJOR*/
-  {name : "Sirius", RA : 6.750, Dec : -16.700, VM : -1.46},
-  {name : "ε CMa", RA : 6.967, Dec : -28.967, VM : 1.5},
-  {name : "δ CMa", RA : 7.133, Dec : -26.383, VM : 1.83},
-  {name : "β CMa", RA : 6.367, Dec : -17.950, VM : 1.98},
-  {name : "η CMa", RA : 7.400, Dec : -29.300, VM : 2.45},
-  /*CYGNUS*/
-  {name : "Deneb", RA : 20.683, Dec : 45.267, VM : 1.25},
-  {name : "γ Cyg", RA : 20.367, Dec : 40.250, VM : 2.23},
-  {name : "ε Cyg", RA : 20.767, Dec : 33.967, VM : 2.48},
-  {name : "δ Cyg", RA : 19.733, Dec : 45.117, VM : 2.86},
-  {name : "Albireo A", RA : 19.500, Dec : 27.950, VM : 3.05},
-  {name : "ζ Cyg", RA : 21.200, Dec : 30.217, VM : 3.21},
-  {name : "ξ Cyg", RA : 21.067, Dec : 43.917, VM : 3.72},
-  {name : "τ Cyg", RA : 21.233, Dec : 38.033, VM : 3.74},
-  {name : "ι Cyg", RA : 19.483, Dec : 51.717, VM : 3.76},
-  {name : "κ Cyg", RA : 19.283, Dec : 53.367, VM : 3.8},
-  {name : "ο1 Cyg", RA : 20.217, Dec : 46.733, VM : 3.8},
-  {name : "η Cyg", RA : 19.933, Dec : 35.083, VM : 3.89},
-  {name : "ν Cyg", RA : 20.950, Dec : 41.167, VM : 3.94},
-  {name : "ο2 Cyg", RA : 20.250, Dec : 47.700, VM : 3.96},
-  {name : "ρ Cyg", RA : 21.550, Dec : 45.583, VM : 3.98},
-  {name : "41 Cyg", RA : 20.483, Dec : 30.367, VM : 4.01},
-  {name : "52 Cyg", RA : 20.750, Dec : 30.717, VM : 4.22},
-  /*CASSEOPIA*/
-  {name : "γ Cas", RA : 0.933, Dec : 60.717, VM : 2.15},
-  {name : "α Cas", RA : 0.667, Dec : 56.533, VM : 2.24},
-  {name : "β Cas", RA : 0.150, Dec : 59.150, VM : 2.28},
-  {name : "δ Cas", RA : 1.417, Dec : 60.233, VM : 2.66},
-  {name : "ε Cas", RA : 1.900, Dec : 63.667, VM : 3.35},
-  /*AQUARIUS*/
-  {name : "β Aqr", RA : 21.517, Dec : -5.567, VM : 2.9},
-  {name : "α Aqr", RA : 22.083, Dec : -0.317, VM : 2.95},
-  {name : "δ Aqr", RA : 22.900, Dec : -15.817, VM : 3.27},
-  {name : "ζ1 Aqr", RA : 22.467, Dec : -0.017, VM : 3.65},
-  {name : "88 Aqr", RA : 23.150, Dec : -21.167, VM : 3.68},
-  {name : "λ Aqr", RA : 22.867, Dec : -7.567, VM : 3.73},
-  {name : "ε Aqr", RA : 20.783, Dec : -9.483, VM : 3.78},
-  {name : "γ Aqr", RA : 22.350, Dec : -1.383, VM : 3.86},
-  /*URSA MINOR*/
-  {name : "β UMi", RA : 14.833, Dec : 74.150, VM : 2.07},
-  {name : "γ UMi", RA : 15.333, Dec : 71.833, VM : 3},
-  {name : "ε UMi", RA : 16.750, Dec : 82.033, VM : 4.21},
-  {name : "5 UMi", RA : 14.450, Dec : 75.683, VM : 4.25},
-  {name : "ζ UMi", RA : 15.733, Dec : 77.783, VM : 4.29},
-  {name : "δ UMi", RA : 17.533, Dec : 86.583, VM : 4.35},
-  {name : "RR UMi", RA : 14.950, Dec : 65.917, VM : 4.63},
-  /*HERCULES*/
-  {name : "β Her", RA : 16.500, Dec : 21.483, VM : 2.78},
-  {name : "ζ Her", RA : 16.683, Dec : 31.600, VM : 2.81},
-  {name : "δ Her", RA : 17.250, Dec : 24.833, VM : 3.12},
-  {name : "π Her", RA : 17.250, Dec : 36.800, VM : 3.16},
-  {name : "α1 Her", RA : 17.233, Dec : 14.383, VM : 3.31},
-  {name : "μ Her", RA : 17.767, Dec : 27.717, VM : 3.42},
-  {name : "η Her", RA : 16.700, Dec : 38.917, VM : 3.48},
-  {name : "ξ Her", RA : 17.950, Dec : 29.233, VM : 3.7},
-  {name : "γ Her", RA : 16.350, Dec : 19.150, VM : 3.74},
-  {name : "ι Her", RA : 17.650, Dec : 46.000, VM : 3.82},
-  {name : "ο Her", RA : 18.117, Dec : 28.750, VM : 3.84},
-  {name : "109 Her", RA : 18.383, Dec : 21.767, VM : 3.85},
-  {name : "θ Her", RA : 17.933, Dec : 37.250, VM : 3.86},
-  {name : "τ Her", RA : 16.317, Dec : 46.300, VM : 3.91},
-  {name : "ε Her", RA : 17.000, Dec : 30.917, VM : 3.92},
-  /*LEO*/
-  {name : "Regulus", RA : 10.133, Dec : 11.967, VM : 1.36},
-  {name : "γ1 Leo", RA : 10.317, Dec : 19.833, VM : 2.01},
-  {name : "Denebola", RA : 11.817, Dec : 14.567, VM : 2.14},
-  {name : "δ Leo", RA : 11.233, Dec : 20.517, VM : 2.56},
-  {name : "ε Leo", RA : 9.750, Dec : 23.767, VM : 2.97},
-  {name : "θ Leo", RA : 11.233, Dec : 15.417, VM : 3.33},
-  {name : "ζ Leo", RA : 10.267, Dec : 23.417, VM : 3.43},
-  {name : "η Leo", RA : 10.117, Dec : 16.750, VM : 3.48},
-  {name : "ο Leo A", RA : 9.683, Dec : 9.883, VM : 3.52},
-  {name : "ο Leo B", RA : 9.683, Dec : 9.900, VM : 3.7},
-  /*SCORPIO*/
-  {name : "Antares", RA : 16.483, Dec : -26.417, VM : 1.06},
-  {name : "λ Sco", RA : 17.550, Dec : -37.100, VM : 1.62},
-  {name : "θ Sco", RA : 17.617, Dec : -42.983, VM : 1.86},
-  {name : "δ Sco", RA : 16.000, Dec : -22.617, VM : 2.29},
-  {name : "ε Sco", RA : 16.833, Dec : -34.283, VM : 2.29},
-  {name : "κ Sco", RA : 17.700, Dec : -39.017, VM : 2.39},
-  {name : "β1 Sco", RA : 16.083, Dec : -19.800, VM : 2.56},
-  {name : "υ Sco", RA : 17.500, Dec : -37.283, VM : 2.7},
-  {name : "τ Sco", RA : 16.583, Dec : -28.200, VM : 2.82},
-  {name : "π Sco", RA : 15.967, Dec : -26.100, VM : 2.89},
-  {name : "σ Sco", RA : 16.350, Dec : -25.583, VM : 2.9},
-  {name : "ι1 Sco", RA : 17.783, Dec : -40.117, VM : 2.99},
-  {name : "μ1 Sco", RA : 16.850, Dec : -38.033, VM : 3},
-  {name : "G Sco", RA : 17.817, Dec : -37.033, VM : 3.19},
-  {name : "η Sco", RA : 17.200, Dec : -43.233, VM : 3.32},
-  {name : "μ2 Sco", RA : 16.867, Dec : -38.017, VM : 3.56},
-  {name : "ζ2 Sco", RA : 16.900, Dec : -42.350, VM : 3.62},
-  {name : "ρ Sco", RA : 15.933, Dec : -29.200, VM : 3.87},
-  {name : "ω1 Sco", RA : 16.100, Dec : -20.667, VM : 3.93},
-  /*SAGITTARIUS*/
-  {name : "ε Sgr", RA : 18.400, Dec : -34.383, VM : 1.79},
-  {name : "σ Sgr", RA : 18.917, Dec : -26.283, VM : 2.05},
-  {name : "ζ Sgr", RA : 19.033, Dec : -29.867, VM : 2.6},
-  {name : "δ Sgr", RA : 18.333, Dec : -29.817, VM : 2.72},
-  {name : "λ Sgr", RA : 18.450, Dec : -25.417, VM : 2.82},
-  {name : "π Sgr", RA : 19.150, Dec : -21.017, VM : 2.88},
-  {name : "γ2 Sgr", RA : 18.083, Dec : -30.417, VM : 2.98},
-  {name : "η Sgr", RA : 18.283, Dec : -36.750, VM : 3.1},
-  {name : "φ Sgr", RA : 18.750, Dec : -26.983, VM : 3.17},
-  {name : "τ Sgr", RA : 19.100, Dec : -27.667, VM : 3.32},
-  {name : "ξ2 Sgr", RA : 18.950, Dec : -21.100, VM : 3.52},
-  {name : "ο Sgr", RA : 19.067, Dec : -21.733, VM : 3.76},
-  {name : "μ Sgr", RA : 18.217, Dec : -21.050, VM : 3.84},
-  {name : "ρ1 Sgr", RA : 19.350, Dec : -17.833, VM : 3.92},
-  {name : "β1 Sgr", RA : 19.367, Dec : -44.450, VM : 3.96},
-  {name : "α Sgr", RA : 19.383, Dec : -40.600, VM : 3.96},
-  /*TAURUS*/
-  {name : "Aldebaran", RA : 4.583, Dec : 16.500, VM : 0.87},
-  {name : "β Tau", RA : 5.433, Dec : 28.600, VM : 1.65},
-  {name : "Alcyone A", RA : 3.783, Dec : 24.100, VM : 2.85},
-  {name : "ζ Tau", RA : 5.617, Dec : 21.133, VM : 2.97},
-  {name : "θ2 Tau", RA : 4.467, Dec : 15.867, VM : 3.4},
-  {name : "λ Tau", RA : 4.000, Dec : 12.483, VM : 3.41},
-  {name : "ε Tau", RA : 4.467, Dec : 19.167, VM : 3.53},
-  {name : "ο Tau", RA : 3.400, Dec : 9.017, VM : 3.61},
-  {name : "Atlas A", RA : 3.817, Dec : 24.050, VM : 3.62},
-  {name : "γ Tau", RA : 4.317, Dec : 15.617, VM : 3.65},
-  {name : "Electra", RA : 3.733, Dec : 24.100, VM : 3.72},
-  {name : "Merope", RA : 3.767, Dec : 23.933, VM : 4.14},
-  {name : "Taygeta", RA : 3.750, Dec : 24.467, VM : 4.3},
-  {name : "Pleione", RA : 3.817, Dec : 24.133, VM : 5.05},
-  {name : "Celaeno", RA : 3.733, Dec : 24.283, VM : 5.45},
-  {name : "Sterope I", RA : 3.750, Dec : 24.550, VM : 5.76},
-  /*ANDROMEDA*/
-  {name : "α And", RA : 0.133, Dec : 29.083, VM : 2.07},
-  {name : "β And", RA : 1.150, Dec : 35.617, VM : 2.07},
-  {name : "γ1 And", RA : 2.050, Dec : 42.317, VM : 2.1},
-  {name : "δ And", RA : 0.650, Dec : 30.850, VM : 3.27},
-  {name : "Andromeda Galaxy", RA : 0.700, Dec : 41.267, VM : 3.44},
-  {name : "51 And", RA : 1.617, Dec : 48.617, VM : 3.59},
-  {name : "ο And", RA : 23.017, Dec : 42.317, VM : 3.62},
-  {name : "λ And", RA : 23.617, Dec : 46.450, VM : 3.81},
-  {name : "μ And", RA : 0.933, Dec : 38.483, VM : 3.86},
-  /*DRACO*/
-  {name : "γ Dra", RA : 17.933, Dec : 51.483, VM : 2.24},
-  {name : "η Dra", RA : 16.383, Dec : 61.500, VM : 2.73},
-  {name : "β Dra", RA : 17.500, Dec : 52.300, VM : 2.79},
-  {name : "δ Dra", RA : 19.200, Dec : 67.650, VM : 3.07},
-  {name : "ζ Dra", RA : 17.133, Dec : 65.700, VM : 3.17},
-  {name : "ι Dra", RA : 15.400, Dec : 58.950, VM : 3.29},
-  {name : "χ Dra", RA : 18.350, Dec : 72.733, VM : 3.55},
-  {name : "Thuban", RA : 14.067, Dec : 64.367, VM : 3.67},
-  {name : "ξ Dra", RA : 17.883, Dec : 56.867, VM : 3.73},
-  {name : "λ Dra", RA : 11.517, Dec : 69.317, VM : 3.82},
-  {name : "ε Dra", RA : 19.800, Dec : 70.267, VM : 3.84},
-  {name : "κ Dra", RA : 12.550, Dec : 69.783, VM : 3.85},
-  /*PERSEUS*/
-  {name : "α Per", RA : 3.400, Dec : 49.850, VM : 1.79},
-  {name : "Algol", RA : 3.133, Dec : 40.950, VM : 2.09},
-  {name : "ζ Per", RA : 3.900, Dec : 31.883, VM : 2.84},
-  {name : "ε Per", RA : 3.950, Dec : 40.000, VM : 2.9},
-  {name : "γ Per A", RA : 3.067, Dec : 53.500, VM : 2.91},
-  {name : "γ Per B", RA : 3.067, Dec : 53.517, VM : 3},
-  {name : "δ Per", RA : 3.700, Dec : 47.783, VM : 3.01},
-  {name : "ρ Per", RA : 3.083, Dec : 38.833, VM : 3.32},
-  {name : "η Per", RA : 2.833, Dec : 55.883, VM : 3.77},
-  {name : "ν Per", RA : 3.750, Dec : 42.567, VM : 3.77},
-  {name : "κ Per", RA : 3.150, Dec : 44.850, VM : 3.79},
-  {name : "ο Per", RA : 3.733, Dec : 32.283, VM : 3.84},
-  {name : "τ Per A", RA : 2.900, Dec : 52.750, VM : 3.93},
-  {name : "48 Per", RA : 4.133, Dec : 47.700, VM : 3.96},
-  {name : "ξ Per", RA : 3.967, Dec : 35.783, VM : 3.98},
-  /*ARIES*/
-  {name : "α Ari", RA : 2.117, Dec : 23.450, VM : 2.01},
-  {name : "β Ari", RA : 1.900, Dec : 20.800, VM : 2.64},
-  {name : "41 Ari", RA : 2.817, Dec : 27.250, VM : 3.61},
-  {name : "γ1 Ari", RA : 1.883, Dec : 19.283, VM : 3.88},
-  /*HYDRA*/
-  {name : "Alphard", RA : 9.450, Dec : -8.650, VM : 1.99},
-  {name : "γ Hya", RA : 13.300, Dec : -23.167, VM : 2.99},
-  {name : "ζ Hya", RA : 8.917, Dec : 5.933, VM : 3.11},
-  {name : "ν Hya", RA : 10.817, Dec : -16.183, VM : 3.11},
-  {name : "π Hya", RA : 14.100, Dec : -26.667, VM : 3.25},
-  {name : "ε Hya", RA : 8.767, Dec : 6.417, VM : 3.38},
-  {name : "ξ Hya", RA : 11.550, Dec : -31.850, VM : 3.54},
-  {name : "λ Hya", RA : 10.167, Dec : -12.350, VM : 3.61},
-  {name : "μ Hya", RA : 10.433, Dec : -16.833, VM : 3.83},
-  {name : "θ Hya", RA : 9.233, Dec : 2.300, VM : 3.89},
-  {name : "ι Hya", RA : 9.650, Dec : -1.133, VM : 3.9},
-  {name : "HD 71155", RA : 8.417, Dec : -3.900, VM : 3.91},
-  /*AURIGA*/
-  {name : "Capella", RA : 5.267, Dec : 45.983, VM : 0.08},
-  {name : "β Aur", RA : 5.983, Dec : 44.933, VM : 1.9},
-  {name : "θ Aur", RA : 5.983, Dec : 37.200, VM : 2.65},
-  {name : "ι Aur", RA : 4.933, Dec : 33.150, VM : 2.69},
-  {name : "ε Aur", RA : 5.017, Dec : 43.817, VM : 3.03},
-  {name : "η Aur", RA : 5.100, Dec : 41.233, VM : 3.18},
-  {name : "ζ Aur", RA : 5.033, Dec : 41.067, VM : 3.69},
-  {name : "δ Aur", RA : 5.983, Dec : 54.283, VM : 3.72},
-  {name : "ν Aur", RA : 5.850, Dec : 39.133, VM : 3.97},
-  /*CANCER*/
-  {name : "β Cnc", RA : 8.267, Dec : 9.183, VM : 3.53},
-  {name : "δ Cnc", RA : 8.733, Dec : 18.150, VM : 3.94},
-  /*GEMINI*/
-  {name : "Pollux", RA : 7.750, Dec : 28.017, VM : 1.16},
-  {name : "Castor A", RA : 7.567, Dec : 31.883, VM : 1.58},
-  {name : "γ Gem", RA : 6.617, Dec : 16.383, VM : 1.93},
-  {name : "μ Gem", RA : 6.367, Dec : 22.500, VM : 2.87},
-  {name : "Castor B", RA : 7.567, Dec : 31.883, VM : 2.88},
-  {name : "ε Gem", RA : 6.717, Dec : 25.117, VM : 3.06},
-  {name : "η Gem", RA : 6.233, Dec : 22.500, VM : 3.31},
-  {name : "ξ Gem", RA : 6.750, Dec : 12.883, VM : 3.35},
-  {name : "δ Gem", RA : 7.333, Dec : 21.967, VM : 3.5},
-  {name : "κ Gem", RA : 7.733, Dec : 24.383, VM : 3.57},
-  {name : "λ Gem", RA : 7.300, Dec : 16.533, VM : 3.58},
-  {name : "θ Gem", RA : 6.867, Dec : 33.950, VM : 3.6},
-  {name : "ι Gem", RA : 7.417, Dec : 27.783, VM : 3.78},
-  /*PEGASUS*/
-  {name : "ε Peg", RA : 21.733, Dec : 9.867, VM : 2.38},
-  {name : "β Peg", RA : 23.050, Dec : 28.067, VM : 2.44},
-  {name : "α Peg", RA : 23.067, Dec : 15.200, VM : 2.49},
-  {name : "γ Peg", RA : 0.217, Dec : 15.183, VM : 2.83},
-  {name : "η Peg", RA : 22.717, Dec : 30.217, VM : 2.93},
-  {name : "ζ Peg", RA : 22.683, Dec : 10.817, VM : 3.41},
-  {name : "μ Peg", RA : 22.833, Dec : 24.600, VM : 3.51},
-  {name : "θ Peg", RA : 22.167, Dec : 6.183, VM : 3.52},
-  {name : "ι Peg", RA : 22.117, Dec : 25.333, VM : 3.77},
-  {name : "λ Peg", RA : 22.767, Dec : 23.550, VM : 3.97},
-  /*BOOTES*/
-  {name : "Arcturus", RA : 14.250, Dec : 19.183, VM : -0.05},
-  {name : "ε Boo", RA : 14.733, Dec : 27.067, VM : 2.35},
-  {name : "η Boo", RA : 13.900, Dec : 18.383, VM : 2.68},
-  {name : "ε Boo", RA : 14.733, Dec : 27.067, VM : 2.7},
-  {name : "γ Boo", RA : 14.533, Dec : 38.300, VM : 3.04},
-  {name : "δ Boo", RA : 15.250, Dec : 33.300, VM : 3.46},
-  {name : "β Boo", RA : 15.017, Dec : 40.383, VM : 3.49},
-  {name : "ρ Boo", RA : 14.517, Dec : 30.367, VM : 3.57},
-  {name : "ζ Boo", RA : 14.683, Dec : 13.717, VM : 3.78},
-  /*AQUILA*/
-  {name : "Altair", RA : 19.833, Dec : 8.867, VM : 0.76},
-  {name : "γ Aql", RA : 19.767, Dec : 10.600, VM : 2.72},
-  {name : "ζ Aql", RA : 19.083, Dec : 13.850, VM : 2.99},
-  {name : "θ Aql", RA : 20.183, Dec : -0.817, VM : 3.24},
-  {name : "δ Aql", RA : 19.417, Dec : 3.100, VM : 3.36},
-  {name : "λ Aql", RA : 19.100, Dec : -4.867, VM : 3.43},
-  {name : "β Aql", RA : 19.917, Dec : 6.400, VM : 3.71},
-  {name : "η Aql", RA : 19.867, Dec : 1.000, VM : 3.87},
-  /*ARA*/
-  {name : "β Ara", RA : 17.417, Dec : -55.517, VM : 2.84},
-  {name : "α Ara", RA : 17.517, Dec : -49.867, VM : 2.84},
-  {name : "ζ Ara", RA : 16.967, Dec : -55.983, VM : 3.12},
-  {name : "γ Ara", RA : 17.417, Dec : -56.367, VM : 3.31},
-  {name : "δ Ara", RA : 17.517, Dec : -60.683, VM : 3.6},
-  {name : "θ Ara", RA : 18.100, Dec : -50.083, VM : 3.65},
-  {name : "η Ara", RA : 16.817, Dec : -59.033, VM : 3.77},
-  /*CANIS MINOR*/
-  {name : "Procyon", RA : 7.650, Dec : 5.217, VM : 0.34},
-  {name : "β CMi", RA : 7.450, Dec : 8.283, VM : 2.89},
-  /*CAPRICORNUS*/
-  {name : "δ Cap", RA : 21.783, Dec : -16.117, VM : 2.85},
-  {name : "β Cap", RA : 20.350, Dec : -14.767, VM : 3.05},
-  {name : "α2 Cap", RA : 20.300, Dec : -12.533, VM : 3.58},
-  {name : "γ Cap", RA : 21.667, Dec : -16.650, VM : 3.69},
-  {name : "ζ Cap", RA : 21.433, Dec : -22.400, VM : 3.77},
-  /*CARINA*/
-  {name : "Canopus", RA : 6.383, Dec : -52.683, VM : -0.72},
-  {name : "β Car", RA : 9.217, Dec : -69.717, VM : 1.67},
-  {name : "ε Car", RA : 8.367, Dec : -59.500, VM : 1.86},
-  {name : "ι Car", RA : 9.283, Dec : -59.267, VM : 2.21},
-  {name : "θ Car", RA : 10.700, Dec : -64.383, VM : 2.74},
-  {name : "υ Car A", RA : 9.783, Dec : -65.067, VM : 2.92},
-  {name : "ω Car", RA : 10.217, Dec : -70.033, VM : 3.29},
-  {name : "PP Car", RA : 10.533, Dec : -61.683, VM : 3.3},
-  {name : "V337 Car", RA : 10.283, Dec : -61.317, VM : 3.39},
-  {name : "V357 Car", RA : 9.167, Dec : -58.967, VM : 3.43},
-  {name : "χ Car", RA : 7.933, Dec : -52.967, VM : 3.46},
-  {name : "l Car", RA : 9.750, Dec : -62.500, VM : 3.69},
-  {name : "u Car", RA : 10.883, Dec : -58.850, VM : 3.78},
-  {name : "s Car", RA : 10.450, Dec : -58.733, VM : 3.81},
-  {name : "c Car", RA : 8.917, Dec : -60.633, VM : 3.84},
-  {name : "V382 Car", RA : 11.133, Dec : -58.967, VM : 3.93},
-  {name : "i Car", RA : 9.183, Dec : -62.317, VM : 3.96},
-  {name : "I Car", RA : 10.400, Dec : -74.017, VM : 3.99},
-  /*CENTAURUS*/
-  {name : "α Cen A", RA : 14.650, Dec : -60.833, VM : -0.01},
-  {name : "β Cen", RA : 14.050, Dec : -60.367, VM : 0.61},
-  {name : "α Cen B", RA : 14.650, Dec : -60.833, VM : 1.35},
-  {name : "θ Cen", RA : 14.100, Dec : -36.367, VM : 2.06},
-  {name : "γ Cen", RA : 12.683, Dec : -48.950, VM : 2.2},
-  {name : "ε Cen", RA : 13.650, Dec : -53.450, VM : 2.29},
-  {name : "η Cen", RA : 14.583, Dec : -42.150, VM : 2.33},
-  {name : "ζ Cen", RA : 13.917, Dec : -47.283, VM : 2.55},
-  {name : "δ Cen", RA : 12.133, Dec : -50.717, VM : 2.58},
-  {name : "ι Cen", RA : 13.333, Dec : -36.700, VM : 2.75},
-  {name : "λ Cen", RA : 11.583, Dec : -63.017, VM : 3.11},
-  {name : "κ Cen", RA : 14.983, Dec : -42.100, VM : 3.13},
-  {name : "ν Cen", RA : 13.817, Dec : -41.683, VM : 3.41},
-  {name : "μ Cen", RA : 13.817, Dec : -42.467, VM : 3.47},
-  {name : "φ Cen", RA : 13.967, Dec : -42.100, VM : 3.83},
-  {name : "τ Cen", RA : 12.617, Dec : -48.533, VM : 3.85},
-  {name : "υ1 Cen", RA : 13.967, Dec : -44.800, VM : 3.87},
-  {name : "π Cen", RA : 11.350, Dec : -54.483, VM : 3.9},
-  {name : "d Cen", RA : 13.517, Dec : -39.400, VM : 3.9},
-  {name : "σ Cen", RA : 12.467, Dec : -50.217, VM : 3.91},
-  {name : "ρ Cen", RA : 12.183, Dec : -52.367, VM : 3.97},
-  /*CEPHEUS*/
-  {name : "α Cep", RA : 21.300, Dec : 62.583, VM : 2.45},
-  {name : "γ Cep", RA : 23.650, Dec : 77.617, VM : 3.21},
-  {name : "β Cep", RA : 21.467, Dec : 70.550, VM : 3.23},
-  {name : "ζ Cep", RA : 22.167, Dec : 58.200, VM : 3.39},
-  {name : "η Cep", RA : 20.750, Dec : 61.833, VM : 3.41},
-  {name : "ι Cep", RA : 22.817, Dec : 66.200, VM : 3.5},
-  /*CETUS*/
-  {name : "β Cet", RA : 0.717, Dec : -17.983, VM : 2.04},
-  {name : "α Cet", RA : 3.033, Dec : 4.083, VM : 2.54},
-  {name : "Mira", RA : 2.317, Dec : -2.967, VM : 3.04},
-  {name : "η Cet", RA : 1.133, Dec : -10.167, VM : 3.46},
-  {name : "γ Cet", RA : 2.717, Dec : 3.233, VM : 3.47},
-  {name : "τ Cet", RA : 1.733, Dec : -15.933, VM : 3.49},
-  {name : "ι Cet", RA : 0.317, Dec : -8.817, VM : 3.56},
-  {name : "θ Cet", RA : 1.400, Dec : -8.167, VM : 3.6},
-  {name : "ζ Cet", RA : 1.850, Dec : -10.333, VM : 3.74},
-  {name : "υ Cet", RA : 2.000, Dec : -21.067, VM : 3.99},
-  /*CIRCINUS*/
-  {name : "α Cir", RA : 14.700, Dec : -64.967, VM : 3.18},
-  /*COLUMBUS*/
-  {name : "α Col", RA : 5.650, Dec : -34.067, VM : 2.65},
-  {name : "β Col", RA : 5.833, Dec : -35.767, VM : 3.12},
-  {name : "δ Col", RA : 6.367, Dec : -33.433, VM : 3.85},
-  {name : "ε Col", RA : 5.517, Dec : -35.467, VM : 3.86},
-  {name : "η Col", RA : 5.983, Dec : -42.800, VM : 3.96},
-  /*CORONA BOREALIS*/
-  {name : "α CrB", RA : 15.567, Dec : 26.700, VM : 2.22},
-  {name : "β CrB", RA : 15.450, Dec : 29.100, VM : 3.66},
-  {name : "γ CrB", RA : 15.700, Dec : 26.283, VM : 3.81},
-  /*CORVUS*/
-  {name : "γ Crv", RA : 12.250, Dec : -17.533, VM : 2.58},
-  {name : "β Crv", RA : 12.567, Dec : -23.383, VM : 2.65},
-  {name : "δ Crv", RA : 12.483, Dec : -16.500, VM : 2.94},
-  {name : "ε Crv", RA : 12.167, Dec : -22.617, VM : 3.02},
-  /*CRATER*/
-  {name : "δ Crt", RA : 11.317, Dec : -14.767, VM : 3.56},
-  /*CRUX*/
-  {name : "β Cru", RA : 12.783, Dec : -59.683, VM : 1.25},
-  {name : "α1 Cru", RA : 12.433, Dec : -63.083, VM : 1.4},
-  {name : "γ Cru A", RA : 12.517, Dec : -57.100, VM : 1.59},
-  {name : "α2 Cru", RA : 12.433, Dec : -63.083, VM : 2.09},
-  {name : "δ Cru", RA : 12.250, Dec : -58.733, VM : 2.79},
-  {name : "ε Cru", RA : 12.350, Dec : -60.400, VM : 3.59},
-  /*DELPHINUS*/
-  {name : "β Del", RA : 20.617, Dec : 14.583, VM : 3.64},
-  {name : "α Del", RA : 20.650, Dec : 15.900, VM : 3.77},
-  /*DORADO*/
-  {name : "α Dor", RA : 4.550, Dec : -55.033, VM : 3.3},
-  {name : "β Dor", RA : 5.550, Dec : -62.483, VM : 3.76},
-  /*EQUULEUS*/
-  {name : "α Equ", RA : 21.250, Dec : 5.233, VM : 3.92},
-  /*ERIDANUS*/
-  {name : "Achernar", RA : 1.617, Dec : -57.233, VM : 0.45},
-  {name : "β Eri", RA : 5.117, Dec : -5.083, VM : 2.78},
-  {name : "θ1 Eri", RA : 2.967, Dec : -40.300, VM : 2.88},
-  {name : "γ Eri", RA : 3.967, Dec : -13.500, VM : 2.97},
-  {name : "δ Eri", RA : 3.717, Dec : -9.750, VM : 3.52},
-  {name : "υ4 Eri", RA : 4.283, Dec : -33.783, VM : 3.55},
-  {name : "φ Eri", RA : 2.267, Dec : -51.500, VM : 3.56},
-  {name : "χ Eri", RA : 1.917, Dec : -51.600, VM : 3.69},
-  {name : "τ4 Eri", RA : 3.317, Dec : -21.750, VM : 3.7},
-  {name : "ε Eri", RA : 3.533, Dec : -9.450, VM : 3.72},
-  {name : "υ2 Eri", RA : 4.583, Dec : -30.550, VM : 3.81},
-  {name : "53 Eri", RA : 4.633, Dec : -14.300, VM : 3.86},
-  {name : "η Eri", RA : 2.933, Dec : -8.883, VM : 3.89},
-  {name : "ν Eri", RA : 4.600, Dec : -3.350, VM : 3.93},
-  {name : "υ3 Eri", RA : 4.400, Dec : -34.017, VM : 3.97},
-  /*FORNAX*/
-  {name : "α For", RA : 3.200, Dec : -28.983, VM : 3.8},
-  /*GRUS*/
-  {name : "α Gru", RA : 22.133, Dec : -46.950, VM : 1.73},
-  {name : "β Gru", RA : 22.700, Dec : -46.883, VM : 2.07},
-  {name : "γ Gru", RA : 21.883, Dec : -37.350, VM : 3},
-  {name : "ε Gru", RA : 22.800, Dec : -51.317, VM : 3.49},
-  {name : "ι Gru", RA : 23.167, Dec : -45.233, VM : 3.88},
-  {name : "δ1 Gru", RA : 22.483, Dec : -43.483, VM : 3.97},
-  /*HOROLOGIUM*/
-  {name : "α Hor", RA : 4.233, Dec : -42.283, VM : 3.85},
-  /*HYDRUS*/
-  {name : "β Hyi", RA : 0.417, Dec : -77.250, VM : 2.82},
-  {name : "α Hyi", RA : 1.967, Dec : -61.567, VM : 2.86},
-  {name : "γ Hyi", RA : 3.783, Dec : -74.233, VM : 3.26},
-  /*INDUS*/
-  {name : "α Ind", RA : 20.617, Dec : -47.283, VM : 3.11},
-  {name : "β Ind", RA : 20.900, Dec : -58.450, VM : 3.67},
-  /*LACERTA*/
-  {name : "α Lac", RA : 22.517, Dec : 50.267, VM : 3.76},
-  /*LEO MINOR*/
-  {name : "46 LMi", RA : 10.883, Dec : 34.200, VM : 3.79},
-  /*LEPUS*/
-  {name : "α Lep", RA : 5.533, Dec : -17.817, VM : 2.58},
-  {name : "β Lep", RA : 5.467, Dec : -20.750, VM : 2.81},
-  {name : "ε Lep", RA : 5.083, Dec : -22.367, VM : 3.19},
-  {name : "μ Lep", RA : 5.200, Dec : -16.200, VM : 3.29},
-  {name : "ζ Lep", RA : 5.767, Dec : -14.817, VM : 3.55},
-  {name : "γ Lep A", RA : 5.733, Dec : -22.433, VM : 3.59},
-  {name : "η Lep", RA : 5.933, Dec : -14.167, VM : 3.71},
-  {name : "δ Lep", RA : 5.850, Dec : -20.867, VM : 3.76},
-  /*LIBRA*/
-  {name : "β Lib", RA : 15.283, Dec : -9.367, VM : 2.61},
-  {name : "α2 Lib", RA : 14.833, Dec : -16.033, VM : 2.75},
-  {name : "σ Lib", RA : 15.067, Dec : -25.267, VM : 3.25},
-  {name : "υ Lib", RA : 15.617, Dec : -28.133, VM : 3.6},
-  {name : "τ Lib", RA : 15.633, Dec : -29.767, VM : 3.66},
-  {name : "γ Lib", RA : 15.583, Dec : -14.783, VM : 3.91},
-  /*LUPUS*/
-  {name : "α Lup", RA : 14.683, Dec : -47.383, VM : 2.3},
-  {name : "β Lup", RA : 14.967, Dec : -43.133, VM : 2.68},
-  {name : "γ Lup", RA : 15.583, Dec : -41.167, VM : 2.8},
-  {name : "δ Lup", RA : 15.350, Dec : -40.633, VM : 3.22},
-  {name : "ε Lup", RA : 15.367, Dec : -44.683, VM : 3.37},
-  {name : "ζ Lup", RA : 15.200, Dec : -52.083, VM : 3.41},
-  {name : "η Lup", RA : 16.000, Dec : -38.383, VM : 3.42},
-  {name : "ι Lup", RA : 14.317, Dec : -46.050, VM : 3.55},
-  {name : "φ1 Lup", RA : 15.350, Dec : -36.250, VM : 3.57},
-  {name : "κ1 Lup", RA : 15.183, Dec : -48.733, VM : 3.88},
-  {name : "π Lup", RA : 15.083, Dec : -47.050, VM : 3.91},
-  {name : "χ Lup", RA : 15.833, Dec : -33.617, VM : 3.97},
-  /*LYNX*/
-  {name : "α Lyn", RA : 9.350, Dec : 34.383, VM : 3.14},
-  {name : "38 Lyn", RA : 9.300, Dec : 36.800, VM : 3.82},
-  {name : "10 UMa", RA : 9.000, Dec : 41.783, VM : 3.96},
-  /*LYRA*/
-  {name : "Vega", RA : 18.600, Dec : 38.767, VM : 0.03},
-  {name : "γ Lyr", RA : 18.967, Dec : 32.683, VM : 3.25},
-  {name : "β Lyr", RA : 18.833, Dec : 33.350, VM : 3.52},
-  /*MONOCEROS*/
-  {name : "α Mon", RA : 7.683, Dec : -9.550, VM : 3.94},
-  {name : "γ Mon", RA : 6.233, Dec : -6.267, VM : 3.99},
-  /*MUSCA*/
-  {name : "α Mus", RA : 12.617, Dec : -69.133, VM : 2.69},
-  {name : "β Mus", RA : 12.767, Dec : -68.100, VM : 3.04},
-  {name : "δ Mus", RA : 13.033, Dec : -71.533, VM : 3.61},
-  {name : "λ Mus", RA : 11.750, Dec : -66.717, VM : 3.68},
-  {name : "γ Mus", RA : 12.533, Dec : -72.117, VM : 3.84},
-  /*OCTANS*/
-  {name : "ν Oct", RA : 21.683, Dec : -77.383, VM : 3.73},
-  /*OPHIUCHUS*/
-  {name : "α Oph", RA : 17.567, Dec : 12.550, VM : 2.08},
-  {name : "η Oph", RA : 17.167, Dec : -15.717, VM : 2.43},
-  {name : "ζ Oph", RA : 16.617, Dec : -10.567, VM : 2.54},
-  {name : "δ Oph", RA : 16.233, Dec : -3.683, VM : 2.73},
-  {name : "β Oph", RA : 17.717, Dec : 4.567, VM : 2.76},
-  {name : "κ Oph", RA : 16.950, Dec : 9.367, VM : 3.19},
-  {name : "ε Oph", RA : 16.300, Dec : -4.683, VM : 3.23},
-  {name : "θ Oph", RA : 17.367, Dec : -24.983, VM : 3.27},
-  {name : "ν Oph", RA : 17.983, Dec : -9.767, VM : 3.32},
-  {name : "72 Oph", RA : 18.117, Dec : 9.550, VM : 3.71},
-  {name : "γ Oph", RA : 17.783, Dec : 2.700, VM : 3.75},
-  {name : "λ Oph", RA : 16.500, Dec : 1.983, VM : 3.82},
-  {name : "67 Oph", RA : 18.000, Dec : 2.917, VM : 3.93},
-  /*PAVO*/
-  {name : "α Pav", RA : 20.417, Dec : -56.733, VM : 1.94},
-  {name : "β Pav", RA : 20.733, Dec : -66.200, VM : 3.42},
-  {name : "δ Pav", RA : 20.133, Dec : -66.167, VM : 3.55},
-  {name : "η Pav", RA : 17.750, Dec : -64.717, VM : 3.61},
-  {name : "ε Pav", RA : 20.000, Dec : -72.900, VM : 3.97},
-  /*PHOENIX*/
-  {name : "α Phe", RA : 0.433, Dec : -42.300, VM : 2.4},
-  {name : "β Phe", RA : 1.100, Dec : -46.717, VM : 3.32},
-  {name : "γ Phe", RA : 1.467, Dec : -43.317, VM : 3.41},
-  {name : "ε Phe", RA : 0.150, Dec : -45.733, VM : 3.88},
-  {name : "κ Phe", RA : 0.433, Dec : -43.667, VM : 3.93},
-  {name : "δ Phe", RA : 1.517, Dec : -49.067, VM : 3.93},
-  {name : "ζ Phe", RA : 1.133, Dec : -55.233, VM : 3.94},
-  /*PICTOR*/
-  {name : "α Pic", RA : 6.800, Dec : -61.933, VM : 3.24},
-  {name : "β Pic", RA : 5.783, Dec : -51.067, VM : 3.85},
-  /*PISCES*/
-  {name : "η Psc", RA : 1.517, Dec : 15.333, VM : 3.62},
-  {name : "γ Psc", RA : 23.283, Dec : 3.267, VM : 3.7},
-  {name : "α Psc A", RA : 2.033, Dec : 2.750, VM : 3.82},
-  /*PISCIS AUSTRINUS*/
-  {name : "Fomalhaut", RA : 22.950, Dec : -29.617, VM : 1.17},
-  /*PUPPIS*/
-  {name : "ζ Pup", RA : 8.050, Dec : -40.000, VM : 2.21},
-  {name : "π Pup", RA : 7.283, Dec : -37.083, VM : 2.71},
-  {name : "ρ Pup", RA : 8.117, Dec : -24.300, VM : 2.83},
-  {name : "τ Pup", RA : 6.817, Dec : -50.600, VM : 2.94},
-  {name : "ν Pup", RA : 6.617, Dec : -43.183, VM : 3.17},
-  {name : "σ Pup", RA : 7.483, Dec : -43.300, VM : 3.25},
-  {name : "ξ Pup", RA : 7.817, Dec : -24.850, VM : 3.34},
-  {name : "175 G. Pup", RA : 7.750, Dec : -37.967, VM : 3.62},
-  {name : "213 G. Pup", RA : 7.867, Dec : -40.567, VM : 3.71},
-  {name : "3 Pup", RA : 7.717, Dec : -28.950, VM : 3.94},
-  /*PYXIS*/
-  {name : "α Pyx", RA : 8.717, Dec : -33.183, VM : 3.68},
-  {name : "β Pyx", RA : 8.667, Dec : -35.300, VM : 3.97},
-  /*RETICULUM*/
-  {name : "α Ret", RA : 4.233, Dec : -62.467, VM : 3.33},
-  {name : "β Ret", RA : 3.733, Dec : -64.800, VM : 3.84},
-  /*SAGITTA*/
-  {name : "γ Sge", RA : 19.967, Dec : 19.483, VM : 3.51},
-  {name : "δ Sge A", RA : 19.783, Dec : 18.533, VM : 3.68},
-  {name : "δ Sge B", RA : 19.783, Dec : 18.533, VM : 3.8},
-  /*SCUTUM*/
-  {name : "α Sct", RA : 18.583, Dec : -8.233, VM : 3.85},
-  /*SERPENS*/
-  {name : "α Ser", RA : 15.733, Dec : 6.417, VM : 2.63},
-  {name : "η Ser", RA : 18.350, Dec : -2.883, VM : 3.23},
-  {name : "μ Ser", RA : 15.817, Dec : -3.417, VM : 3.54},
-  {name : "ξ Ser", RA : 17.617, Dec : -15.383, VM : 3.54},
-  {name : "β Ser", RA : 15.767, Dec : 15.417, VM : 3.65},
-  {name : "ε Ser", RA : 15.833, Dec : 4.467, VM : 3.71},
-  {name : "δ Ser A", RA : 15.567, Dec : 10.533, VM : 3.8},
-  {name : "δ Ser B", RA : 15.567, Dec : 10.533, VM : 3.8},
-  {name : "γ Ser", RA : 15.933, Dec : 15.650, VM : 3.85},
-  /*TELESCOPIUM*/
-  {name : "α Tel", RA : 18.433, Dec : -45.967, VM : 3.49},
-  /*TRIANGULUM*/
-  {name : "β Tri", RA : 2.150, Dec : 34.983, VM : 3},
-  {name : "α Tri", RA : 1.883, Dec : 29.567, VM : 3.42},
-  /*TRIANGULUM AUSTRALE*/
-  {name : "α TrA", RA : 16.800, Dec : -69.017, VM : 1.91},
-  {name : "β TrA", RA : 15.917, Dec : -63.417, VM : 2.83},
-  {name : "γ TrA", RA : 15.300, Dec : -68.667, VM : 2.87},
-  {name : "δ TrA", RA : 16.250, Dec : -63.683, VM : 3.86},
-  /*TUCANA*/
-  {name : "α Tuc", RA : 22.300, Dec : -60.250, VM : 2.87},
-  {name : "γ Tuc", RA : 23.283, Dec : -58.233, VM : 3.99},
-  /*VELA*/
-  {name : "γ2 Vel", RA : 8.150, Dec : -47.333, VM : 1.75},
-  {name : "δ Vel", RA : 8.733, Dec : -54.700, VM : 1.93},
-  {name : "λ Vel", RA : 9.117, Dec : -43.417, VM : 2.23},
-  {name : "κ Vel", RA : 9.367, Dec : -55.000, VM : 2.47},
-  {name : "μ Vel", RA : 10.767, Dec : -49.417, VM : 2.69},
-  {name : "N Vel", RA : 9.517, Dec : -57.033, VM : 3.16},
-  {name : "φ Vel", RA : 9.933, Dec : -54.567, VM : 3.52},
-  {name : "ο Vel", RA : 8.667, Dec : -52.917, VM : 3.6},
-  {name : "ψ Vel", RA : 9.500, Dec : -40.467, VM : 3.6},
-  {name : "c Vel", RA : 9.067, Dec : -47.083, VM : 3.75},
-  {name : "b Vel", RA : 8.667, Dec : -46.633, VM : 3.77},
-  {name : "p Vel", RA : 10.617, Dec : -48.217, VM : 3.84},
-  {name : "q Vel", RA : 10.233, Dec : -42.117, VM : 3.85},
-  {name : "a Vel", RA : 8.767, Dec : -46.033, VM : 3.87},
-  /*VIRGO*/
-  {name : "Spica", RA : 13.417, Dec : -11.150, VM : 0.98},
-  {name : "γ Vir A", RA : 12.683, Dec : -1.433, VM : 2.74},
-  {name : "ε Vir", RA : 13.033, Dec : 10.950, VM : 2.85},
-  {name : "ζ Vir", RA : 13.567, Dec : -0.583, VM : 3.38},
-  {name : "δ Vir", RA : 12.917, Dec : 3.383, VM : 3.39},
-  {name : "β Vir", RA : 11.833, Dec : 1.750, VM : 3.59},
-  {name : "γ Vir B", RA : 12.683, Dec : -1.433, VM : 3.68},
-  {name : "109 Vir", RA : 14.767, Dec : 1.883, VM : 3.73},
-  {name : "μ Vir", RA : 14.717, Dec : -5.650, VM : 3.87},
-  {name : "η Vir", RA : 12.317, Dec : -0.667, VM : 3.89},
-  /*VOLANS*/
-  {name : "β Vol", RA : 8.417, Dec : -66.133, VM : 3.77},
-  {name : "γ2 Vol", RA : 7.133, Dec : -70.483, VM : 3.78},
-  {name : "ζ Vol", RA : 7.683, Dec : -72.600, VM : 3.93},
-  {name : "δ Vol", RA : 7.267, Dec : -67.950, VM : 3.97},
+  {
+    "name": "",
+    "RA": 0.027,
+    "Dec": -77.066,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 0.03,
+    "Dec": -3.028,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 0.033,
+    "Dec": -6.014,
+    "VM": 4.37
+  },
+  {
+    "name": "",
+    "RA": 0.039,
+    "Dec": -29.72,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 0.062,
+    "Dec": -17.336,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 0.075,
+    "Dec": -10.51,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 0.089,
+    "Dec": -5.708,
+    "VM": 4.61
+  },
+  {
+    "name": "Alpheratz",
+    "RA": 0.14,
+    "Dec": 29.09,
+    "VM": 2.07
+  },
+  {
+    "name": "Caph",
+    "RA": 0.153,
+    "Dec": 59.15,
+    "VM": 2.28
+  },
+  {
+    "name": "",
+    "RA": 0.156,
+    "Dec": -27.988,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 0.157,
+    "Dec": -45.747,
+    "VM": 3.88
+  },
+  {
+    "name": "",
+    "RA": 0.167,
+    "Dec": -82.224,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 0.172,
+    "Dec": 46.072,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 0.188,
+    "Dec": -15.468,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 0.193,
+    "Dec": -27.8,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 0.196,
+    "Dec": -35.133,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 0.203,
+    "Dec": -17.938,
+    "VM": 5.29
+  },
+  {
+    "name": "Algenib",
+    "RA": 0.221,
+    "Dec": 15.184,
+    "VM": 2.83
+  },
+  {
+    "name": "",
+    "RA": 0.241,
+    "Dec": -7.781,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 0.243,
+    "Dec": 20.207,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 0.244,
+    "Dec": -18.933,
+    "VM": 4.44
+  },
+  {
+    "name": "",
+    "RA": 0.285,
+    "Dec": 38.682,
+    "VM": 4.61
+  },
+  {
+    "name": "",
+    "RA": 0.305,
+    "Dec": 36.785,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 0.324,
+    "Dec": -8.824,
+    "VM": 3.56
+  },
+  {
+    "name": "",
+    "RA": 0.334,
+    "Dec": -64.875,
+    "VM": 4.23
+  },
+  {
+    "name": "",
+    "RA": 0.343,
+    "Dec": 8.19,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 0.344,
+    "Dec": -69.625,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 0.352,
+    "Dec": 37.969,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 0.359,
+    "Dec": -28.981,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 0.413,
+    "Dec": 61.831,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 0.428,
+    "Dec": -77.254,
+    "VM": 2.82
+  },
+  {
+    "name": "",
+    "RA": 0.437,
+    "Dec": -43.68,
+    "VM": 3.93
+  },
+  {
+    "name": "Ankaa",
+    "RA": 0.438,
+    "Dec": -42.306,
+    "VM": 2.4
+  },
+  {
+    "name": "",
+    "RA": 0.465,
+    "Dec": -33.007,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 0.467,
+    "Dec": 17.893,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 0.47,
+    "Dec": 44.394,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 0.474,
+    "Dec": -39.915,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 0.502,
+    "Dec": 29.752,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 0.506,
+    "Dec": -23.788,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 0.524,
+    "Dec": -48.804,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 0.526,
+    "Dec": -62.958,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 0.526,
+    "Dec": -62.966,
+    "VM": 4.53
+  },
+  {
+    "name": "",
+    "RA": 0.53,
+    "Dec": 54.522,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 0.543,
+    "Dec": 20.294,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 0.546,
+    "Dec": -63.032,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 0.55,
+    "Dec": 62.932,
+    "VM": 4.17
+  },
+  {
+    "name": "",
+    "RA": 0.587,
+    "Dec": -3.593,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 0.602,
+    "Dec": 54.168,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 0.613,
+    "Dec": 44.489,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 0.615,
+    "Dec": 33.719,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 0.616,
+    "Dec": 53.897,
+    "VM": 3.69
+  },
+  {
+    "name": "",
+    "RA": 0.623,
+    "Dec": 35.4,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 0.643,
+    "Dec": 29.312,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 0.653,
+    "Dec": 49.355,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 0.655,
+    "Dec": 30.861,
+    "VM": 3.27
+  },
+  {
+    "name": "",
+    "RA": 0.665,
+    "Dec": 21.438,
+    "VM": 5.36
+  },
+  {
+    "name": "Shedir",
+    "RA": 0.675,
+    "Dec": 56.537,
+    "VM": 2.24
+  },
+  {
+    "name": "",
+    "RA": 0.685,
+    "Dec": 39.459,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 0.689,
+    "Dec": -46.085,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 0.701,
+    "Dec": 50.513,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 0.708,
+    "Dec": -65.468,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 0.723,
+    "Dec": -57.463,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 0.724,
+    "Dec": 47.025,
+    "VM": 4.95
+  },
+  {
+    "name": "Diphda",
+    "RA": 0.726,
+    "Dec": -17.987,
+    "VM": 2.04
+  },
+  {
+    "name": "",
+    "RA": 0.737,
+    "Dec": -10.61,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 0.745,
+    "Dec": 48.284,
+    "VM": 4.48
+  },
+  {
+    "name": "",
+    "RA": 0.746,
+    "Dec": -22.006,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 0.755,
+    "Dec": 55.221,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 0.77,
+    "Dec": -22.522,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 0.776,
+    "Dec": 15.476,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 0.789,
+    "Dec": 24.267,
+    "VM": 4.08
+  },
+  {
+    "name": "",
+    "RA": 0.796,
+    "Dec": 74.848,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 0.81,
+    "Dec": -74.923,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 0.811,
+    "Dec": 7.585,
+    "VM": 4.44
+  },
+  {
+    "name": "",
+    "RA": 0.814,
+    "Dec": 50.968,
+    "VM": 4.9
+  },
+  {
+    "name": "",
+    "RA": 0.816,
+    "Dec": 16.941,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 0.818,
+    "Dec": 57.815,
+    "VM": 3.46
+  },
+  {
+    "name": "",
+    "RA": 0.83,
+    "Dec": 41.079,
+    "VM": 4.53
+  },
+  {
+    "name": "",
+    "RA": 0.835,
+    "Dec": -10.644,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 0.845,
+    "Dec": -50.987,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 0.845,
+    "Dec": 64.248,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 0.878,
+    "Dec": -24.006,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 0.883,
+    "Dec": -1.144,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 0.885,
+    "Dec": 61.124,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 0.916,
+    "Dec": 23.628,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 0.917,
+    "Dec": 58.973,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 0.917,
+    "Dec": -69.527,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 0.934,
+    "Dec": -11.267,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 0.944,
+    "Dec": 59.181,
+    "VM": 4.62
+  },
+  {
+    "name": "Cih",
+    "RA": 0.945,
+    "Dec": 60.717,
+    "VM": 2.15
+  },
+  {
+    "name": "",
+    "RA": 0.946,
+    "Dec": 38.499,
+    "VM": 3.86
+  },
+  {
+    "name": "",
+    "RA": 0.953,
+    "Dec": 23.418,
+    "VM": 4.4
+  },
+  {
+    "name": "",
+    "RA": 0.964,
+    "Dec": 28.992,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 0.977,
+    "Dec": -29.357,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 1.041,
+    "Dec": -31.552,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 1.047,
+    "Dec": 31.804,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 1.047,
+    "Dec": -46.397,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 1.049,
+    "Dec": 7.89,
+    "VM": 4.27
+  },
+  {
+    "name": "",
+    "RA": 1.051,
+    "Dec": -4.837,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 1.095,
+    "Dec": 21.473,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 1.101,
+    "Dec": -46.718,
+    "VM": 3.32
+  },
+  {
+    "name": "",
+    "RA": 1.122,
+    "Dec": -61.775,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 1.13,
+    "Dec": -41.487,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 1.134,
+    "Dec": 43.942,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 1.137,
+    "Dec": 54.92,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 1.14,
+    "Dec": -55.246,
+    "VM": 3.94
+  },
+  {
+    "name": "",
+    "RA": 1.143,
+    "Dec": -10.182,
+    "VM": 3.46
+  },
+  {
+    "name": "",
+    "RA": 1.146,
+    "Dec": 86.257,
+    "VM": 4.24
+  },
+  {
+    "name": "",
+    "RA": 1.158,
+    "Dec": 47.242,
+    "VM": 4.26
+  },
+  {
+    "name": "Mirach",
+    "RA": 1.162,
+    "Dec": 35.621,
+    "VM": 2.07
+  },
+  {
+    "name": "",
+    "RA": 1.178,
+    "Dec": 68.779,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 1.185,
+    "Dec": 55.15,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 1.185,
+    "Dec": 31.425,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 1.191,
+    "Dec": 21.035,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 1.194,
+    "Dec": 30.09,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 1.229,
+    "Dec": 7.575,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 1.229,
+    "Dec": 24.584,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 1.24,
+    "Dec": -7.923,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 1.253,
+    "Dec": -45.532,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 1.263,
+    "Dec": -68.876,
+    "VM": 4.25
+  },
+  {
+    "name": "",
+    "RA": 1.277,
+    "Dec": -2.5,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 1.297,
+    "Dec": 3.614,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 1.324,
+    "Dec": 27.264,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 1.335,
+    "Dec": 58.232,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 1.352,
+    "Dec": 28.738,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 1.372,
+    "Dec": 45.529,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 1.4,
+    "Dec": -8.183,
+    "VM": 3.6
+  },
+  {
+    "name": "",
+    "RA": 1.411,
+    "Dec": -41.493,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 1.427,
+    "Dec": -14.599,
+    "VM": 4.9
+  },
+  {
+    "name": "Ruchbah",
+    "RA": 1.43,
+    "Dec": 60.235,
+    "VM": 2.66
+  },
+  {
+    "name": "",
+    "RA": 1.432,
+    "Dec": 68.13,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 1.438,
+    "Dec": 19.172,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 1.445,
+    "Dec": 19.24,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 1.461,
+    "Dec": 45.407,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 1.473,
+    "Dec": -43.318,
+    "VM": 3.41
+  },
+  {
+    "name": "",
+    "RA": 1.493,
+    "Dec": -21.629,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 1.502,
+    "Dec": 47.007,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 1.503,
+    "Dec": 6.144,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 1.521,
+    "Dec": -49.073,
+    "VM": 3.93
+  },
+  {
+    "name": "",
+    "RA": 1.525,
+    "Dec": 15.346,
+    "VM": 3.62
+  },
+  {
+    "name": "",
+    "RA": 1.549,
+    "Dec": -36.865,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 1.566,
+    "Dec": 59.232,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 1.6,
+    "Dec": -15.4,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 1.613,
+    "Dec": 41.405,
+    "VM": 4.1
+  },
+  {
+    "name": "Achernar",
+    "RA": 1.629,
+    "Dec": -57.237,
+    "VM": 0.45
+  },
+  {
+    "name": "",
+    "RA": 1.633,
+    "Dec": 48.628,
+    "VM": 3.59
+  },
+  {
+    "name": "",
+    "RA": 1.642,
+    "Dec": 73.04,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 1.656,
+    "Dec": 44.386,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 1.676,
+    "Dec": 40.577,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 1.691,
+    "Dec": 5.488,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 1.696,
+    "Dec": 42.613,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 1.702,
+    "Dec": -32.327,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 1.708,
+    "Dec": 20.269,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 1.712,
+    "Dec": -3.69,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 1.715,
+    "Dec": 70.623,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 1.728,
+    "Dec": 50.689,
+    "VM": 4.01
+  },
+  {
+    "name": "",
+    "RA": 1.734,
+    "Dec": -15.937,
+    "VM": 3.49
+  },
+  {
+    "name": "",
+    "RA": 1.757,
+    "Dec": 9.158,
+    "VM": 4.26
+  },
+  {
+    "name": "",
+    "RA": 1.761,
+    "Dec": -25.053,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 1.766,
+    "Dec": -5.733,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 1.768,
+    "Dec": -50.816,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 1.768,
+    "Dec": -53.522,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 1.826,
+    "Dec": -10.686,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 1.858,
+    "Dec": -10.335,
+    "VM": 3.74
+  },
+  {
+    "name": "",
+    "RA": 1.885,
+    "Dec": 29.579,
+    "VM": 3.42
+  },
+  {
+    "name": "",
+    "RA": 1.888,
+    "Dec": 40.73,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 1.892,
+    "Dec": 19.294,
+    "VM": 3.88
+  },
+  {
+    "name": "",
+    "RA": 1.893,
+    "Dec": 3.188,
+    "VM": 4.61
+  },
+  {
+    "name": "",
+    "RA": 1.894,
+    "Dec": -46.303,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 1.906,
+    "Dec": -42.497,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 1.907,
+    "Dec": 63.67,
+    "VM": 3.35
+  },
+  {
+    "name": "Sheratan",
+    "RA": 1.911,
+    "Dec": 20.808,
+    "VM": 2.64
+  },
+  {
+    "name": "",
+    "RA": 1.916,
+    "Dec": -67.647,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 1.933,
+    "Dec": -51.609,
+    "VM": 3.69
+  },
+  {
+    "name": "",
+    "RA": 1.933,
+    "Dec": 68.685,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 1.944,
+    "Dec": -22.527,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 1.953,
+    "Dec": -47.385,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 1.956,
+    "Dec": 17.818,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 1.965,
+    "Dec": 23.596,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 1.979,
+    "Dec": -61.57,
+    "VM": 2.86
+  },
+  {
+    "name": "",
+    "RA": 1.994,
+    "Dec": 64.622,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 1.996,
+    "Dec": -20.825,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 2,
+    "Dec": -21.078,
+    "VM": 3.99
+  },
+  {
+    "name": "",
+    "RA": 2.007,
+    "Dec": -8.524,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 2.021,
+    "Dec": -30.002,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 2.028,
+    "Dec": -44.714,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 2.033,
+    "Dec": 70.907,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 2.034,
+    "Dec": 2.764,
+    "VM": 3.82
+  },
+  {
+    "name": "",
+    "RA": 2.038,
+    "Dec": 54.488,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 2.049,
+    "Dec": 33.284,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 2.053,
+    "Dec": 0.129,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 2.057,
+    "Dec": 72.421,
+    "VM": 3.95
+  },
+  {
+    "name": "Almaak",
+    "RA": 2.065,
+    "Dec": 42.33,
+    "VM": 2.1
+  },
+  {
+    "name": "",
+    "RA": 2.075,
+    "Dec": -29.297,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 2.085,
+    "Dec": 77.281,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 2.092,
+    "Dec": 76.115,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 2.109,
+    "Dec": 22.648,
+    "VM": 5.03
+  },
+  {
+    "name": "Hamal",
+    "RA": 2.12,
+    "Dec": 23.462,
+    "VM": 2.01
+  },
+  {
+    "name": "",
+    "RA": 2.141,
+    "Dec": 37.859,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 2.157,
+    "Dec": 25.94,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 2.159,
+    "Dec": 34.987,
+    "VM": 3
+  },
+  {
+    "name": "",
+    "RA": 2.206,
+    "Dec": 30.303,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 2.213,
+    "Dec": 21.211,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 2.215,
+    "Dec": -30.724,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 2.217,
+    "Dec": 8.847,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 2.22,
+    "Dec": 44.232,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 2.227,
+    "Dec": 51.066,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 2.266,
+    "Dec": 33.359,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 2.275,
+    "Dec": -51.512,
+    "VM": 3.56
+  },
+  {
+    "name": "",
+    "RA": 2.284,
+    "Dec": 34.224,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 2.289,
+    "Dec": 33.847,
+    "VM": 4.03
+  },
+  {
+    "name": "",
+    "RA": 2.316,
+    "Dec": 28.643,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 2.321,
+    "Dec": 47.38,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 2.362,
+    "Dec": -68.659,
+    "VM": 4.08
+  },
+  {
+    "name": "",
+    "RA": 2.366,
+    "Dec": 0.396,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 2.367,
+    "Dec": -10.778,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 2.37,
+    "Dec": -0.885,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 2.373,
+    "Dec": 55.846,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 2.376,
+    "Dec": -23.816,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 2.407,
+    "Dec": 50.007,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 2.414,
+    "Dec": 10.611,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 2.415,
+    "Dec": -60.312,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 2.427,
+    "Dec": 50.279,
+    "VM": 4.73
+  },
+  {
+    "name": "",
+    "RA": 2.433,
+    "Dec": -12.29,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 2.45,
+    "Dec": -47.704,
+    "VM": 4.24
+  },
+  {
+    "name": "",
+    "RA": 2.467,
+    "Dec": -33.811,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 2.469,
+    "Dec": 8.46,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 2.469,
+    "Dec": 29.669,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 2.484,
+    "Dec": 67.402,
+    "VM": 4.46
+  },
+  {
+    "name": "",
+    "RA": 2.525,
+    "Dec": 2.267,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 2.528,
+    "Dec": -79.109,
+    "VM": 5.27
+  },
+  {
+    "name": "Polaris",
+    "RA": 2.53,
+    "Dec": 89.264,
+    "VM": 1.97
+  },
+  {
+    "name": "",
+    "RA": 2.535,
+    "Dec": -15.245,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 2.535,
+    "Dec": 36.147,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 2.536,
+    "Dec": -1.035,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 2.564,
+    "Dec": -28.232,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 2.596,
+    "Dec": 34.688,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 2.598,
+    "Dec": 5.593,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 2.623,
+    "Dec": -52.543,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 2.634,
+    "Dec": 72.818,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 2.647,
+    "Dec": 21.961,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 2.658,
+    "Dec": 0.329,
+    "VM": 4.08
+  },
+  {
+    "name": "",
+    "RA": 2.659,
+    "Dec": -11.872,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 2.66,
+    "Dec": -68.267,
+    "VM": 4.12
+  },
+  {
+    "name": "",
+    "RA": 2.663,
+    "Dec": -42.892,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 2.678,
+    "Dec": -54.55,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 2.678,
+    "Dec": -39.855,
+    "VM": 4.11
+  },
+  {
+    "name": "",
+    "RA": 2.678,
+    "Dec": 27.061,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 2.704,
+    "Dec": 40.194,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 2.709,
+    "Dec": -50.8,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 2.722,
+    "Dec": 3.236,
+    "VM": 3.47
+  },
+  {
+    "name": "",
+    "RA": 2.724,
+    "Dec": 27.707,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 2.735,
+    "Dec": 44.297,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 2.735,
+    "Dec": -13.859,
+    "VM": 4.24
+  },
+  {
+    "name": "",
+    "RA": 2.737,
+    "Dec": 49.228,
+    "VM": 4.1
+  },
+  {
+    "name": "",
+    "RA": 2.749,
+    "Dec": 10.114,
+    "VM": 4.27
+  },
+  {
+    "name": "",
+    "RA": 2.749,
+    "Dec": 12.446,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 2.752,
+    "Dec": -18.573,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 2.759,
+    "Dec": -67.617,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 2.798,
+    "Dec": 29.247,
+    "VM": 4.52
+  },
+  {
+    "name": "",
+    "RA": 2.817,
+    "Dec": -62.807,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 2.818,
+    "Dec": -32.406,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 2.822,
+    "Dec": 17.464,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 2.832,
+    "Dec": -27.942,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 2.833,
+    "Dec": 27.261,
+    "VM": 3.61
+  },
+  {
+    "name": "",
+    "RA": 2.841,
+    "Dec": -75.067,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 2.843,
+    "Dec": 38.319,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 2.845,
+    "Dec": -35.676,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 2.845,
+    "Dec": 55.895,
+    "VM": 3.77
+  },
+  {
+    "name": "",
+    "RA": 2.851,
+    "Dec": -21.004,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 2.859,
+    "Dec": 35.06,
+    "VM": 4.56
+  },
+  {
+    "name": "",
+    "RA": 2.895,
+    "Dec": 38.337,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 2.904,
+    "Dec": 52.762,
+    "VM": 3.93
+  },
+  {
+    "name": "",
+    "RA": 2.94,
+    "Dec": -8.898,
+    "VM": 3.89
+  },
+  {
+    "name": "",
+    "RA": 2.944,
+    "Dec": -3.712,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 2.955,
+    "Dec": 31.934,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 2.957,
+    "Dec": -23.862,
+    "VM": 5.44
+  },
+  {
+    "name": "Acamar",
+    "RA": 2.971,
+    "Dec": -40.305,
+    "VM": 2.88
+  },
+  {
+    "name": "",
+    "RA": 2.978,
+    "Dec": -2.783,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 2.979,
+    "Dec": 39.663,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 2.98,
+    "Dec": -64.071,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 2.984,
+    "Dec": 35.183,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 2.987,
+    "Dec": 21.34,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 2.995,
+    "Dec": 8.907,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 2.997,
+    "Dec": 47.221,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 3.015,
+    "Dec": 52.352,
+    "VM": 5.24
+  },
+  {
+    "name": "Menkar",
+    "RA": 3.038,
+    "Dec": 4.09,
+    "VM": 2.54
+  },
+  {
+    "name": "",
+    "RA": 3.04,
+    "Dec": -23.624,
+    "VM": 4.08
+  },
+  {
+    "name": "",
+    "RA": 3.045,
+    "Dec": -7.685,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 3.06,
+    "Dec": -59.738,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 3.071,
+    "Dec": -7.601,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 3.08,
+    "Dec": 53.506,
+    "VM": 2.91
+  },
+  {
+    "name": "",
+    "RA": 3.086,
+    "Dec": 38.84,
+    "VM": 3.32
+  },
+  {
+    "name": "",
+    "RA": 3.091,
+    "Dec": 25.255,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 3.092,
+    "Dec": 56.706,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 3.102,
+    "Dec": 79.419,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 3.109,
+    "Dec": -6.089,
+    "VM": 5.23
+  },
+  {
+    "name": "Algol",
+    "RA": 3.136,
+    "Dec": 40.956,
+    "VM": 2.09
+  },
+  {
+    "name": "",
+    "RA": 3.151,
+    "Dec": 49.613,
+    "VM": 4.05
+  },
+  {
+    "name": "",
+    "RA": 3.158,
+    "Dec": 44.858,
+    "VM": 3.79
+  },
+  {
+    "name": "",
+    "RA": 3.188,
+    "Dec": 39.612,
+    "VM": 4.61
+  },
+  {
+    "name": "",
+    "RA": 3.194,
+    "Dec": 19.727,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 3.199,
+    "Dec": 74.394,
+    "VM": 4.85
+  },
+  {
+    "name": "",
+    "RA": 3.201,
+    "Dec": -28.988,
+    "VM": 3.8
+  },
+  {
+    "name": "",
+    "RA": 3.213,
+    "Dec": -1.196,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 3.248,
+    "Dec": 21.044,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 3.264,
+    "Dec": -8.82,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 3.27,
+    "Dec": 50.938,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 3.296,
+    "Dec": 44.025,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 3.303,
+    "Dec": -62.506,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 3.306,
+    "Dec": -22.511,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 3.31,
+    "Dec": 50.222,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 3.312,
+    "Dec": 34.223,
+    "VM": 4.85
+  },
+  {
+    "name": "",
+    "RA": 3.319,
+    "Dec": 50.095,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 3.323,
+    "Dec": 3.37,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 3.325,
+    "Dec": -21.758,
+    "VM": 3.7
+  },
+  {
+    "name": "82 G. Eri",
+    "RA": 3.332,
+    "Dec": -43.07,
+    "VM": 4.26
+  },
+  {
+    "name": "",
+    "RA": 3.333,
+    "Dec": 65.652,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 3.339,
+    "Dec": 77.735,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 3.339,
+    "Dec": 29.048,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 3.354,
+    "Dec": 21.147,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 3.357,
+    "Dec": -23.635,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 3.357,
+    "Dec": 43.33,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 3.379,
+    "Dec": 20.742,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 3.387,
+    "Dec": 49.213,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 3.405,
+    "Dec": 24.724,
+    "VM": 5.5
+  },
+  {
+    "name": "Mirphak",
+    "RA": 3.405,
+    "Dec": 49.861,
+    "VM": 1.79
+  },
+  {
+    "name": "",
+    "RA": 3.411,
+    "Dec": 64.586,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 3.414,
+    "Dec": 9.029,
+    "VM": 3.61
+  },
+  {
+    "name": "",
+    "RA": 3.453,
+    "Dec": 9.733,
+    "VM": 3.73
+  },
+  {
+    "name": "",
+    "RA": 3.468,
+    "Dec": 49.063,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 3.484,
+    "Dec": 59.94,
+    "VM": 4.21
+  },
+  {
+    "name": "",
+    "RA": 3.489,
+    "Dec": 49.509,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 3.49,
+    "Dec": -62.938,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 3.499,
+    "Dec": 58.879,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 3.5,
+    "Dec": 55.452,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 3.507,
+    "Dec": 11.336,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 3.51,
+    "Dec": 47.995,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 3.51,
+    "Dec": -5.075,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 3.515,
+    "Dec": 12.937,
+    "VM": 4.14
+  },
+  {
+    "name": "",
+    "RA": 3.536,
+    "Dec": 48.023,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 3.541,
+    "Dec": 46.057,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 3.549,
+    "Dec": -9.458,
+    "VM": 3.72
+  },
+  {
+    "name": "",
+    "RA": 3.563,
+    "Dec": -21.633,
+    "VM": 4.26
+  },
+  {
+    "name": "",
+    "RA": 3.605,
+    "Dec": -17.467,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 3.608,
+    "Dec": 48.193,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 3.615,
+    "Dec": 0.402,
+    "VM": 4.29
+  },
+  {
+    "name": "",
+    "RA": 3.618,
+    "Dec": -40.275,
+    "VM": 4.57
+  },
+  {
+    "name": "",
+    "RA": 3.703,
+    "Dec": 63.217,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 3.704,
+    "Dec": -31.938,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 3.706,
+    "Dec": 33.965,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 3.714,
+    "Dec": -37.314,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 3.715,
+    "Dec": 47.788,
+    "VM": 3.01
+  },
+  {
+    "name": "",
+    "RA": 3.721,
+    "Dec": -9.763,
+    "VM": 3.52
+  },
+  {
+    "name": "",
+    "RA": 3.737,
+    "Dec": -64.807,
+    "VM": 3.84
+  },
+  {
+    "name": "",
+    "RA": 3.739,
+    "Dec": 32.288,
+    "VM": 3.84
+  },
+  {
+    "name": "",
+    "RA": 3.742,
+    "Dec": -1.163,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 3.747,
+    "Dec": 24.289,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 3.748,
+    "Dec": 24.113,
+    "VM": 3.72
+  },
+  {
+    "name": "",
+    "RA": 3.753,
+    "Dec": 42.579,
+    "VM": 3.77
+  },
+  {
+    "name": "",
+    "RA": 3.753,
+    "Dec": 24.467,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 3.761,
+    "Dec": 6.05,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 3.764,
+    "Dec": 24.368,
+    "VM": 3.87
+  },
+  {
+    "name": "",
+    "RA": 3.767,
+    "Dec": 63.345,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 3.769,
+    "Dec": -12.102,
+    "VM": 4.43
+  },
+  {
+    "name": "",
+    "RA": 3.772,
+    "Dec": 23.948,
+    "VM": 4.14
+  },
+  {
+    "name": "",
+    "RA": 3.781,
+    "Dec": -23.25,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 3.787,
+    "Dec": -74.239,
+    "VM": 3.26
+  },
+  {
+    "name": "Alcyone",
+    "RA": 3.791,
+    "Dec": 24.105,
+    "VM": 2.85
+  },
+  {
+    "name": "",
+    "RA": 3.794,
+    "Dec": -23.875,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 3.805,
+    "Dec": 11.143,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 3.806,
+    "Dec": 23.421,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 3.81,
+    "Dec": -37.62,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 3.819,
+    "Dec": 24.053,
+    "VM": 3.62
+  },
+  {
+    "name": "",
+    "RA": 3.82,
+    "Dec": 24.137,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 3.82,
+    "Dec": 70.871,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 3.824,
+    "Dec": -36.2,
+    "VM": 4.17
+  },
+  {
+    "name": "",
+    "RA": 3.825,
+    "Dec": 65.526,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 3.826,
+    "Dec": 33.091,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 3.839,
+    "Dec": 25.579,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 3.839,
+    "Dec": 71.332,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 3.878,
+    "Dec": -5.361,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 3.894,
+    "Dec": -34.732,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 3.895,
+    "Dec": -24.612,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 3.902,
+    "Dec": 31.884,
+    "VM": 2.84
+  },
+  {
+    "name": "",
+    "RA": 3.905,
+    "Dec": -2.955,
+    "VM": 4.46
+  },
+  {
+    "name": "",
+    "RA": 3.933,
+    "Dec": 47.871,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 3.941,
+    "Dec": 35.081,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 3.943,
+    "Dec": 50.695,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 3.952,
+    "Dec": 61.109,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 3.957,
+    "Dec": 63.072,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 3.964,
+    "Dec": 40.01,
+    "VM": 2.9
+  },
+  {
+    "name": "Zaurak",
+    "RA": 3.967,
+    "Dec": -13.509,
+    "VM": 2.97
+  },
+  {
+    "name": "",
+    "RA": 3.979,
+    "Dec": -61.4,
+    "VM": 4.56
+  },
+  {
+    "name": "",
+    "RA": 3.983,
+    "Dec": 35.791,
+    "VM": 3.98
+  },
+  {
+    "name": "",
+    "RA": 3.999,
+    "Dec": -24.016,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 4.011,
+    "Dec": 12.49,
+    "VM": 3.41
+  },
+  {
+    "name": "",
+    "RA": 4.015,
+    "Dec": -62.159,
+    "VM": 4.48
+  },
+  {
+    "name": "",
+    "RA": 4.022,
+    "Dec": -61.079,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 4.026,
+    "Dec": -1.55,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 4.044,
+    "Dec": -0.269,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 4.053,
+    "Dec": 5.989,
+    "VM": 3.91
+  },
+  {
+    "name": "",
+    "RA": 4.062,
+    "Dec": 5.436,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 4.066,
+    "Dec": 8.197,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 4.069,
+    "Dec": 2.827,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 4.073,
+    "Dec": 24.106,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 4.074,
+    "Dec": 59.156,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 4.078,
+    "Dec": 22.082,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 4.11,
+    "Dec": 50.351,
+    "VM": 4.25
+  },
+  {
+    "name": "",
+    "RA": 4.11,
+    "Dec": 27.6,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 4.117,
+    "Dec": 29.001,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 4.144,
+    "Dec": 47.713,
+    "VM": 3.96
+  },
+  {
+    "name": "",
+    "RA": 4.155,
+    "Dec": -16.386,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 4.167,
+    "Dec": 80.699,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 4.173,
+    "Dec": -6.924,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 4.181,
+    "Dec": 26.481,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 4.181,
+    "Dec": -41.994,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 4.198,
+    "Dec": -6.838,
+    "VM": 4.04
+  },
+  {
+    "name": "",
+    "RA": 4.226,
+    "Dec": 7.716,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 4.232,
+    "Dec": 9.264,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 4.233,
+    "Dec": -42.294,
+    "VM": 3.85
+  },
+  {
+    "name": "",
+    "RA": 4.24,
+    "Dec": -10.256,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 4.24,
+    "Dec": -62.474,
+    "VM": 3.33
+  },
+  {
+    "name": "",
+    "RA": 4.243,
+    "Dec": 10.011,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 4.247,
+    "Dec": -62.192,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 4.248,
+    "Dec": 40.484,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 4.248,
+    "Dec": 48.409,
+    "VM": 4.12
+  },
+  {
+    "name": "",
+    "RA": 4.255,
+    "Dec": -7.653,
+    "VM": 4.43
+  },
+  {
+    "name": "",
+    "RA": 4.259,
+    "Dec": 8.892,
+    "VM": 4.27
+  },
+  {
+    "name": "",
+    "RA": 4.267,
+    "Dec": -51.487,
+    "VM": 4.26
+  },
+  {
+    "name": "",
+    "RA": 4.275,
+    "Dec": -59.302,
+    "VM": 4.44
+  },
+  {
+    "name": "",
+    "RA": 4.279,
+    "Dec": 53.612,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 4.288,
+    "Dec": 20.579,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 4.298,
+    "Dec": -33.798,
+    "VM": 3.55
+  },
+  {
+    "name": "",
+    "RA": 4.304,
+    "Dec": 50.296,
+    "VM": 4.6
+  },
+  {
+    "name": "",
+    "RA": 4.32,
+    "Dec": 50.049,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 4.321,
+    "Dec": -44.268,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 4.324,
+    "Dec": 21.142,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 4.327,
+    "Dec": 21.773,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 4.33,
+    "Dec": 15.628,
+    "VM": 3.65
+  },
+  {
+    "name": "",
+    "RA": 4.339,
+    "Dec": 27.351,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 4.34,
+    "Dec": 34.567,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 4.343,
+    "Dec": 15.095,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 4.344,
+    "Dec": -20.64,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 4.345,
+    "Dec": 65.14,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 4.359,
+    "Dec": 46.499,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 4.363,
+    "Dec": 60.736,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 4.365,
+    "Dec": -63.386,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 4.376,
+    "Dec": 25.629,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 4.382,
+    "Dec": 17.543,
+    "VM": 3.77
+  },
+  {
+    "name": "",
+    "RA": 4.395,
+    "Dec": -3.745,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 4.398,
+    "Dec": 9.461,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 4.401,
+    "Dec": -34.017,
+    "VM": 3.97
+  },
+  {
+    "name": "",
+    "RA": 4.402,
+    "Dec": 17.444,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 4.423,
+    "Dec": 22.294,
+    "VM": 4.21
+  },
+  {
+    "name": "",
+    "RA": 4.424,
+    "Dec": 22.2,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 4.425,
+    "Dec": 17.928,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 4.435,
+    "Dec": 31.439,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 4.438,
+    "Dec": 22.814,
+    "VM": 4.28
+  },
+  {
+    "name": "",
+    "RA": 4.439,
+    "Dec": 15.618,
+    "VM": 4.48
+  },
+  {
+    "name": "",
+    "RA": 4.443,
+    "Dec": 14.714,
+    "VM": 4.69
+  },
+  {
+    "name": "",
+    "RA": 4.451,
+    "Dec": 80.824,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 4.474,
+    "Dec": 16.36,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 4.476,
+    "Dec": 15.962,
+    "VM": 3.84
+  },
+  {
+    "name": "",
+    "RA": 4.477,
+    "Dec": 19.18,
+    "VM": 3.53
+  },
+  {
+    "name": "",
+    "RA": 4.478,
+    "Dec": 15.871,
+    "VM": 3.4
+  },
+  {
+    "name": "",
+    "RA": 4.481,
+    "Dec": 13.048,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 4.5,
+    "Dec": 83.34,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 4.509,
+    "Dec": 16.194,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 4.51,
+    "Dec": 13.724,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 4.511,
+    "Dec": 15.692,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 4.514,
+    "Dec": -44.954,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 4.531,
+    "Dec": -0.044,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 4.558,
+    "Dec": -29.766,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 4.564,
+    "Dec": 14.844,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 4.567,
+    "Dec": -55.045,
+    "VM": 3.3
+  },
+  {
+    "name": "",
+    "RA": 4.57,
+    "Dec": -8.231,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 4.57,
+    "Dec": -8.97,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 4.593,
+    "Dec": -30.562,
+    "VM": 3.81
+  },
+  {
+    "name": "",
+    "RA": 4.594,
+    "Dec": 10.161,
+    "VM": 4.25
+  },
+  {
+    "name": "Aldebaran",
+    "RA": 4.599,
+    "Dec": 16.509,
+    "VM": 0.87
+  },
+  {
+    "name": "",
+    "RA": 4.605,
+    "Dec": -3.352,
+    "VM": 3.93
+  },
+  {
+    "name": "",
+    "RA": 4.612,
+    "Dec": 41.265,
+    "VM": 4.25
+  },
+  {
+    "name": "",
+    "RA": 4.62,
+    "Dec": 0.998,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 4.627,
+    "Dec": -2.474,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 4.636,
+    "Dec": 12.511,
+    "VM": 4.27
+  },
+  {
+    "name": "",
+    "RA": 4.636,
+    "Dec": -14.304,
+    "VM": 3.86
+  },
+  {
+    "name": "",
+    "RA": 4.648,
+    "Dec": -12.123,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 4.652,
+    "Dec": 7.871,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 4.653,
+    "Dec": 15.8,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 4.655,
+    "Dec": 15.918,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 4.655,
+    "Dec": -14.359,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 4.665,
+    "Dec": 53.08,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 4.666,
+    "Dec": 53.473,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 4.668,
+    "Dec": 12.198,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 4.674,
+    "Dec": -19.671,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 4.676,
+    "Dec": -41.864,
+    "VM": 4.44
+  },
+  {
+    "name": "",
+    "RA": 4.701,
+    "Dec": -37.144,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 4.704,
+    "Dec": 22.957,
+    "VM": 4.27
+  },
+  {
+    "name": "",
+    "RA": 4.713,
+    "Dec": -50.481,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 4.715,
+    "Dec": 43.365,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 4.739,
+    "Dec": -59.733,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 4.741,
+    "Dec": 11.146,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 4.758,
+    "Dec": -3.255,
+    "VM": 4.01
+  },
+  {
+    "name": "",
+    "RA": 4.767,
+    "Dec": 11.706,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 4.793,
+    "Dec": -16.934,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 4.8,
+    "Dec": 56.757,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 4.831,
+    "Dec": 6.961,
+    "VM": 3.19
+  },
+  {
+    "name": "",
+    "RA": 4.832,
+    "Dec": 37.488,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 4.837,
+    "Dec": -16.217,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 4.844,
+    "Dec": 8.9,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 4.853,
+    "Dec": 5.605,
+    "VM": 3.68
+  },
+  {
+    "name": "",
+    "RA": 4.856,
+    "Dec": 18.84,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 4.868,
+    "Dec": 63.505,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 4.876,
+    "Dec": 14.251,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 4.877,
+    "Dec": 36.703,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 4.882,
+    "Dec": -5.453,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 4.89,
+    "Dec": 2.508,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 4.901,
+    "Dec": 66.343,
+    "VM": 4.26
+  },
+  {
+    "name": "",
+    "RA": 4.904,
+    "Dec": 2.441,
+    "VM": 3.71
+  },
+  {
+    "name": "",
+    "RA": 4.913,
+    "Dec": 11.426,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 4.913,
+    "Dec": 7.779,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 4.915,
+    "Dec": 10.151,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 4.92,
+    "Dec": -74.937,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 4.94,
+    "Dec": 13.514,
+    "VM": 4.06
+  },
+  {
+    "name": "",
+    "RA": 4.94,
+    "Dec": -5.171,
+    "VM": 5.5
+  },
+  {
+    "name": "Hassaleh",
+    "RA": 4.95,
+    "Dec": 33.166,
+    "VM": 2.69
+  },
+  {
+    "name": "",
+    "RA": 4.955,
+    "Dec": 53.752,
+    "VM": 4.43
+  },
+  {
+    "name": "",
+    "RA": 4.976,
+    "Dec": 1.714,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 4.988,
+    "Dec": 37.89,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 4.997,
+    "Dec": -10.263,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 4.999,
+    "Dec": -12.537,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 5.006,
+    "Dec": 81.194,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 5.024,
+    "Dec": -20.052,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 5.024,
+    "Dec": -7.174,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 5.033,
+    "Dec": 43.823,
+    "VM": 3.03
+  },
+  {
+    "name": "",
+    "RA": 5.036,
+    "Dec": -26.275,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 5.041,
+    "Dec": 41.076,
+    "VM": 3.69
+  },
+  {
+    "name": "",
+    "RA": 5.045,
+    "Dec": -71.314,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 5.047,
+    "Dec": -49.151,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 5.052,
+    "Dec": 21.59,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 5.057,
+    "Dec": 60.442,
+    "VM": 4.03
+  },
+  {
+    "name": "",
+    "RA": 5.073,
+    "Dec": -35.483,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 5.076,
+    "Dec": 15.404,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 5.083,
+    "Dec": -49.578,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 5.091,
+    "Dec": -22.371,
+    "VM": 3.19
+  },
+  {
+    "name": "",
+    "RA": 5.092,
+    "Dec": -57.473,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 5.102,
+    "Dec": 58.972,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 5.109,
+    "Dec": 41.234,
+    "VM": 3.18
+  },
+  {
+    "name": "",
+    "RA": 5.111,
+    "Dec": 51.598,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 5.113,
+    "Dec": -4.655,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 5.124,
+    "Dec": 18.645,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 5.126,
+    "Dec": -63.4,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 5.13,
+    "Dec": 20.418,
+    "VM": 5.28
+  },
+  {
+    "name": "Cursa",
+    "RA": 5.131,
+    "Dec": -5.086,
+    "VM": 2.78
+  },
+  {
+    "name": "",
+    "RA": 5.131,
+    "Dec": 8.498,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 5.135,
+    "Dec": 24.265,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 5.145,
+    "Dec": -4.456,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 5.152,
+    "Dec": -8.754,
+    "VM": 4.25
+  },
+  {
+    "name": "",
+    "RA": 5.155,
+    "Dec": 9.83,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 5.162,
+    "Dec": 15.597,
+    "VM": 4.81
+  },
+  {
+    "name": "",
+    "RA": 5.195,
+    "Dec": 16.046,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 5.205,
+    "Dec": -11.869,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 5.206,
+    "Dec": 73.947,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 5.216,
+    "Dec": -16.205,
+    "VM": 3.29
+  },
+  {
+    "name": "",
+    "RA": 5.221,
+    "Dec": -12.941,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 5.222,
+    "Dec": 2.861,
+    "VM": 4.46
+  },
+  {
+    "name": "",
+    "RA": 5.224,
+    "Dec": 38.484,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 5.229,
+    "Dec": -67.185,
+    "VM": 4.81
+  },
+  {
+    "name": "Rigel",
+    "RA": 5.242,
+    "Dec": -8.202,
+    "VM": 0.18
+  },
+  {
+    "name": "",
+    "RA": 5.246,
+    "Dec": 5.156,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 5.257,
+    "Dec": -26.944,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 5.257,
+    "Dec": 32.688,
+    "VM": 5.01
+  },
+  {
+    "name": "Capella",
+    "RA": 5.278,
+    "Dec": 45.998,
+    "VM": 0.08
+  },
+  {
+    "name": "",
+    "RA": 5.291,
+    "Dec": -34.895,
+    "VM": 4.81
+  },
+  {
+    "name": "",
+    "RA": 5.293,
+    "Dec": -6.844,
+    "VM": 3.59
+  },
+  {
+    "name": "",
+    "RA": 5.295,
+    "Dec": -13.52,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 5.303,
+    "Dec": 33.372,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 5.317,
+    "Dec": 33.748,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 5.319,
+    "Dec": 40.099,
+    "VM": 4.69
+  },
+  {
+    "name": "",
+    "RA": 5.32,
+    "Dec": 2.596,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 5.321,
+    "Dec": 22.096,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 5.323,
+    "Dec": -50.606,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 5.326,
+    "Dec": -13.177,
+    "VM": 4.29
+  },
+  {
+    "name": "",
+    "RA": 5.333,
+    "Dec": -12.316,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 5.334,
+    "Dec": 33.958,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 5.337,
+    "Dec": 41.086,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 5.341,
+    "Dec": -21.24,
+    "VM": 4.7
+  },
+  {
+    "name": "",
+    "RA": 5.363,
+    "Dec": -0.382,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 5.363,
+    "Dec": -24.773,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 5.363,
+    "Dec": 41.805,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 5.376,
+    "Dec": 79.231,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 5.381,
+    "Dec": 3.544,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 5.391,
+    "Dec": 57.544,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 5.392,
+    "Dec": -13.927,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 5.399,
+    "Dec": -7.808,
+    "VM": 4.13
+  },
+  {
+    "name": "",
+    "RA": 5.407,
+    "Dec": 17.384,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 5.408,
+    "Dec": -2.397,
+    "VM": 3.35
+  },
+  {
+    "name": "",
+    "RA": 5.408,
+    "Dec": -0.891,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 5.411,
+    "Dec": 37.385,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 5.412,
+    "Dec": 1.846,
+    "VM": 4.89
+  },
+  {
+    "name": "Bellatrix",
+    "RA": 5.419,
+    "Dec": 6.35,
+    "VM": 1.64
+  },
+  {
+    "name": "Alnath",
+    "RA": 5.438,
+    "Dec": 28.607,
+    "VM": 1.65
+  },
+  {
+    "name": "",
+    "RA": 5.439,
+    "Dec": -58.913,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 5.447,
+    "Dec": 3.096,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 5.453,
+    "Dec": 17.962,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 5.461,
+    "Dec": 21.937,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 5.461,
+    "Dec": 34.476,
+    "VM": 5.08
+  },
+  {
+    "name": "Nihal",
+    "RA": 5.471,
+    "Dec": -20.759,
+    "VM": 2.81
+  },
+  {
+    "name": "",
+    "RA": 5.488,
+    "Dec": 25.15,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 5.496,
+    "Dec": -1.092,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 5.503,
+    "Dec": -47.078,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 5.503,
+    "Dec": 63.067,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 5.513,
+    "Dec": 5.948,
+    "VM": 4.2
+  },
+  {
+    "name": "",
+    "RA": 5.52,
+    "Dec": -35.471,
+    "VM": 3.86
+  },
+  {
+    "name": "",
+    "RA": 5.521,
+    "Dec": 3.292,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 5.531,
+    "Dec": -76.341,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 5.532,
+    "Dec": -7.302,
+    "VM": 4.62
+  },
+  {
+    "name": "Mintaka",
+    "RA": 5.533,
+    "Dec": -0.299,
+    "VM": 2.25
+  },
+  {
+    "name": "",
+    "RA": 5.537,
+    "Dec": 18.594,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 5.537,
+    "Dec": 17.058,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 5.545,
+    "Dec": -1.592,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 5.545,
+    "Dec": 32.192,
+    "VM": 4.71
+  },
+  {
+    "name": "Arneb",
+    "RA": 5.546,
+    "Dec": -17.822,
+    "VM": 2.58
+  },
+  {
+    "name": "",
+    "RA": 5.548,
+    "Dec": -38.513,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 5.55,
+    "Dec": -64.228,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 5.559,
+    "Dec": -1.156,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 5.56,
+    "Dec": -62.49,
+    "VM": 3.76
+  },
+  {
+    "name": "",
+    "RA": 5.571,
+    "Dec": 3.767,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 5.58,
+    "Dec": 9.49,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 5.584,
+    "Dec": -6.002,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 5.586,
+    "Dec": 9.934,
+    "VM": 3.39
+  },
+  {
+    "name": "",
+    "RA": 5.588,
+    "Dec": -5.387,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 5.588,
+    "Dec": -5.39,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 5.59,
+    "Dec": -5.416,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 5.59,
+    "Dec": -4.838,
+    "VM": 4.58
+  },
+  {
+    "name": "Hatsya",
+    "RA": 5.591,
+    "Dec": -5.91,
+    "VM": 2.75
+  },
+  {
+    "name": "",
+    "RA": 5.591,
+    "Dec": 24.04,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 5.594,
+    "Dec": -4.856,
+    "VM": 5.24
+  },
+  {
+    "name": "Alnilam",
+    "RA": 5.604,
+    "Dec": -1.202,
+    "VM": 1.69
+  },
+  {
+    "name": "",
+    "RA": 5.615,
+    "Dec": 9.291,
+    "VM": 4.09
+  },
+  {
+    "name": "",
+    "RA": 5.627,
+    "Dec": 21.143,
+    "VM": 2.97
+  },
+  {
+    "name": "",
+    "RA": 5.629,
+    "Dec": -28.69,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 5.644,
+    "Dec": 30.492,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 5.646,
+    "Dec": -2.6,
+    "VM": 3.77
+  },
+  {
+    "name": "",
+    "RA": 5.648,
+    "Dec": -7.213,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 5.653,
+    "Dec": 4.121,
+    "VM": 4.5
+  },
+  {
+    "name": "Phakt",
+    "RA": 5.661,
+    "Dec": -34.074,
+    "VM": 2.65
+  },
+  {
+    "name": "",
+    "RA": 5.662,
+    "Dec": 25.897,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 5.664,
+    "Dec": -32.629,
+    "VM": 5.44
+  },
+  {
+    "name": "Alnitak",
+    "RA": 5.679,
+    "Dec": -1.943,
+    "VM": 1.74
+  },
+  {
+    "name": "",
+    "RA": 5.681,
+    "Dec": -1.129,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 5.688,
+    "Dec": 16.534,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 5.704,
+    "Dec": -34.668,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 5.708,
+    "Dec": 1.475,
+    "VM": 4.9
+  },
+  {
+    "name": "",
+    "RA": 5.741,
+    "Dec": -22.448,
+    "VM": 3.59
+  },
+  {
+    "name": "",
+    "RA": 5.746,
+    "Dec": -65.736,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 5.765,
+    "Dec": 49.826,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 5.767,
+    "Dec": -32.306,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 5.774,
+    "Dec": -46.597,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 5.783,
+    "Dec": -14.822,
+    "VM": 3.55
+  },
+  {
+    "name": "",
+    "RA": 5.788,
+    "Dec": -51.067,
+    "VM": 3.85
+  },
+  {
+    "name": "",
+    "RA": 5.791,
+    "Dec": 17.729,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 5.795,
+    "Dec": 13.9,
+    "VM": 5.28
+  },
+  {
+    "name": "Saiph",
+    "RA": 5.796,
+    "Dec": -9.67,
+    "VM": 2.07
+  },
+  {
+    "name": "",
+    "RA": 5.8,
+    "Dec": 6.454,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 5.817,
+    "Dec": 24.568,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 5.82,
+    "Dec": 39.181,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 5.826,
+    "Dec": 12.651,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 5.827,
+    "Dec": -14.484,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 5.83,
+    "Dec": -56.167,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 5.832,
+    "Dec": -66.901,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 5.838,
+    "Dec": -79.361,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 5.848,
+    "Dec": -52.109,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 5.849,
+    "Dec": -35.768,
+    "VM": 3.12
+  },
+  {
+    "name": "",
+    "RA": 5.851,
+    "Dec": 37.306,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 5.855,
+    "Dec": -20.879,
+    "VM": 3.76
+  },
+  {
+    "name": "",
+    "RA": 5.856,
+    "Dec": -7.518,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 5.858,
+    "Dec": 39.148,
+    "VM": 3.97
+  },
+  {
+    "name": "",
+    "RA": 5.874,
+    "Dec": 1.855,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 5.885,
+    "Dec": -33.801,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 5.889,
+    "Dec": 27.612,
+    "VM": 4.56
+  },
+  {
+    "name": "",
+    "RA": 5.902,
+    "Dec": -63.09,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 5.906,
+    "Dec": 20.276,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 5.914,
+    "Dec": -52.635,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 5.914,
+    "Dec": 55.707,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 5.916,
+    "Dec": 59.888,
+    "VM": 5.2
+  },
+  {
+    "name": "Betelgeuse",
+    "RA": 5.92,
+    "Dec": 7.407,
+    "VM": 0.45
+  },
+  {
+    "name": "",
+    "RA": 5.925,
+    "Dec": -37.121,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 5.94,
+    "Dec": -14.168,
+    "VM": 3.71
+  },
+  {
+    "name": "",
+    "RA": 5.959,
+    "Dec": -35.283,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 5.967,
+    "Dec": 25.954,
+    "VM": 4.81
+  },
+  {
+    "name": "",
+    "RA": 5.98,
+    "Dec": 0.553,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 5.985,
+    "Dec": -9.558,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 5.986,
+    "Dec": -42.815,
+    "VM": 3.96
+  },
+  {
+    "name": "",
+    "RA": 5.992,
+    "Dec": 54.285,
+    "VM": 3.72
+  },
+  {
+    "name": "Menkalinan",
+    "RA": 5.992,
+    "Dec": 44.947,
+    "VM": 1.9
+  },
+  {
+    "name": "",
+    "RA": 5.995,
+    "Dec": 37.213,
+    "VM": 2.65
+  },
+  {
+    "name": "",
+    "RA": 5.999,
+    "Dec": 45.937,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 6.001,
+    "Dec": -3.074,
+    "VM": 4.53
+  },
+  {
+    "name": "",
+    "RA": 6.031,
+    "Dec": -10.598,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 6.04,
+    "Dec": 9.647,
+    "VM": 4.12
+  },
+  {
+    "name": "",
+    "RA": 6.054,
+    "Dec": -26.285,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 6.058,
+    "Dec": 19.691,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 6.065,
+    "Dec": 20.138,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 6.069,
+    "Dec": 23.263,
+    "VM": 4.16
+  },
+  {
+    "name": "",
+    "RA": 6.07,
+    "Dec": -6.709,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 6.083,
+    "Dec": -16.484,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 6.103,
+    "Dec": -14.935,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 6.109,
+    "Dec": -23.111,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 6.11,
+    "Dec": 38.483,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 6.111,
+    "Dec": -4.194,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 6.118,
+    "Dec": -62.155,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 6.125,
+    "Dec": -37.253,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 6.126,
+    "Dec": 14.768,
+    "VM": 4.42
+  },
+  {
+    "name": "",
+    "RA": 6.128,
+    "Dec": -19.166,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 6.131,
+    "Dec": -42.154,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 6.146,
+    "Dec": -68.843,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 6.149,
+    "Dec": -22.427,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 6.166,
+    "Dec": 58.936,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 6.171,
+    "Dec": -74.753,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 6.172,
+    "Dec": -54.969,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 6.188,
+    "Dec": -65.589,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 6.198,
+    "Dec": -6.55,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 6.199,
+    "Dec": 14.209,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 6.201,
+    "Dec": 16.13,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 6.214,
+    "Dec": 65.718,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 6.247,
+    "Dec": 19.156,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 6.248,
+    "Dec": -6.275,
+    "VM": 3.99
+  },
+  {
+    "name": "",
+    "RA": 6.248,
+    "Dec": 22.507,
+    "VM": 3.31
+  },
+  {
+    "name": "",
+    "RA": 6.256,
+    "Dec": 29.498,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 6.257,
+    "Dec": 16.143,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 6.261,
+    "Dec": 59.999,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 6.262,
+    "Dec": -13.718,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 6.262,
+    "Dec": 12.551,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 6.274,
+    "Dec": 12.272,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 6.276,
+    "Dec": -35.141,
+    "VM": 4.37
+  },
+  {
+    "name": "",
+    "RA": 6.285,
+    "Dec": 9.942,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 6.295,
+    "Dec": -16.816,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 6.299,
+    "Dec": 61.515,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 6.314,
+    "Dec": -9.39,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 6.314,
+    "Dec": 69.32,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 6.327,
+    "Dec": 59.011,
+    "VM": 4.44
+  },
+  {
+    "name": "",
+    "RA": 6.329,
+    "Dec": -7.823,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 6.333,
+    "Dec": -2.944,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 6.339,
+    "Dec": -30.063,
+    "VM": 3.02
+  },
+  {
+    "name": "",
+    "RA": 6.357,
+    "Dec": -11.773,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 6.363,
+    "Dec": 53.452,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 6.369,
+    "Dec": -33.436,
+    "VM": 3.85
+  },
+  {
+    "name": "Mirzam",
+    "RA": 6.378,
+    "Dec": -17.956,
+    "VM": 1.98
+  },
+  {
+    "name": "",
+    "RA": 6.383,
+    "Dec": 22.514,
+    "VM": 2.87
+  },
+  {
+    "name": "",
+    "RA": 6.396,
+    "Dec": 4.593,
+    "VM": 4.39
+  },
+  {
+    "name": "Canopus",
+    "RA": 6.399,
+    "Dec": -52.696,
+    "VM": -0.62
+  },
+  {
+    "name": "",
+    "RA": 6.403,
+    "Dec": -11.53,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 6.415,
+    "Dec": 49.288,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 6.425,
+    "Dec": -69.69,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 6.447,
+    "Dec": 58.417,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 6.454,
+    "Dec": 0.299,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 6.466,
+    "Dec": -4.762,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 6.47,
+    "Dec": -32.58,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 6.48,
+    "Dec": -7.033,
+    "VM": 3.76
+  },
+  {
+    "name": "",
+    "RA": 6.483,
+    "Dec": 20.212,
+    "VM": 4.13
+  },
+  {
+    "name": "",
+    "RA": 6.491,
+    "Dec": -56.853,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 6.497,
+    "Dec": -50.239,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 6.523,
+    "Dec": -12.392,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 6.53,
+    "Dec": 11.544,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 6.531,
+    "Dec": -8.158,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 6.531,
+    "Dec": -23.418,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 6.539,
+    "Dec": -37.697,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 6.548,
+    "Dec": 7.333,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 6.561,
+    "Dec": -1.22,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 6.564,
+    "Dec": -36.232,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 6.583,
+    "Dec": -52.976,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 6.584,
+    "Dec": -22.965,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 6.587,
+    "Dec": 28.022,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 6.609,
+    "Dec": 38.446,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 6.611,
+    "Dec": -19.256,
+    "VM": 3.95
+  },
+  {
+    "name": "Alhena",
+    "RA": 6.629,
+    "Dec": 16.399,
+    "VM": 1.93
+  },
+  {
+    "name": "",
+    "RA": 6.629,
+    "Dec": -43.196,
+    "VM": 3.17
+  },
+  {
+    "name": "",
+    "RA": 6.63,
+    "Dec": -32.34,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 6.632,
+    "Dec": -18.237,
+    "VM": 4.42
+  },
+  {
+    "name": "",
+    "RA": 6.644,
+    "Dec": -48.22,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 6.647,
+    "Dec": 39.903,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 6.655,
+    "Dec": -14.146,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 6.656,
+    "Dec": 42.489,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 6.683,
+    "Dec": 9.896,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 6.699,
+    "Dec": -9.168,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 6.707,
+    "Dec": 17.645,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 6.718,
+    "Dec": 44.524,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 6.732,
+    "Dec": 25.131,
+    "VM": 3.06
+  },
+  {
+    "name": "",
+    "RA": 6.733,
+    "Dec": 13.228,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 6.741,
+    "Dec": -31.071,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 6.746,
+    "Dec": 28.971,
+    "VM": 5.42
+  },
+  {
+    "name": "Sirius",
+    "RA": 6.752,
+    "Dec": -16.716,
+    "VM": -1.44
+  },
+  {
+    "name": "",
+    "RA": 6.755,
+    "Dec": 12.896,
+    "VM": 3.35
+  },
+  {
+    "name": "",
+    "RA": 6.766,
+    "Dec": -14.796,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 6.771,
+    "Dec": 59.442,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 6.771,
+    "Dec": 79.565,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 6.779,
+    "Dec": 43.577,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 6.78,
+    "Dec": 57.169,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 6.781,
+    "Dec": -14.426,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 6.781,
+    "Dec": -51.266,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 6.789,
+    "Dec": 8.037,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 6.789,
+    "Dec": -37.93,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 6.794,
+    "Dec": -8.999,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 6.794,
+    "Dec": 48.789,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 6.798,
+    "Dec": 2.412,
+    "VM": 4.48
+  },
+  {
+    "name": "",
+    "RA": 6.803,
+    "Dec": -61.941,
+    "VM": 3.24
+  },
+  {
+    "name": "",
+    "RA": 6.816,
+    "Dec": -15.145,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 6.831,
+    "Dec": -32.508,
+    "VM": 3.5
+  },
+  {
+    "name": "",
+    "RA": 6.831,
+    "Dec": -53.622,
+    "VM": 4.41
+  },
+  {
+    "name": "",
+    "RA": 6.832,
+    "Dec": -46.615,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 6.832,
+    "Dec": -50.615,
+    "VM": 2.94
+  },
+  {
+    "name": "",
+    "RA": 6.846,
+    "Dec": 41.781,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 6.848,
+    "Dec": -34.367,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 6.849,
+    "Dec": 67.572,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 6.857,
+    "Dec": -70.963,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 6.859,
+    "Dec": 21.761,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 6.88,
+    "Dec": 33.961,
+    "VM": 3.6
+  },
+  {
+    "name": "",
+    "RA": 6.885,
+    "Dec": 59.449,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 6.892,
+    "Dec": -20.224,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 6.895,
+    "Dec": 68.888,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 6.902,
+    "Dec": -24.184,
+    "VM": 3.89
+  },
+  {
+    "name": "",
+    "RA": 6.903,
+    "Dec": -12.039,
+    "VM": 4.08
+  },
+  {
+    "name": "",
+    "RA": 6.907,
+    "Dec": -1.127,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 6.911,
+    "Dec": 13.178,
+    "VM": 4.73
+  },
+  {
+    "name": "",
+    "RA": 6.927,
+    "Dec": -20.136,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 6.93,
+    "Dec": -22.941,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 6.935,
+    "Dec": -14.043,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 6.936,
+    "Dec": -17.054,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 6.938,
+    "Dec": -48.721,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 6.943,
+    "Dec": -79.42,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 6.955,
+    "Dec": 58.423,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 6.959,
+    "Dec": -24.631,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 6.96,
+    "Dec": 45.094,
+    "VM": 4.9
+  },
+  {
+    "name": "",
+    "RA": 6.974,
+    "Dec": -34.112,
+    "VM": 5.07
+  },
+  {
+    "name": "Adhara",
+    "RA": 6.977,
+    "Dec": -28.972,
+    "VM": 1.5
+  },
+  {
+    "name": "",
+    "RA": 6.997,
+    "Dec": -67.916,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 7.001,
+    "Dec": 76.977,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 7.014,
+    "Dec": -51.403,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 7.029,
+    "Dec": -27.935,
+    "VM": 3.49
+  },
+  {
+    "name": "",
+    "RA": 7.032,
+    "Dec": -5.722,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 7.04,
+    "Dec": 24.215,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 7.049,
+    "Dec": -4.239,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 7.05,
+    "Dec": -23.833,
+    "VM": 3.02
+  },
+  {
+    "name": "",
+    "RA": 7.054,
+    "Dec": -59.178,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 7.061,
+    "Dec": 10.952,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 7.063,
+    "Dec": -15.633,
+    "VM": 4.11
+  },
+  {
+    "name": "",
+    "RA": 7.065,
+    "Dec": -49.584,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 7.067,
+    "Dec": -42.337,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 7.068,
+    "Dec": 20.57,
+    "VM": 4.01
+  },
+  {
+    "name": "",
+    "RA": 7.072,
+    "Dec": -56.75,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 7.111,
+    "Dec": -11.294,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 7.139,
+    "Dec": 15.931,
+    "VM": 5.47
+  },
+  {
+    "name": "Wezen",
+    "RA": 7.14,
+    "Dec": -26.393,
+    "VM": 1.83
+  },
+  {
+    "name": "",
+    "RA": 7.146,
+    "Dec": -70.499,
+    "VM": 3.78
+  },
+  {
+    "name": "",
+    "RA": 7.148,
+    "Dec": -39.656,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 7.17,
+    "Dec": -4.237,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 7.172,
+    "Dec": -27.492,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 7.18,
+    "Dec": -48.932,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 7.186,
+    "Dec": 30.245,
+    "VM": 4.41
+  },
+  {
+    "name": "",
+    "RA": 7.19,
+    "Dec": -0.302,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 7.194,
+    "Dec": 39.321,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 7.198,
+    "Dec": -0.493,
+    "VM": 4.15
+  },
+  {
+    "name": "",
+    "RA": 7.204,
+    "Dec": -40.499,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 7.209,
+    "Dec": -46.759,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 7.22,
+    "Dec": -45.183,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 7.223,
+    "Dec": 16.159,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 7.223,
+    "Dec": 51.429,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 7.226,
+    "Dec": -44.64,
+    "VM": 4.42
+  },
+  {
+    "name": "",
+    "RA": 7.238,
+    "Dec": -26.353,
+    "VM": 4.42
+  },
+  {
+    "name": "",
+    "RA": 7.239,
+    "Dec": 3.111,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 7.244,
+    "Dec": -48.272,
+    "VM": 4.75
+  },
+  {
+    "name": "",
+    "RA": 7.247,
+    "Dec": -26.773,
+    "VM": 4.01
+  },
+  {
+    "name": "",
+    "RA": 7.256,
+    "Dec": -30.686,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 7.265,
+    "Dec": 59.637,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 7.271,
+    "Dec": -15.586,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 7.276,
+    "Dec": -27.881,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 7.277,
+    "Dec": -23.316,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 7.28,
+    "Dec": -36.593,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 7.281,
+    "Dec": -67.957,
+    "VM": 3.97
+  },
+  {
+    "name": "",
+    "RA": 7.286,
+    "Dec": -37.097,
+    "VM": 2.71
+  },
+  {
+    "name": "",
+    "RA": 7.302,
+    "Dec": 16.54,
+    "VM": 3.58
+  },
+  {
+    "name": "",
+    "RA": 7.305,
+    "Dec": -36.734,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 7.309,
+    "Dec": 49.465,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 7.309,
+    "Dec": -39.21,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 7.311,
+    "Dec": -36.743,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 7.311,
+    "Dec": -24.559,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 7.312,
+    "Dec": -24.954,
+    "VM": 4.37
+  },
+  {
+    "name": "",
+    "RA": 7.314,
+    "Dec": -26.586,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 7.335,
+    "Dec": 21.982,
+    "VM": 3.5
+  },
+  {
+    "name": "",
+    "RA": 7.339,
+    "Dec": -52.312,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 7.344,
+    "Dec": -52.086,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 7.366,
+    "Dec": 20.444,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 7.367,
+    "Dec": 36.761,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 7.37,
+    "Dec": -19.017,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 7.384,
+    "Dec": -31.924,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 7.391,
+    "Dec": 25.051,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 7.391,
+    "Dec": -27.834,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 7.392,
+    "Dec": -32.202,
+    "VM": 5.41
+  },
+  {
+    "name": "Aludra",
+    "RA": 7.402,
+    "Dec": -29.303,
+    "VM": 2.45
+  },
+  {
+    "name": "",
+    "RA": 7.402,
+    "Dec": 40.672,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 7.411,
+    "Dec": -16.201,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 7.412,
+    "Dec": -31.809,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 7.416,
+    "Dec": 11.67,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 7.427,
+    "Dec": 9.276,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 7.429,
+    "Dec": 27.798,
+    "VM": 3.78
+  },
+  {
+    "name": "",
+    "RA": 7.439,
+    "Dec": -51.018,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 7.445,
+    "Dec": 49.212,
+    "VM": 4.61
+  },
+  {
+    "name": "Gomeisa",
+    "RA": 7.453,
+    "Dec": 8.289,
+    "VM": 2.89
+  },
+  {
+    "name": "",
+    "RA": 7.462,
+    "Dec": 21.445,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 7.467,
+    "Dec": 6.942,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 7.469,
+    "Dec": 8.926,
+    "VM": 4.33
+  },
+  {
+    "name": "",
+    "RA": 7.485,
+    "Dec": -38.812,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 7.485,
+    "Dec": 31.785,
+    "VM": 4.16
+  },
+  {
+    "name": "",
+    "RA": 7.487,
+    "Dec": -43.301,
+    "VM": 3.25
+  },
+  {
+    "name": "",
+    "RA": 7.489,
+    "Dec": 28.118,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 7.497,
+    "Dec": 12.007,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 7.497,
+    "Dec": 27.916,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 7.498,
+    "Dec": -23.024,
+    "VM": 4.85
+  },
+  {
+    "name": "",
+    "RA": 7.499,
+    "Dec": 49.672,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 7.512,
+    "Dec": -30.962,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 7.518,
+    "Dec": 82.411,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 7.53,
+    "Dec": 17.086,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 7.535,
+    "Dec": 1.914,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 7.56,
+    "Dec": 15.827,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 7.563,
+    "Dec": -14.524,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 7.564,
+    "Dec": -36.338,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 7.568,
+    "Dec": -22.296,
+    "VM": 4.44
+  },
+  {
+    "name": "",
+    "RA": 7.572,
+    "Dec": -23.474,
+    "VM": 5.06
+  },
+  {
+    "name": "Castor",
+    "RA": 7.577,
+    "Dec": 31.888,
+    "VM": 1.58
+  },
+  {
+    "name": "",
+    "RA": 7.586,
+    "Dec": 30.961,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 7.59,
+    "Dec": -28.369,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 7.594,
+    "Dec": -52.534,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 7.599,
+    "Dec": 26.896,
+    "VM": 4.06
+  },
+  {
+    "name": "",
+    "RA": 7.621,
+    "Dec": -4.111,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 7.623,
+    "Dec": -34.969,
+    "VM": 4.53
+  },
+  {
+    "name": "",
+    "RA": 7.638,
+    "Dec": -25.365,
+    "VM": 4.69
+  },
+  {
+    "name": "",
+    "RA": 7.647,
+    "Dec": -26.804,
+    "VM": 3.8
+  },
+  {
+    "name": "",
+    "RA": 7.653,
+    "Dec": 34.584,
+    "VM": 4.89
+  },
+  {
+    "name": "Procyon",
+    "RA": 7.655,
+    "Dec": 5.225,
+    "VM": 0.4
+  },
+  {
+    "name": "",
+    "RA": 7.658,
+    "Dec": -38.308,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 7.658,
+    "Dec": 17.675,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 7.673,
+    "Dec": -15.264,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 7.675,
+    "Dec": 87.02,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 7.687,
+    "Dec": -9.551,
+    "VM": 3.94
+  },
+  {
+    "name": "",
+    "RA": 7.688,
+    "Dec": -38.534,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 7.697,
+    "Dec": -72.606,
+    "VM": 3.93
+  },
+  {
+    "name": "",
+    "RA": 7.716,
+    "Dec": -45.173,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 7.717,
+    "Dec": 58.71,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 7.722,
+    "Dec": 28.884,
+    "VM": 4.23
+  },
+  {
+    "name": "",
+    "RA": 7.726,
+    "Dec": -28.411,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 7.728,
+    "Dec": -40.934,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 7.73,
+    "Dec": -28.955,
+    "VM": 3.94
+  },
+  {
+    "name": "",
+    "RA": 7.734,
+    "Dec": 50.434,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 7.735,
+    "Dec": 25.784,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 7.741,
+    "Dec": 24.398,
+    "VM": 3.57
+  },
+  {
+    "name": "",
+    "RA": 7.754,
+    "Dec": -37.969,
+    "VM": 3.62
+  },
+  {
+    "name": "Pollux",
+    "RA": 7.755,
+    "Dec": 28.026,
+    "VM": 1.16
+  },
+  {
+    "name": "",
+    "RA": 7.76,
+    "Dec": -34.172,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 7.766,
+    "Dec": -14.564,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 7.767,
+    "Dec": -6.773,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 7.769,
+    "Dec": 18.51,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 7.771,
+    "Dec": 10.768,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 7.778,
+    "Dec": 37.517,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 7.79,
+    "Dec": -38.511,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 7.792,
+    "Dec": 33.416,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 7.792,
+    "Dec": -46.608,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 7.799,
+    "Dec": -12.193,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 7.801,
+    "Dec": -25.937,
+    "VM": 4.4
+  },
+  {
+    "name": "",
+    "RA": 7.806,
+    "Dec": -47.078,
+    "VM": 4.69
+  },
+  {
+    "name": "",
+    "RA": 7.817,
+    "Dec": -24.912,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 7.821,
+    "Dec": -46.373,
+    "VM": 4.1
+  },
+  {
+    "name": "",
+    "RA": 7.822,
+    "Dec": -24.86,
+    "VM": 3.34
+  },
+  {
+    "name": "",
+    "RA": 7.828,
+    "Dec": -17.228,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 7.862,
+    "Dec": 1.767,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 7.863,
+    "Dec": -13.898,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 7.87,
+    "Dec": -40.576,
+    "VM": 3.71
+  },
+  {
+    "name": "",
+    "RA": 7.871,
+    "Dec": -34.705,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 7.877,
+    "Dec": -38.863,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 7.884,
+    "Dec": -36.364,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 7.884,
+    "Dec": -49.613,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 7.888,
+    "Dec": -48.103,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 7.892,
+    "Dec": 26.766,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 7.903,
+    "Dec": -35.877,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 7.912,
+    "Dec": 47.565,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 7.928,
+    "Dec": 19.884,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 7.946,
+    "Dec": -52.982,
+    "VM": 3.46
+  },
+  {
+    "name": "",
+    "RA": 7.948,
+    "Dec": -22.88,
+    "VM": 4.2
+  },
+  {
+    "name": "",
+    "RA": 7.949,
+    "Dec": -43.5,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 7.955,
+    "Dec": -44.11,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 7.961,
+    "Dec": -30.335,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 7.964,
+    "Dec": -45.578,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 7.971,
+    "Dec": -49.245,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 7.972,
+    "Dec": 2.225,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 7.985,
+    "Dec": -23.31,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 7.991,
+    "Dec": -39.297,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 7.994,
+    "Dec": -60.587,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 7.996,
+    "Dec": -3.68,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 7.998,
+    "Dec": -18.399,
+    "VM": 4.61
+  },
+  {
+    "name": "",
+    "RA": 8.003,
+    "Dec": 73.918,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 8.006,
+    "Dec": -63.567,
+    "VM": 4.81
+  },
+  {
+    "name": "",
+    "RA": 8.02,
+    "Dec": -1.393,
+    "VM": 4.69
+  },
+  {
+    "name": "",
+    "RA": 8.038,
+    "Dec": 2.335,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 8.059,
+    "Dec": 27.794,
+    "VM": 4.94
+  },
+  {
+    "name": "Naos",
+    "RA": 8.06,
+    "Dec": -40.003,
+    "VM": 2.21
+  },
+  {
+    "name": "",
+    "RA": 8.071,
+    "Dec": -32.675,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 8.08,
+    "Dec": 79.48,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 8.085,
+    "Dec": 13.118,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 8.111,
+    "Dec": -45.266,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 8.122,
+    "Dec": -20.554,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 8.126,
+    "Dec": -24.304,
+    "VM": 2.83
+  },
+  {
+    "name": "",
+    "RA": 8.129,
+    "Dec": 21.582,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 8.132,
+    "Dec": -68.617,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 8.141,
+    "Dec": 51.507,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 8.143,
+    "Dec": -2.984,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 8.15,
+    "Dec": -61.302,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 8.15,
+    "Dec": -19.245,
+    "VM": 4.4
+  },
+  {
+    "name": "",
+    "RA": 8.159,
+    "Dec": -47.337,
+    "VM": 1.75
+  },
+  {
+    "name": "",
+    "RA": 8.16,
+    "Dec": -44.123,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 8.162,
+    "Dec": -47.937,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 8.188,
+    "Dec": -12.927,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 8.189,
+    "Dec": -39.619,
+    "VM": 4.44
+  },
+  {
+    "name": "",
+    "RA": 8.191,
+    "Dec": -42.987,
+    "VM": 4.73
+  },
+  {
+    "name": "",
+    "RA": 8.193,
+    "Dec": -7.773,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 8.204,
+    "Dec": 17.648,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 8.214,
+    "Dec": 68.474,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 8.222,
+    "Dec": -15.788,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 8.225,
+    "Dec": -35.9,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 8.227,
+    "Dec": -46.992,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 8.233,
+    "Dec": -36.322,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 8.234,
+    "Dec": -40.348,
+    "VM": 4.42
+  },
+  {
+    "name": "",
+    "RA": 8.254,
+    "Dec": -62.916,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 8.275,
+    "Dec": 9.186,
+    "VM": 3.53
+  },
+  {
+    "name": "",
+    "RA": 8.305,
+    "Dec": -65.613,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 8.309,
+    "Dec": -76.92,
+    "VM": 4.05
+  },
+  {
+    "name": "",
+    "RA": 8.309,
+    "Dec": -36.659,
+    "VM": 4.44
+  },
+  {
+    "name": "",
+    "RA": 8.33,
+    "Dec": -71.515,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 8.334,
+    "Dec": 27.218,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 8.344,
+    "Dec": -77.484,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 8.356,
+    "Dec": -36.484,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 8.356,
+    "Dec": -33.054,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 8.368,
+    "Dec": -73.4,
+    "VM": 5.28
+  },
+  {
+    "name": "Avior",
+    "RA": 8.375,
+    "Dec": -59.509,
+    "VM": 1.86
+  },
+  {
+    "name": "",
+    "RA": 8.375,
+    "Dec": -48.49,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 8.381,
+    "Dec": 43.188,
+    "VM": 4.25
+  },
+  {
+    "name": "",
+    "RA": 8.418,
+    "Dec": -24.046,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 8.425,
+    "Dec": -51.727,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 8.428,
+    "Dec": -3.906,
+    "VM": 3.91
+  },
+  {
+    "name": "",
+    "RA": 8.429,
+    "Dec": -66.137,
+    "VM": 3.77
+  },
+  {
+    "name": "",
+    "RA": 8.431,
+    "Dec": -42.153,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 8.432,
+    "Dec": 7.565,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 8.46,
+    "Dec": -53.088,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 8.485,
+    "Dec": -47.929,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 8.491,
+    "Dec": -44.725,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 8.504,
+    "Dec": 60.718,
+    "VM": 3.35
+  },
+  {
+    "name": "",
+    "RA": 8.525,
+    "Dec": -19.577,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 8.527,
+    "Dec": 18.094,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 8.545,
+    "Dec": 20.441,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 8.577,
+    "Dec": 65.145,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 8.579,
+    "Dec": -49.944,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 8.588,
+    "Dec": -58.225,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 8.589,
+    "Dec": -58.009,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 8.622,
+    "Dec": -62.853,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 8.627,
+    "Dec": -42.989,
+    "VM": 4.11
+  },
+  {
+    "name": "",
+    "RA": 8.628,
+    "Dec": 5.704,
+    "VM": 4.14
+  },
+  {
+    "name": "",
+    "RA": 8.631,
+    "Dec": -26.255,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 8.646,
+    "Dec": 3.341,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 8.651,
+    "Dec": -70.387,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 8.652,
+    "Dec": -22.662,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 8.657,
+    "Dec": -53.44,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 8.662,
+    "Dec": -29.561,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 8.666,
+    "Dec": -53.055,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 8.667,
+    "Dec": -12.475,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 8.668,
+    "Dec": -35.308,
+    "VM": 3.97
+  },
+  {
+    "name": "",
+    "RA": 8.67,
+    "Dec": 64.328,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 8.672,
+    "Dec": -52.922,
+    "VM": 3.6
+  },
+  {
+    "name": "",
+    "RA": 8.672,
+    "Dec": -40.264,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 8.677,
+    "Dec": -59.761,
+    "VM": 4.31
+  },
+  {
+    "name": "",
+    "RA": 8.677,
+    "Dec": -46.649,
+    "VM": 3.77
+  },
+  {
+    "name": "",
+    "RA": 8.684,
+    "Dec": 45.834,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 8.687,
+    "Dec": -47.317,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 8.689,
+    "Dec": -78.963,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 8.695,
+    "Dec": -15.943,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 8.699,
+    "Dec": -45.411,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 8.704,
+    "Dec": -48.099,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 8.705,
+    "Dec": -53.1,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 8.707,
+    "Dec": -53.114,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 8.72,
+    "Dec": 3.399,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 8.721,
+    "Dec": 21.469,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 8.727,
+    "Dec": -33.186,
+    "VM": 3.68
+  },
+  {
+    "name": "",
+    "RA": 8.728,
+    "Dec": -49.823,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 8.728,
+    "Dec": -7.234,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 8.74,
+    "Dec": -42.649,
+    "VM": 4.05
+  },
+  {
+    "name": "",
+    "RA": 8.745,
+    "Dec": 18.154,
+    "VM": 3.94
+  },
+  {
+    "name": "",
+    "RA": 8.745,
+    "Dec": -54.709,
+    "VM": 1.93
+  },
+  {
+    "name": "",
+    "RA": 8.767,
+    "Dec": -46.042,
+    "VM": 3.87
+  },
+  {
+    "name": "",
+    "RA": 8.773,
+    "Dec": -13.548,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 8.775,
+    "Dec": -45.913,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 8.778,
+    "Dec": 28.76,
+    "VM": 4.03
+  },
+  {
+    "name": "",
+    "RA": 8.778,
+    "Dec": -56.77,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 8.78,
+    "Dec": 6.419,
+    "VM": 3.38
+  },
+  {
+    "name": "",
+    "RA": 8.787,
+    "Dec": -1.897,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 8.807,
+    "Dec": 5.838,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 8.823,
+    "Dec": -3.443,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 8.828,
+    "Dec": -40.32,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 8.83,
+    "Dec": -45.308,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 8.831,
+    "Dec": -32.781,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 8.842,
+    "Dec": -27.71,
+    "VM": 4.02
+  },
+  {
+    "name": "",
+    "RA": 8.843,
+    "Dec": -46.529,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 8.843,
+    "Dec": -66.793,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 8.866,
+    "Dec": 43.727,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 8.897,
+    "Dec": -47.521,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 8.904,
+    "Dec": 30.579,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 8.917,
+    "Dec": -60.645,
+    "VM": 3.84
+  },
+  {
+    "name": "",
+    "RA": 8.923,
+    "Dec": 5.946,
+    "VM": 3.11
+  },
+  {
+    "name": "",
+    "RA": 8.925,
+    "Dec": -27.682,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 8.928,
+    "Dec": 27.927,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 8.932,
+    "Dec": 11.626,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 8.939,
+    "Dec": -52.723,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 8.945,
+    "Dec": -85.663,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 8.949,
+    "Dec": 32.91,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 8.95,
+    "Dec": -59.229,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 8.954,
+    "Dec": 15.323,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 8.975,
+    "Dec": 11.858,
+    "VM": 4.26
+  },
+  {
+    "name": "",
+    "RA": 8.981,
+    "Dec": -47.235,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 8.987,
+    "Dec": 48.042,
+    "VM": 3.12
+  },
+  {
+    "name": "",
+    "RA": 8.99,
+    "Dec": -59.084,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 8.992,
+    "Dec": 32.419,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 9.002,
+    "Dec": -41.254,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 9.011,
+    "Dec": 41.783,
+    "VM": 3.96
+  },
+  {
+    "name": "",
+    "RA": 9.029,
+    "Dec": -52.189,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 9.041,
+    "Dec": -66.396,
+    "VM": 4
+  },
+  {
+    "name": "",
+    "RA": 9.042,
+    "Dec": 67.63,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 9.046,
+    "Dec": 24.453,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 9.06,
+    "Dec": 47.157,
+    "VM": 3.57
+  },
+  {
+    "name": "",
+    "RA": 9.069,
+    "Dec": -47.098,
+    "VM": 3.75
+  },
+  {
+    "name": "",
+    "RA": 9.086,
+    "Dec": -72.603,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 9.09,
+    "Dec": 48.53,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 9.094,
+    "Dec": -70.538,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 9.1,
+    "Dec": 5.092,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 9.109,
+    "Dec": 38.452,
+    "VM": 4.56
+  },
+  {
+    "name": "",
+    "RA": 9.129,
+    "Dec": 10.668,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 9.133,
+    "Dec": -43.433,
+    "VM": 2.23
+  },
+  {
+    "name": "",
+    "RA": 9.133,
+    "Dec": 29.654,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 9.134,
+    "Dec": -25.859,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 9.14,
+    "Dec": 66.873,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 9.148,
+    "Dec": 51.605,
+    "VM": 4.46
+  },
+  {
+    "name": "",
+    "RA": 9.156,
+    "Dec": 22.045,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 9.16,
+    "Dec": -8.788,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 9.173,
+    "Dec": 67.134,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 9.182,
+    "Dec": 63.514,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 9.183,
+    "Dec": -58.967,
+    "VM": 3.43
+  },
+  {
+    "name": "",
+    "RA": 9.185,
+    "Dec": -44.868,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 9.188,
+    "Dec": -62.317,
+    "VM": 3.96
+  },
+  {
+    "name": "Miaplacidus",
+    "RA": 9.22,
+    "Dec": -69.717,
+    "VM": 1.67
+  },
+  {
+    "name": "",
+    "RA": 9.23,
+    "Dec": 43.218,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 9.238,
+    "Dec": -55.57,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 9.239,
+    "Dec": 61.423,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 9.239,
+    "Dec": 2.314,
+    "VM": 3.89
+  },
+  {
+    "name": "",
+    "RA": 9.24,
+    "Dec": -43.227,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 9.254,
+    "Dec": 14.942,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 9.26,
+    "Dec": -38.57,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 9.263,
+    "Dec": -37.413,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 9.264,
+    "Dec": 56.741,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 9.27,
+    "Dec": 54.022,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 9.27,
+    "Dec": -57.541,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 9.273,
+    "Dec": -44.266,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 9.278,
+    "Dec": -8.745,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 9.278,
+    "Dec": -6.353,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 9.283,
+    "Dec": -39.402,
+    "VM": 5.31
+  },
+  {
+    "name": "Tureis",
+    "RA": 9.285,
+    "Dec": -59.275,
+    "VM": 2.21
+  },
+  {
+    "name": "",
+    "RA": 9.288,
+    "Dec": -68.69,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 9.29,
+    "Dec": -74.894,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 9.302,
+    "Dec": -51.051,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 9.314,
+    "Dec": 36.803,
+    "VM": 3.82
+  },
+  {
+    "name": "",
+    "RA": 9.33,
+    "Dec": -11.975,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 9.341,
+    "Dec": -9.556,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 9.349,
+    "Dec": -62.405,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 9.351,
+    "Dec": 34.393,
+    "VM": 3.14
+  },
+  {
+    "name": "",
+    "RA": 9.358,
+    "Dec": -25.965,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 9.369,
+    "Dec": -55.011,
+    "VM": 2.47
+  },
+  {
+    "name": "",
+    "RA": 9.387,
+    "Dec": -28.834,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 9.403,
+    "Dec": -80.787,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 9.411,
+    "Dec": 26.182,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 9.438,
+    "Dec": -53.379,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 9.452,
+    "Dec": -71.602,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 9.455,
+    "Dec": -22.344,
+    "VM": 4.72
+  },
+  {
+    "name": "Alphard",
+    "RA": 9.46,
+    "Dec": -8.659,
+    "VM": 1.99
+  },
+  {
+    "name": "",
+    "RA": 9.463,
+    "Dec": -6.071,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 9.474,
+    "Dec": 9.057,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 9.478,
+    "Dec": 45.601,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 9.486,
+    "Dec": -2.769,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 9.487,
+    "Dec": -35.951,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 9.498,
+    "Dec": -26.59,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 9.501,
+    "Dec": -51.517,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 9.512,
+    "Dec": -40.467,
+    "VM": 3.6
+  },
+  {
+    "name": "",
+    "RA": 9.52,
+    "Dec": -57.034,
+    "VM": 3.16
+  },
+  {
+    "name": "",
+    "RA": 9.525,
+    "Dec": 63.062,
+    "VM": 3.65
+  },
+  {
+    "name": "",
+    "RA": 9.526,
+    "Dec": 35.103,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 9.527,
+    "Dec": -73.081,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 9.529,
+    "Dec": 22.968,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 9.532,
+    "Dec": 11.3,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 9.533,
+    "Dec": 9.716,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 9.533,
+    "Dec": -1.185,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 9.539,
+    "Dec": -40.649,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 9.548,
+    "Dec": 51.677,
+    "VM": 3.17
+  },
+  {
+    "name": "",
+    "RA": 9.553,
+    "Dec": -21.116,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 9.562,
+    "Dec": -49.005,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 9.565,
+    "Dec": -80.941,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 9.569,
+    "Dec": -51.255,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 9.57,
+    "Dec": 36.398,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 9.574,
+    "Dec": -59.23,
+    "VM": 4.08
+  },
+  {
+    "name": "",
+    "RA": 9.575,
+    "Dec": 69.83,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 9.58,
+    "Dec": 52.051,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 9.584,
+    "Dec": 39.621,
+    "VM": 4.81
+  },
+  {
+    "name": "",
+    "RA": 9.594,
+    "Dec": 35.81,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 9.614,
+    "Dec": -49.355,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 9.618,
+    "Dec": 81.326,
+    "VM": 4.28
+  },
+  {
+    "name": "",
+    "RA": 9.62,
+    "Dec": -53.669,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 9.62,
+    "Dec": 6.836,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 9.639,
+    "Dec": 40.24,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 9.641,
+    "Dec": 4.649,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 9.656,
+    "Dec": -61.328,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 9.664,
+    "Dec": -1.143,
+    "VM": 3.9
+  },
+  {
+    "name": "",
+    "RA": 9.672,
+    "Dec": -14.332,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 9.678,
+    "Dec": -57.984,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 9.686,
+    "Dec": 9.892,
+    "VM": 3.52
+  },
+  {
+    "name": "",
+    "RA": 9.688,
+    "Dec": -23.592,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 9.704,
+    "Dec": -23.916,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 9.716,
+    "Dec": 72.253,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 9.729,
+    "Dec": 14.022,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 9.737,
+    "Dec": -27.769,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 9.754,
+    "Dec": -62.508,
+    "VM": 3.69
+  },
+  {
+    "name": "Ras Elased Australis",
+    "RA": 9.764,
+    "Dec": 23.774,
+    "VM": 2.97
+  },
+  {
+    "name": "",
+    "RA": 9.772,
+    "Dec": -76.776,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 9.775,
+    "Dec": 57.128,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 9.785,
+    "Dec": -65.072,
+    "VM": 2.92
+  },
+  {
+    "name": "",
+    "RA": 9.81,
+    "Dec": 46.021,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 9.833,
+    "Dec": -45.733,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 9.85,
+    "Dec": 59.039,
+    "VM": 3.78
+  },
+  {
+    "name": "",
+    "RA": 9.858,
+    "Dec": -14.847,
+    "VM": 4.11
+  },
+  {
+    "name": "",
+    "RA": 9.861,
+    "Dec": -46.548,
+    "VM": 4.58
+  },
+  {
+    "name": "",
+    "RA": 9.865,
+    "Dec": 24.395,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 9.868,
+    "Dec": 54.064,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 9.875,
+    "Dec": -8.105,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 9.879,
+    "Dec": 26.007,
+    "VM": 3.88
+  },
+  {
+    "name": "",
+    "RA": 9.903,
+    "Dec": -25.932,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 9.915,
+    "Dec": -19.009,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 9.929,
+    "Dec": 49.82,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 9.948,
+    "Dec": -54.568,
+    "VM": 3.52
+  },
+  {
+    "name": "",
+    "RA": 9.961,
+    "Dec": 41.056,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 9.97,
+    "Dec": 12.445,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 9.981,
+    "Dec": -35.891,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 9.998,
+    "Dec": 56.812,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 10.004,
+    "Dec": 8.044,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 10.017,
+    "Dec": 31.924,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 10.085,
+    "Dec": -13.065,
+    "VM": 4.6
+  },
+  {
+    "name": "",
+    "RA": 10.103,
+    "Dec": -47.37,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 10.122,
+    "Dec": 16.763,
+    "VM": 3.48
+  },
+  {
+    "name": "",
+    "RA": 10.124,
+    "Dec": 35.245,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 10.132,
+    "Dec": 9.998,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 10.132,
+    "Dec": -0.372,
+    "VM": 4.48
+  },
+  {
+    "name": "Regulus",
+    "RA": 10.14,
+    "Dec": 11.967,
+    "VM": 1.36
+  },
+  {
+    "name": "",
+    "RA": 10.145,
+    "Dec": -65.815,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 10.149,
+    "Dec": -51.811,
+    "VM": 4.85
+  },
+  {
+    "name": "",
+    "RA": 10.168,
+    "Dec": -12.816,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 10.176,
+    "Dec": -12.354,
+    "VM": 3.61
+  },
+  {
+    "name": "",
+    "RA": 10.223,
+    "Dec": -51.233,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 10.225,
+    "Dec": -66.373,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 10.229,
+    "Dec": -70.038,
+    "VM": 3.29
+  },
+  {
+    "name": "",
+    "RA": 10.246,
+    "Dec": -42.122,
+    "VM": 3.85
+  },
+  {
+    "name": "",
+    "RA": 10.271,
+    "Dec": 29.311,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 10.278,
+    "Dec": 13.728,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 10.278,
+    "Dec": 23.417,
+    "VM": 3.43
+  },
+  {
+    "name": "",
+    "RA": 10.285,
+    "Dec": -61.332,
+    "VM": 3.39
+  },
+  {
+    "name": "",
+    "RA": 10.285,
+    "Dec": 42.914,
+    "VM": 3.45
+  },
+  {
+    "name": "",
+    "RA": 10.294,
+    "Dec": -8.069,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 10.327,
+    "Dec": -55.029,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 10.329,
+    "Dec": 19.471,
+    "VM": 4.78
+  },
+  {
+    "name": "Algieba",
+    "RA": 10.333,
+    "Dec": 19.841,
+    "VM": 2.01
+  },
+  {
+    "name": "",
+    "RA": 10.349,
+    "Dec": -56.043,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 10.372,
+    "Dec": -41.65,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 10.372,
+    "Dec": 41.5,
+    "VM": 3.06
+  },
+  {
+    "name": "",
+    "RA": 10.383,
+    "Dec": -66.901,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 10.391,
+    "Dec": -38.01,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 10.402,
+    "Dec": 65.566,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 10.407,
+    "Dec": -74.032,
+    "VM": 3.99
+  },
+  {
+    "name": "",
+    "RA": 10.432,
+    "Dec": 33.796,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 10.435,
+    "Dec": -16.836,
+    "VM": 3.83
+  },
+  {
+    "name": "",
+    "RA": 10.453,
+    "Dec": -31.068,
+    "VM": 4.28
+  },
+  {
+    "name": "",
+    "RA": 10.457,
+    "Dec": -57.639,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 10.465,
+    "Dec": -58.739,
+    "VM": 3.81
+  },
+  {
+    "name": "",
+    "RA": 10.465,
+    "Dec": 36.707,
+    "VM": 4.2
+  },
+  {
+    "name": "",
+    "RA": 10.481,
+    "Dec": -64.172,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 10.491,
+    "Dec": -2.739,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 10.505,
+    "Dec": -0.637,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 10.506,
+    "Dec": -71.993,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 10.51,
+    "Dec": 55.981,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 10.517,
+    "Dec": -73.221,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 10.518,
+    "Dec": 82.559,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 10.523,
+    "Dec": -53.715,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 10.534,
+    "Dec": -61.685,
+    "VM": 3.3
+  },
+  {
+    "name": "",
+    "RA": 10.537,
+    "Dec": 14.137,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 10.547,
+    "Dec": 9.307,
+    "VM": 3.84
+  },
+  {
+    "name": "",
+    "RA": 10.549,
+    "Dec": -47.003,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 10.554,
+    "Dec": 40.426,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 10.567,
+    "Dec": -23.745,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 10.58,
+    "Dec": 6.954,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 10.585,
+    "Dec": 75.713,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 10.586,
+    "Dec": 57.083,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 10.587,
+    "Dec": -39.563,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 10.591,
+    "Dec": -78.608,
+    "VM": 4.11
+  },
+  {
+    "name": "",
+    "RA": 10.593,
+    "Dec": -57.558,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 10.606,
+    "Dec": -59.564,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 10.62,
+    "Dec": -27.413,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 10.622,
+    "Dec": -48.226,
+    "VM": 3.84
+  },
+  {
+    "name": "",
+    "RA": 10.624,
+    "Dec": -58.733,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 10.626,
+    "Dec": -13.385,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 10.643,
+    "Dec": -16.877,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 10.645,
+    "Dec": 31.976,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 10.646,
+    "Dec": -59.183,
+    "VM": 4.69
+  },
+  {
+    "name": "",
+    "RA": 10.655,
+    "Dec": -55.603,
+    "VM": 4.29
+  },
+  {
+    "name": "",
+    "RA": 10.699,
+    "Dec": 65.716,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 10.704,
+    "Dec": -64.466,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 10.711,
+    "Dec": -59.216,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 10.716,
+    "Dec": -64.394,
+    "VM": 2.74
+  },
+  {
+    "name": "",
+    "RA": 10.718,
+    "Dec": 69.076,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 10.724,
+    "Dec": 23.188,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 10.726,
+    "Dec": -60.567,
+    "VM": 4.58
+  },
+  {
+    "name": "",
+    "RA": 10.726,
+    "Dec": 46.204,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 10.735,
+    "Dec": -63.961,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 10.755,
+    "Dec": -80.47,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 10.763,
+    "Dec": -80.54,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 10.764,
+    "Dec": 30.682,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 10.771,
+    "Dec": -64.515,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 10.773,
+    "Dec": 18.892,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 10.774,
+    "Dec": 14.195,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 10.775,
+    "Dec": -64.263,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 10.779,
+    "Dec": -49.42,
+    "VM": 2.69
+  },
+  {
+    "name": "",
+    "RA": 10.781,
+    "Dec": -64.383,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 10.781,
+    "Dec": -17.297,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 10.783,
+    "Dec": -56.757,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 10.821,
+    "Dec": 10.545,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 10.827,
+    "Dec": -16.194,
+    "VM": 3.11
+  },
+  {
+    "name": "",
+    "RA": 10.875,
+    "Dec": -57.24,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 10.889,
+    "Dec": 34.215,
+    "VM": 3.79
+  },
+  {
+    "name": "",
+    "RA": 10.892,
+    "Dec": -20.139,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 10.892,
+    "Dec": -58.853,
+    "VM": 3.78
+  },
+  {
+    "name": "",
+    "RA": 10.893,
+    "Dec": 54.585,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 10.895,
+    "Dec": -2.129,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 10.9,
+    "Dec": 43.19,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 10.927,
+    "Dec": 24.75,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 10.929,
+    "Dec": 33.507,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 10.945,
+    "Dec": -37.138,
+    "VM": 4.6
+  },
+  {
+    "name": "",
+    "RA": 10.991,
+    "Dec": 40.43,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 10.996,
+    "Dec": -18.299,
+    "VM": 4.08
+  },
+  {
+    "name": "",
+    "RA": 11.003,
+    "Dec": -42.226,
+    "VM": 4.37
+  },
+  {
+    "name": "",
+    "RA": 11.004,
+    "Dec": 45.526,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 11.009,
+    "Dec": 3.617,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 11.012,
+    "Dec": 6.101,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 11.014,
+    "Dec": 39.212,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 11.03,
+    "Dec": -2.485,
+    "VM": 4.73
+  },
+  {
+    "name": "Merak",
+    "RA": 11.031,
+    "Dec": 56.382,
+    "VM": 2.34
+  },
+  {
+    "name": "",
+    "RA": 11.039,
+    "Dec": 20.18,
+    "VM": 4.42
+  },
+  {
+    "name": "Dubhe",
+    "RA": 11.062,
+    "Dec": 61.751,
+    "VM": 1.81
+  },
+  {
+    "name": "",
+    "RA": 11.082,
+    "Dec": -35.805,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 11.084,
+    "Dec": 7.336,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 11.089,
+    "Dec": -27.294,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 11.109,
+    "Dec": -62.424,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 11.121,
+    "Dec": -42.639,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 11.143,
+    "Dec": -61.947,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 11.143,
+    "Dec": -58.975,
+    "VM": 3.93
+  },
+  {
+    "name": "",
+    "RA": 11.146,
+    "Dec": -28.081,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 11.161,
+    "Dec": 44.498,
+    "VM": 3
+  },
+  {
+    "name": "",
+    "RA": 11.194,
+    "Dec": -22.826,
+    "VM": 4.46
+  },
+  {
+    "name": "",
+    "RA": 11.209,
+    "Dec": -49.101,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 11.21,
+    "Dec": -60.318,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 11.213,
+    "Dec": -64.17,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 11.229,
+    "Dec": -0.07,
+    "VM": 5.4
+  },
+  {
+    "name": "Zosma",
+    "RA": 11.235,
+    "Dec": 20.524,
+    "VM": 2.56
+  },
+  {
+    "name": "",
+    "RA": 11.237,
+    "Dec": 15.43,
+    "VM": 3.33
+  },
+  {
+    "name": "",
+    "RA": 11.253,
+    "Dec": 23.096,
+    "VM": 4.56
+  },
+  {
+    "name": "",
+    "RA": 11.264,
+    "Dec": 13.308,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 11.278,
+    "Dec": -3.652,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 11.288,
+    "Dec": 2.011,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 11.308,
+    "Dec": 33.094,
+    "VM": 3.49
+  },
+  {
+    "name": "",
+    "RA": 11.319,
+    "Dec": 38.186,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 11.322,
+    "Dec": -14.779,
+    "VM": 3.56
+  },
+  {
+    "name": "",
+    "RA": 11.35,
+    "Dec": -54.491,
+    "VM": 3.9
+  },
+  {
+    "name": "",
+    "RA": 11.352,
+    "Dec": 6.029,
+    "VM": 4.05
+  },
+  {
+    "name": "",
+    "RA": 11.38,
+    "Dec": 43.483,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 11.387,
+    "Dec": -36.165,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 11.389,
+    "Dec": -64.955,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 11.389,
+    "Dec": -18.78,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 11.399,
+    "Dec": 10.53,
+    "VM": 4
+  },
+  {
+    "name": "",
+    "RA": 11.401,
+    "Dec": 1.408,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 11.41,
+    "Dec": -10.859,
+    "VM": 4.81
+  },
+  {
+    "name": "",
+    "RA": 11.415,
+    "Dec": -17.684,
+    "VM": 4.06
+  },
+  {
+    "name": "",
+    "RA": 11.425,
+    "Dec": -36.063,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 11.429,
+    "Dec": -63.972,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 11.443,
+    "Dec": -61.115,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 11.466,
+    "Dec": 2.856,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 11.476,
+    "Dec": -42.674,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 11.484,
+    "Dec": 39.337,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 11.505,
+    "Dec": -3.004,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 11.523,
+    "Dec": 69.331,
+    "VM": 3.82
+  },
+  {
+    "name": "",
+    "RA": 11.529,
+    "Dec": -59.442,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 11.53,
+    "Dec": -59.516,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 11.538,
+    "Dec": -29.261,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 11.539,
+    "Dec": 61.083,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 11.548,
+    "Dec": -31.087,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 11.55,
+    "Dec": -31.858,
+    "VM": 3.54
+  },
+  {
+    "name": "",
+    "RA": 11.56,
+    "Dec": -40.587,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 11.579,
+    "Dec": -54.264,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 11.582,
+    "Dec": -49.136,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 11.596,
+    "Dec": -63.02,
+    "VM": 3.11
+  },
+  {
+    "name": "",
+    "RA": 11.599,
+    "Dec": -47.642,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 11.601,
+    "Dec": 69.323,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 11.611,
+    "Dec": -9.802,
+    "VM": 4.7
+  },
+  {
+    "name": "",
+    "RA": 11.616,
+    "Dec": -0.824,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 11.617,
+    "Dec": -61.283,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 11.626,
+    "Dec": -47.747,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 11.635,
+    "Dec": -61.827,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 11.641,
+    "Dec": 8.134,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 11.644,
+    "Dec": -13.202,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 11.658,
+    "Dec": -65.398,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 11.67,
+    "Dec": -34.745,
+    "VM": 4.7
+  },
+  {
+    "name": "",
+    "RA": 11.68,
+    "Dec": 21.353,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 11.682,
+    "Dec": -62.09,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 11.684,
+    "Dec": 34.202,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 11.696,
+    "Dec": -32.499,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 11.708,
+    "Dec": 66.745,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 11.725,
+    "Dec": -62.489,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 11.746,
+    "Dec": -18.351,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 11.755,
+    "Dec": 8.258,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 11.76,
+    "Dec": -66.729,
+    "VM": 3.63
+  },
+  {
+    "name": "",
+    "RA": 11.762,
+    "Dec": -45.69,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 11.764,
+    "Dec": 6.529,
+    "VM": 4.04
+  },
+  {
+    "name": "",
+    "RA": 11.768,
+    "Dec": 47.779,
+    "VM": 3.69
+  },
+  {
+    "name": "",
+    "RA": 11.775,
+    "Dec": -61.178,
+    "VM": 4.11
+  },
+  {
+    "name": "",
+    "RA": 11.775,
+    "Dec": -40.5,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 11.782,
+    "Dec": 55.628,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 11.789,
+    "Dec": -57.696,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 11.799,
+    "Dec": 8.246,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 11.8,
+    "Dec": 20.219,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 11.804,
+    "Dec": -66.815,
+    "VM": 4.75
+  },
+  {
+    "name": "",
+    "RA": 11.813,
+    "Dec": -26.75,
+    "VM": 5.1
+  },
+  {
+    "name": "Denebola",
+    "RA": 11.818,
+    "Dec": 14.572,
+    "VM": 2.14
+  },
+  {
+    "name": "",
+    "RA": 11.828,
+    "Dec": -63.788,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 11.832,
+    "Dec": -70.226,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 11.845,
+    "Dec": 1.765,
+    "VM": 3.59
+  },
+  {
+    "name": "",
+    "RA": 11.852,
+    "Dec": -45.173,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 11.864,
+    "Dec": -65.206,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 11.882,
+    "Dec": -33.908,
+    "VM": 4.29
+  },
+  {
+    "name": "Phad",
+    "RA": 11.897,
+    "Dec": 53.695,
+    "VM": 2.41
+  },
+  {
+    "name": "",
+    "RA": 11.912,
+    "Dec": -25.714,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 11.934,
+    "Dec": -17.151,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 11.971,
+    "Dec": -56.317,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 11.994,
+    "Dec": -78.222,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 11.999,
+    "Dec": 3.655,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 12.014,
+    "Dec": -19.659,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 12.015,
+    "Dec": 6.614,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 12.035,
+    "Dec": 43.046,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 12.05,
+    "Dec": -63.313,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 12.061,
+    "Dec": -42.434,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 12.072,
+    "Dec": -63.166,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 12.077,
+    "Dec": -68.329,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 12.08,
+    "Dec": -76.519,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 12.087,
+    "Dec": 8.733,
+    "VM": 4.12
+  },
+  {
+    "name": "",
+    "RA": 12.115,
+    "Dec": -64.614,
+    "VM": 4.14
+  },
+  {
+    "name": "",
+    "RA": 12.131,
+    "Dec": -75.367,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 12.135,
+    "Dec": -50.661,
+    "VM": 4.46
+  },
+  {
+    "name": "",
+    "RA": 12.137,
+    "Dec": -48.692,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 12.139,
+    "Dec": -50.722,
+    "VM": 2.58
+  },
+  {
+    "name": "",
+    "RA": 12.14,
+    "Dec": -24.729,
+    "VM": 4.02
+  },
+  {
+    "name": "",
+    "RA": 12.169,
+    "Dec": -22.62,
+    "VM": 3.02
+  },
+  {
+    "name": "",
+    "RA": 12.184,
+    "Dec": -23.602,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 12.194,
+    "Dec": -52.368,
+    "VM": 3.97
+  },
+  {
+    "name": "",
+    "RA": 12.203,
+    "Dec": 77.616,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 12.234,
+    "Dec": -45.724,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 12.252,
+    "Dec": -58.749,
+    "VM": 2.79
+  },
+  {
+    "name": "Megrez",
+    "RA": 12.257,
+    "Dec": 57.033,
+    "VM": 3.32
+  },
+  {
+    "name": "Gienah Ghurab",
+    "RA": 12.263,
+    "Dec": -17.542,
+    "VM": 2.58
+  },
+  {
+    "name": "",
+    "RA": 12.267,
+    "Dec": 14.899,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 12.272,
+    "Dec": 23.945,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 12.275,
+    "Dec": 33.062,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 12.293,
+    "Dec": -67.961,
+    "VM": 4.06
+  },
+  {
+    "name": "",
+    "RA": 12.306,
+    "Dec": -79.312,
+    "VM": 4.24
+  },
+  {
+    "name": "",
+    "RA": 12.307,
+    "Dec": -64.003,
+    "VM": 4.06
+  },
+  {
+    "name": "",
+    "RA": 12.314,
+    "Dec": 75.161,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 12.317,
+    "Dec": -55.143,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 12.33,
+    "Dec": 48.984,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 12.332,
+    "Dec": -0.667,
+    "VM": 3.89
+  },
+  {
+    "name": "",
+    "RA": 12.339,
+    "Dec": 3.313,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 12.343,
+    "Dec": -22.216,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 12.345,
+    "Dec": 17.793,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 12.349,
+    "Dec": -13.566,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 12.356,
+    "Dec": -60.401,
+    "VM": 3.59
+  },
+  {
+    "name": "",
+    "RA": 12.369,
+    "Dec": -67.522,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 12.375,
+    "Dec": 25.846,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 12.38,
+    "Dec": -57.676,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 12.393,
+    "Dec": -35.413,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 12.4,
+    "Dec": 51.562,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 12.405,
+    "Dec": 26.099,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 12.431,
+    "Dec": 39.019,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 12.44,
+    "Dec": 27.268,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 12.442,
+    "Dec": -51.451,
+    "VM": 4.82
+  },
+  {
+    "name": "Acrux",
+    "RA": 12.443,
+    "Dec": -63.099,
+    "VM": 0.77
+  },
+  {
+    "name": "",
+    "RA": 12.449,
+    "Dec": 28.268,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 12.45,
+    "Dec": 26.826,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 12.458,
+    "Dec": -58.992,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 12.467,
+    "Dec": -50.231,
+    "VM": 3.91
+  },
+  {
+    "name": "",
+    "RA": 12.473,
+    "Dec": -39.041,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 12.482,
+    "Dec": 25.913,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 12.491,
+    "Dec": 24.109,
+    "VM": 5.47
+  },
+  {
+    "name": "Algorab",
+    "RA": 12.498,
+    "Dec": -16.515,
+    "VM": 2.94
+  },
+  {
+    "name": "",
+    "RA": 12.499,
+    "Dec": 58.406,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 12.502,
+    "Dec": 69.201,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 12.517,
+    "Dec": 24.567,
+    "VM": 5.47
+  },
+  {
+    "name": "Gacrux",
+    "RA": 12.519,
+    "Dec": -57.113,
+    "VM": 1.59
+  },
+  {
+    "name": "",
+    "RA": 12.528,
+    "Dec": -59.424,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 12.535,
+    "Dec": -16.196,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 12.541,
+    "Dec": -72.133,
+    "VM": 3.84
+  },
+  {
+    "name": "",
+    "RA": 12.558,
+    "Dec": 69.788,
+    "VM": 3.85
+  },
+  {
+    "name": "",
+    "RA": 12.561,
+    "Dec": 33.248,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 12.562,
+    "Dec": 41.357,
+    "VM": 4.24
+  },
+  {
+    "name": "",
+    "RA": 12.563,
+    "Dec": -9.452,
+    "VM": 5.48
+  },
+  {
+    "name": "Kraz",
+    "RA": 12.573,
+    "Dec": -23.397,
+    "VM": 2.65
+  },
+  {
+    "name": "",
+    "RA": 12.579,
+    "Dec": 70.022,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 12.581,
+    "Dec": 22.629,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 12.585,
+    "Dec": 18.377,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 12.596,
+    "Dec": -41.022,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 12.62,
+    "Dec": -69.136,
+    "VM": 2.69
+  },
+  {
+    "name": "",
+    "RA": 12.628,
+    "Dec": -27.139,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 12.628,
+    "Dec": -48.541,
+    "VM": 3.85
+  },
+  {
+    "name": "",
+    "RA": 12.652,
+    "Dec": 21.063,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 12.654,
+    "Dec": -7.996,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 12.665,
+    "Dec": -39.987,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 12.688,
+    "Dec": -13.014,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 12.692,
+    "Dec": -48.96,
+    "VM": 2.2
+  },
+  {
+    "name": "Porrima",
+    "RA": 12.694,
+    "Dec": -1.449,
+    "VM": 2.74
+  },
+  {
+    "name": "",
+    "RA": 12.698,
+    "Dec": 10.236,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 12.699,
+    "Dec": -59.686,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 12.71,
+    "Dec": -48.813,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 12.714,
+    "Dec": -63.059,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 12.733,
+    "Dec": -28.324,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 12.752,
+    "Dec": 45.44,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 12.76,
+    "Dec": 7.673,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 12.761,
+    "Dec": -60.981,
+    "VM": 4.69
+  },
+  {
+    "name": "",
+    "RA": 12.771,
+    "Dec": -68.108,
+    "VM": 3.04
+  },
+  {
+    "name": "",
+    "RA": 12.773,
+    "Dec": -56.489,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 12.777,
+    "Dec": 16.578,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 12.793,
+    "Dec": 66.79,
+    "VM": 5.43
+  },
+  {
+    "name": "Becrux",
+    "RA": 12.795,
+    "Dec": -59.689,
+    "VM": 1.25
+  },
+  {
+    "name": "",
+    "RA": 12.82,
+    "Dec": 83.413,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 12.845,
+    "Dec": -33.999,
+    "VM": 4.9
+  },
+  {
+    "name": "",
+    "RA": 12.862,
+    "Dec": 27.541,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 12.885,
+    "Dec": -48.943,
+    "VM": 4.33
+  },
+  {
+    "name": "",
+    "RA": 12.888,
+    "Dec": 21.245,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 12.891,
+    "Dec": -40.179,
+    "VM": 4.25
+  },
+  {
+    "name": "Alioth",
+    "RA": 12.9,
+    "Dec": 55.96,
+    "VM": 1.76
+  },
+  {
+    "name": "",
+    "RA": 12.906,
+    "Dec": -9.539,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 12.91,
+    "Dec": -57.178,
+    "VM": 4.03
+  },
+  {
+    "name": "",
+    "RA": 12.91,
+    "Dec": -57.169,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 12.911,
+    "Dec": -59.147,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 12.916,
+    "Dec": -85.123,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 12.922,
+    "Dec": -42.916,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 12.925,
+    "Dec": 65.438,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 12.927,
+    "Dec": 3.397,
+    "VM": 3.39
+  },
+  {
+    "name": "",
+    "RA": 12.933,
+    "Dec": -56.836,
+    "VM": 5.34
+  },
+  {
+    "name": "Cor Caroli",
+    "RA": 12.934,
+    "Dec": 38.318,
+    "VM": 2.89
+  },
+  {
+    "name": "",
+    "RA": 12.951,
+    "Dec": -51.199,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 12.982,
+    "Dec": 17.409,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 12.999,
+    "Dec": 66.597,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 13.005,
+    "Dec": 30.785,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 13.012,
+    "Dec": 56.366,
+    "VM": 4.93
+  },
+  {
+    "name": "Vindemiatrix",
+    "RA": 13.036,
+    "Dec": 10.959,
+    "VM": 2.85
+  },
+  {
+    "name": "",
+    "RA": 13.038,
+    "Dec": -71.549,
+    "VM": 3.61
+  },
+  {
+    "name": "",
+    "RA": 13.059,
+    "Dec": -49.527,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 13.096,
+    "Dec": 35.799,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 13.105,
+    "Dec": -48.463,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 13.115,
+    "Dec": -49.906,
+    "VM": 4.27
+  },
+  {
+    "name": "",
+    "RA": 13.12,
+    "Dec": 27.625,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 13.132,
+    "Dec": -10.74,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 13.135,
+    "Dec": -65.306,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 13.151,
+    "Dec": -23.118,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 13.166,
+    "Dec": -5.539,
+    "VM": 4.38
+  },
+  {
+    "name": "",
+    "RA": 13.166,
+    "Dec": 17.529,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 13.19,
+    "Dec": -43.369,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 13.198,
+    "Dec": 27.878,
+    "VM": 4.23
+  },
+  {
+    "name": "",
+    "RA": 13.201,
+    "Dec": -37.803,
+    "VM": 4.85
+  },
+  {
+    "name": "",
+    "RA": 13.201,
+    "Dec": -16.199,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 13.205,
+    "Dec": -59.921,
+    "VM": 4.58
+  },
+  {
+    "name": "",
+    "RA": 13.229,
+    "Dec": 40.153,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 13.236,
+    "Dec": -19.931,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 13.238,
+    "Dec": -59.103,
+    "VM": 4.9
+  },
+  {
+    "name": "",
+    "RA": 13.254,
+    "Dec": -67.895,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 13.266,
+    "Dec": -19.943,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 13.28,
+    "Dec": 9.424,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 13.281,
+    "Dec": -31.506,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 13.287,
+    "Dec": -66.783,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 13.288,
+    "Dec": 13.676,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 13.292,
+    "Dec": 40.573,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 13.293,
+    "Dec": 5.47,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 13.304,
+    "Dec": 49.682,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 13.307,
+    "Dec": -18.311,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 13.315,
+    "Dec": -23.172,
+    "VM": 2.99
+  },
+  {
+    "name": "",
+    "RA": 13.343,
+    "Dec": -36.712,
+    "VM": 2.75
+  },
+  {
+    "name": "",
+    "RA": 13.344,
+    "Dec": -52.748,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 13.377,
+    "Dec": -60.988,
+    "VM": 4.52
+  },
+  {
+    "name": "",
+    "RA": 13.384,
+    "Dec": -17.735,
+    "VM": 5.36
+  },
+  {
+    "name": "Mizar",
+    "RA": 13.399,
+    "Dec": 54.925,
+    "VM": 2.23
+  },
+  {
+    "name": "",
+    "RA": 13.4,
+    "Dec": -64.536,
+    "VM": 4.52
+  },
+  {
+    "name": "",
+    "RA": 13.419,
+    "Dec": -74.888,
+    "VM": 5.04
+  },
+  {
+    "name": "Spica",
+    "RA": 13.42,
+    "Dec": -11.161,
+    "VM": 0.98
+  },
+  {
+    "name": "Alcor",
+    "RA": 13.42,
+    "Dec": 54.988,
+    "VM": 3.99
+  },
+  {
+    "name": "",
+    "RA": 13.421,
+    "Dec": -64.485,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 13.435,
+    "Dec": -39.755,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 13.445,
+    "Dec": -12.708,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 13.458,
+    "Dec": -15.974,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 13.474,
+    "Dec": 13.779,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 13.474,
+    "Dec": 59.946,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 13.49,
+    "Dec": -51.165,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 13.517,
+    "Dec": -39.407,
+    "VM": 3.9
+  },
+  {
+    "name": "",
+    "RA": 13.533,
+    "Dec": -6.256,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 13.549,
+    "Dec": -10.165,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 13.569,
+    "Dec": 3.659,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 13.574,
+    "Dec": 49.016,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 13.578,
+    "Dec": -0.596,
+    "VM": 3.38
+  },
+  {
+    "name": "",
+    "RA": 13.58,
+    "Dec": 37.182,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 13.62,
+    "Dec": 71.242,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 13.624,
+    "Dec": 36.295,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 13.658,
+    "Dec": 52.921,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 13.665,
+    "Dec": -53.466,
+    "VM": 2.29
+  },
+  {
+    "name": "",
+    "RA": 13.679,
+    "Dec": 54.682,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 13.694,
+    "Dec": -8.703,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 13.696,
+    "Dec": -54.559,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 13.7,
+    "Dec": -58.787,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 13.718,
+    "Dec": 3.538,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 13.761,
+    "Dec": -33.044,
+    "VM": 4.23
+  },
+  {
+    "name": "",
+    "RA": 13.766,
+    "Dec": -12.427,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 13.778,
+    "Dec": -51.433,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 13.782,
+    "Dec": -36.252,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 13.788,
+    "Dec": 17.457,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 13.79,
+    "Dec": -17.86,
+    "VM": 5.41
+  },
+  {
+    "name": "Alkaid",
+    "RA": 13.792,
+    "Dec": 49.313,
+    "VM": 1.85
+  },
+  {
+    "name": "",
+    "RA": 13.794,
+    "Dec": -50.321,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 13.824,
+    "Dec": -34.451,
+    "VM": 4.19
+  },
+  {
+    "name": "",
+    "RA": 13.825,
+    "Dec": 15.798,
+    "VM": 4.05
+  },
+  {
+    "name": "",
+    "RA": 13.825,
+    "Dec": -41.688,
+    "VM": 3.41
+  },
+  {
+    "name": "",
+    "RA": 13.827,
+    "Dec": -42.474,
+    "VM": 3.47
+  },
+  {
+    "name": "",
+    "RA": 13.829,
+    "Dec": 21.264,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 13.831,
+    "Dec": -18.134,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 13.857,
+    "Dec": 64.723,
+    "VM": 4.58
+  },
+  {
+    "name": "",
+    "RA": 13.863,
+    "Dec": 34.444,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 13.864,
+    "Dec": -32.994,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 13.868,
+    "Dec": -52.812,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 13.887,
+    "Dec": -31.928,
+    "VM": 4.75
+  },
+  {
+    "name": "Mufrid",
+    "RA": 13.911,
+    "Dec": 18.398,
+    "VM": 2.68
+  },
+  {
+    "name": "",
+    "RA": 13.912,
+    "Dec": -1.503,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 13.926,
+    "Dec": -47.288,
+    "VM": 2.55
+  },
+  {
+    "name": "",
+    "RA": 13.943,
+    "Dec": 27.492,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 13.961,
+    "Dec": -63.687,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 13.971,
+    "Dec": -42.101,
+    "VM": 3.83
+  },
+  {
+    "name": "",
+    "RA": 13.975,
+    "Dec": -24.972,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 13.978,
+    "Dec": -44.804,
+    "VM": 3.87
+  },
+  {
+    "name": "",
+    "RA": 14.027,
+    "Dec": 1.545,
+    "VM": 4.23
+  },
+  {
+    "name": "",
+    "RA": 14.029,
+    "Dec": -45.603,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 14.04,
+    "Dec": -27.43,
+    "VM": 5.47
+  },
+  {
+    "name": "Hadar",
+    "RA": 14.064,
+    "Dec": -60.373,
+    "VM": 0.61
+  },
+  {
+    "name": "Thuban",
+    "RA": 14.073,
+    "Dec": 64.376,
+    "VM": 3.67
+  },
+  {
+    "name": "",
+    "RA": 14.101,
+    "Dec": -41.18,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 14.106,
+    "Dec": -26.682,
+    "VM": 3.25
+  },
+  {
+    "name": "Menkent",
+    "RA": 14.111,
+    "Dec": -36.37,
+    "VM": 2.06
+  },
+  {
+    "name": "",
+    "RA": 14.112,
+    "Dec": -9.314,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 14.132,
+    "Dec": 43.854,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 14.138,
+    "Dec": 49.458,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 14.147,
+    "Dec": 77.548,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 14.165,
+    "Dec": -53.439,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 14.173,
+    "Dec": 25.092,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 14.181,
+    "Dec": -16.302,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 14.201,
+    "Dec": 69.433,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 14.204,
+    "Dec": 2.409,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 14.213,
+    "Dec": -27.261,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 14.215,
+    "Dec": -10.274,
+    "VM": 4.18
+  },
+  {
+    "name": "",
+    "RA": 14.225,
+    "Dec": 51.79,
+    "VM": 4.53
+  },
+  {
+    "name": "",
+    "RA": 14.247,
+    "Dec": 10.101,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 14.249,
+    "Dec": -57.086,
+    "VM": 5.03
+  },
+  {
+    "name": "Arcturus",
+    "RA": 14.261,
+    "Dec": 19.182,
+    "VM": -0.05
+  },
+  {
+    "name": "",
+    "RA": 14.267,
+    "Dec": -6.001,
+    "VM": 4.07
+  },
+  {
+    "name": "",
+    "RA": 14.269,
+    "Dec": 51.367,
+    "VM": 4.75
+  },
+  {
+    "name": "",
+    "RA": 14.273,
+    "Dec": 46.088,
+    "VM": 4.18
+  },
+  {
+    "name": "",
+    "RA": 14.3,
+    "Dec": 35.51,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 14.304,
+    "Dec": -81.008,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 14.318,
+    "Dec": -13.371,
+    "VM": 4.52
+  },
+  {
+    "name": "",
+    "RA": 14.321,
+    "Dec": 13.004,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 14.323,
+    "Dec": -46.058,
+    "VM": 3.55
+  },
+  {
+    "name": "",
+    "RA": 14.326,
+    "Dec": -2.266,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 14.329,
+    "Dec": 16.307,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 14.331,
+    "Dec": -61.273,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 14.339,
+    "Dec": -56.386,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 14.343,
+    "Dec": -37.885,
+    "VM": 4.05
+  },
+  {
+    "name": "",
+    "RA": 14.345,
+    "Dec": -45.187,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 14.373,
+    "Dec": -80.109,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 14.377,
+    "Dec": -58.459,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 14.384,
+    "Dec": -39.512,
+    "VM": 4.41
+  },
+  {
+    "name": "",
+    "RA": 14.385,
+    "Dec": -27.754,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 14.39,
+    "Dec": 8.447,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 14.403,
+    "Dec": 5.82,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 14.414,
+    "Dec": -24.806,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 14.42,
+    "Dec": 51.851,
+    "VM": 4.04
+  },
+  {
+    "name": "",
+    "RA": 14.436,
+    "Dec": -45.221,
+    "VM": 4.56
+  },
+  {
+    "name": "",
+    "RA": 14.436,
+    "Dec": -45.379,
+    "VM": 4.33
+  },
+  {
+    "name": "",
+    "RA": 14.441,
+    "Dec": 19.227,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 14.449,
+    "Dec": -83.668,
+    "VM": 4.31
+  },
+  {
+    "name": "",
+    "RA": 14.459,
+    "Dec": 75.696,
+    "VM": 4.25
+  },
+  {
+    "name": "",
+    "RA": 14.47,
+    "Dec": -29.492,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 14.47,
+    "Dec": -2.228,
+    "VM": 4.81
+  },
+  {
+    "name": "",
+    "RA": 14.478,
+    "Dec": -6.901,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 14.506,
+    "Dec": -49.519,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 14.53,
+    "Dec": 30.371,
+    "VM": 3.57
+  },
+  {
+    "name": "",
+    "RA": 14.535,
+    "Dec": 38.308,
+    "VM": 3.04
+  },
+  {
+    "name": "",
+    "RA": 14.544,
+    "Dec": -50.457,
+    "VM": 4.44
+  },
+  {
+    "name": "",
+    "RA": 14.578,
+    "Dec": 29.745,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 14.592,
+    "Dec": -42.158,
+    "VM": 2.33
+  },
+  {
+    "name": "",
+    "RA": 14.622,
+    "Dec": -46.133,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 14.631,
+    "Dec": -49.426,
+    "VM": 4.05
+  },
+  {
+    "name": "",
+    "RA": 14.647,
+    "Dec": 44.404,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 14.66,
+    "Dec": -60.838,
+    "VM": 1.35
+  },
+  {
+    "name": "Rigil Kentaurus",
+    "RA": 14.661,
+    "Dec": -60.834,
+    "VM": -0.01
+  },
+  {
+    "name": "",
+    "RA": 14.679,
+    "Dec": 16.418,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 14.686,
+    "Dec": 13.728,
+    "VM": 3.78
+  },
+  {
+    "name": "",
+    "RA": 14.694,
+    "Dec": 8.162,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 14.699,
+    "Dec": -47.388,
+    "VM": 2.3
+  },
+  {
+    "name": "",
+    "RA": 14.699,
+    "Dec": -37.793,
+    "VM": 4.01
+  },
+  {
+    "name": "",
+    "RA": 14.708,
+    "Dec": -64.975,
+    "VM": 3.18
+  },
+  {
+    "name": "",
+    "RA": 14.718,
+    "Dec": -5.658,
+    "VM": 3.87
+  },
+  {
+    "name": "",
+    "RA": 14.724,
+    "Dec": 26.528,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 14.728,
+    "Dec": -35.174,
+    "VM": 4.06
+  },
+  {
+    "name": "",
+    "RA": 14.75,
+    "Dec": -35.192,
+    "VM": 4.92
+  },
+  {
+    "name": "Izar",
+    "RA": 14.75,
+    "Dec": 27.074,
+    "VM": 2.35
+  },
+  {
+    "name": "",
+    "RA": 14.754,
+    "Dec": 16.964,
+    "VM": 4.6
+  },
+  {
+    "name": "",
+    "RA": 14.755,
+    "Dec": -62.876,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 14.767,
+    "Dec": -25.443,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 14.771,
+    "Dec": 1.893,
+    "VM": 3.73
+  },
+  {
+    "name": "",
+    "RA": 14.784,
+    "Dec": -52.384,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 14.796,
+    "Dec": -26.087,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 14.798,
+    "Dec": -79.045,
+    "VM": 3.83
+  },
+  {
+    "name": "",
+    "RA": 14.822,
+    "Dec": -14.149,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 14.838,
+    "Dec": -27.96,
+    "VM": 4.42
+  },
+  {
+    "name": "",
+    "RA": 14.842,
+    "Dec": 37.272,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 14.845,
+    "Dec": -15.997,
+    "VM": 5.15
+  },
+  {
+    "name": "Kochab",
+    "RA": 14.845,
+    "Dec": 74.156,
+    "VM": 2.07
+  },
+  {
+    "name": "Zubenelgenubi",
+    "RA": 14.848,
+    "Dec": -16.042,
+    "VM": 2.75
+  },
+  {
+    "name": "",
+    "RA": 14.85,
+    "Dec": -2.299,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 14.856,
+    "Dec": 19.1,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 14.857,
+    "Dec": 59.294,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 14.861,
+    "Dec": -43.575,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 14.881,
+    "Dec": -37.803,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 14.906,
+    "Dec": -24.642,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 14.926,
+    "Dec": -60.114,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 14.929,
+    "Dec": -33.856,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 14.938,
+    "Dec": -52.81,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 14.946,
+    "Dec": -62.781,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 14.946,
+    "Dec": -11.41,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 14.953,
+    "Dec": -4.346,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 14.96,
+    "Dec": 65.932,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 14.965,
+    "Dec": -76.663,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 14.976,
+    "Dec": -43.134,
+    "VM": 2.68
+  },
+  {
+    "name": "",
+    "RA": 14.986,
+    "Dec": -42.104,
+    "VM": 3.13
+  },
+  {
+    "name": "",
+    "RA": 15.016,
+    "Dec": -8.519,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 15.032,
+    "Dec": 40.391,
+    "VM": 3.49
+  },
+  {
+    "name": "",
+    "RA": 15.035,
+    "Dec": 25.008,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 15.048,
+    "Dec": 2.091,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 15.05,
+    "Dec": -32.643,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 15.063,
+    "Dec": 47.654,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 15.068,
+    "Dec": -25.282,
+    "VM": 3.25
+  },
+  {
+    "name": "",
+    "RA": 15.074,
+    "Dec": 26.948,
+    "VM": 4.52
+  },
+  {
+    "name": "",
+    "RA": 15.08,
+    "Dec": -64.031,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 15.085,
+    "Dec": -47.051,
+    "VM": 3.91
+  },
+  {
+    "name": "",
+    "RA": 15.089,
+    "Dec": -41.067,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 15.105,
+    "Dec": 54.556,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 15.11,
+    "Dec": -16.257,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 15.122,
+    "Dec": 24.869,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 15.147,
+    "Dec": -45.28,
+    "VM": 4.07
+  },
+  {
+    "name": "",
+    "RA": 15.188,
+    "Dec": -55.346,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 15.199,
+    "Dec": -48.738,
+    "VM": 3.88
+  },
+  {
+    "name": "",
+    "RA": 15.204,
+    "Dec": -19.792,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 15.205,
+    "Dec": -52.099,
+    "VM": 3.41
+  },
+  {
+    "name": "",
+    "RA": 15.214,
+    "Dec": -44.5,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 15.241,
+    "Dec": 29.164,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 15.244,
+    "Dec": -31.519,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 15.244,
+    "Dec": 67.347,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 15.253,
+    "Dec": 4.939,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 15.258,
+    "Dec": 33.315,
+    "VM": 3.46
+  },
+  {
+    "name": "",
+    "RA": 15.268,
+    "Dec": -41.491,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 15.282,
+    "Dec": -60.957,
+    "VM": 5.04
+  },
+  {
+    "name": "Zubeneschemali",
+    "RA": 15.283,
+    "Dec": -9.383,
+    "VM": 2.61
+  },
+  {
+    "name": "",
+    "RA": 15.285,
+    "Dec": 71.824,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 15.292,
+    "Dec": -58.801,
+    "VM": 4.07
+  },
+  {
+    "name": "",
+    "RA": 15.294,
+    "Dec": -63.61,
+    "VM": 4.85
+  },
+  {
+    "name": "",
+    "RA": 15.297,
+    "Dec": -30.149,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 15.309,
+    "Dec": -47.875,
+    "VM": 4.27
+  },
+  {
+    "name": "",
+    "RA": 15.314,
+    "Dec": -60.496,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 15.315,
+    "Dec": -68.68,
+    "VM": 2.87
+  },
+  {
+    "name": "",
+    "RA": 15.322,
+    "Dec": 1.765,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 15.345,
+    "Dec": 71.834,
+    "VM": 3
+  },
+  {
+    "name": "",
+    "RA": 15.351,
+    "Dec": 0.715,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 15.356,
+    "Dec": -40.648,
+    "VM": 3.22
+  },
+  {
+    "name": "",
+    "RA": 15.363,
+    "Dec": -36.261,
+    "VM": 3.57
+  },
+  {
+    "name": "",
+    "RA": 15.363,
+    "Dec": 32.934,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 15.369,
+    "Dec": -47.928,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 15.378,
+    "Dec": -44.69,
+    "VM": 3.37
+  },
+  {
+    "name": "",
+    "RA": 15.386,
+    "Dec": -36.858,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 15.387,
+    "Dec": 30.288,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 15.39,
+    "Dec": -59.321,
+    "VM": 4.48
+  },
+  {
+    "name": "",
+    "RA": 15.403,
+    "Dec": -10.322,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 15.408,
+    "Dec": 37.377,
+    "VM": 4.31
+  },
+  {
+    "name": "",
+    "RA": 15.413,
+    "Dec": -39.71,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 15.415,
+    "Dec": 58.966,
+    "VM": 3.29
+  },
+  {
+    "name": "",
+    "RA": 15.422,
+    "Dec": -38.734,
+    "VM": 4.6
+  },
+  {
+    "name": "",
+    "RA": 15.43,
+    "Dec": 15.428,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 15.438,
+    "Dec": 34.336,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 15.455,
+    "Dec": -36.768,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 15.464,
+    "Dec": 29.106,
+    "VM": 3.66
+  },
+  {
+    "name": "",
+    "RA": 15.477,
+    "Dec": 1.842,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 15.49,
+    "Dec": -46.733,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 15.515,
+    "Dec": 40.833,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 15.524,
+    "Dec": 77.349,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 15.525,
+    "Dec": -73.39,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 15.53,
+    "Dec": 40.899,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 15.544,
+    "Dec": -19.67,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 15.549,
+    "Dec": 31.359,
+    "VM": 4.14
+  },
+  {
+    "name": "",
+    "RA": 15.549,
+    "Dec": -1.186,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 15.57,
+    "Dec": -10.065,
+    "VM": 4.61
+  },
+  {
+    "name": "",
+    "RA": 15.574,
+    "Dec": -9.183,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 15.577,
+    "Dec": -28.047,
+    "VM": 5.13
+  },
+  {
+    "name": "Alphekka",
+    "RA": 15.578,
+    "Dec": 26.715,
+    "VM": 2.22
+  },
+  {
+    "name": "",
+    "RA": 15.58,
+    "Dec": 10.539,
+    "VM": 3.8
+  },
+  {
+    "name": "",
+    "RA": 15.586,
+    "Dec": -41.167,
+    "VM": 2.8
+  },
+  {
+    "name": "",
+    "RA": 15.587,
+    "Dec": 39.01,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 15.592,
+    "Dec": -14.79,
+    "VM": 3.91
+  },
+  {
+    "name": "",
+    "RA": 15.598,
+    "Dec": -44.958,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 15.603,
+    "Dec": -44.397,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 15.608,
+    "Dec": 10.01,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 15.612,
+    "Dec": -66.317,
+    "VM": 4.11
+  },
+  {
+    "name": "",
+    "RA": 15.617,
+    "Dec": -28.135,
+    "VM": 3.6
+  },
+  {
+    "name": "",
+    "RA": 15.63,
+    "Dec": 40.353,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 15.634,
+    "Dec": -42.567,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 15.644,
+    "Dec": -29.778,
+    "VM": 3.66
+  },
+  {
+    "name": "",
+    "RA": 15.647,
+    "Dec": -52.373,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 15.648,
+    "Dec": -19.302,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 15.656,
+    "Dec": 36.636,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 15.663,
+    "Dec": -34.412,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 15.671,
+    "Dec": -23.818,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 15.687,
+    "Dec": -44.661,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 15.693,
+    "Dec": 19.67,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 15.697,
+    "Dec": 12.848,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 15.699,
+    "Dec": -19.679,
+    "VM": 4.75
+  },
+  {
+    "name": "",
+    "RA": 15.711,
+    "Dec": -37.425,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 15.711,
+    "Dec": -34.71,
+    "VM": 4.75
+  },
+  {
+    "name": "",
+    "RA": 15.712,
+    "Dec": 26.296,
+    "VM": 3.81
+  },
+  {
+    "name": "",
+    "RA": 15.714,
+    "Dec": 52.361,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 15.734,
+    "Dec": 77.794,
+    "VM": 4.29
+  },
+  {
+    "name": "",
+    "RA": 15.735,
+    "Dec": -15.673,
+    "VM": 5.41
+  },
+  {
+    "name": "Unukalhai",
+    "RA": 15.738,
+    "Dec": 6.426,
+    "VM": 2.63
+  },
+  {
+    "name": "",
+    "RA": 15.768,
+    "Dec": -1.804,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 15.77,
+    "Dec": 15.422,
+    "VM": 3.65
+  },
+  {
+    "name": "",
+    "RA": 15.774,
+    "Dec": 7.353,
+    "VM": 4.42
+  },
+  {
+    "name": "",
+    "RA": 15.778,
+    "Dec": 62.6,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 15.812,
+    "Dec": 18.142,
+    "VM": 4.09
+  },
+  {
+    "name": "",
+    "RA": 15.827,
+    "Dec": 26.068,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 15.827,
+    "Dec": -3.43,
+    "VM": 3.54
+  },
+  {
+    "name": "",
+    "RA": 15.838,
+    "Dec": 2.197,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 15.847,
+    "Dec": 4.478,
+    "VM": 3.71
+  },
+  {
+    "name": "",
+    "RA": 15.849,
+    "Dec": -33.627,
+    "VM": 3.97
+  },
+  {
+    "name": "",
+    "RA": 15.85,
+    "Dec": -25.751,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 15.854,
+    "Dec": 35.657,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 15.854,
+    "Dec": -3.09,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 15.854,
+    "Dec": 20.978,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 15.878,
+    "Dec": 42.452,
+    "VM": 4.6
+  },
+  {
+    "name": "",
+    "RA": 15.889,
+    "Dec": -20.167,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 15.894,
+    "Dec": -25.327,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 15.897,
+    "Dec": -16.729,
+    "VM": 4.13
+  },
+  {
+    "name": "",
+    "RA": 15.898,
+    "Dec": -24.533,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 15.899,
+    "Dec": -23.978,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 15.91,
+    "Dec": 20.311,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 15.911,
+    "Dec": 43.139,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 15.919,
+    "Dec": -63.431,
+    "VM": 2.83
+  },
+  {
+    "name": "",
+    "RA": 15.925,
+    "Dec": -68.603,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 15.93,
+    "Dec": 37.947,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 15.941,
+    "Dec": 15.662,
+    "VM": 3.85
+  },
+  {
+    "name": "",
+    "RA": 15.948,
+    "Dec": -29.214,
+    "VM": 3.87
+  },
+  {
+    "name": "",
+    "RA": 15.948,
+    "Dec": -33.966,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 15.96,
+    "Dec": 26.878,
+    "VM": 4.14
+  },
+  {
+    "name": "",
+    "RA": 15.963,
+    "Dec": 54.75,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 15.97,
+    "Dec": -14.279,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 15.976,
+    "Dec": -24.831,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 15.981,
+    "Dec": -26.114,
+    "VM": 2.89
+  },
+  {
+    "name": "",
+    "RA": 15.992,
+    "Dec": -41.744,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 16.002,
+    "Dec": -38.397,
+    "VM": 3.42
+  },
+  {
+    "name": "",
+    "RA": 16.005,
+    "Dec": -16.533,
+    "VM": 5.47
+  },
+  {
+    "name": "Dschubba",
+    "RA": 16.006,
+    "Dec": -22.622,
+    "VM": 2.29
+  },
+  {
+    "name": "",
+    "RA": 16.017,
+    "Dec": 33.304,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 16.021,
+    "Dec": 17.818,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 16.024,
+    "Dec": 29.851,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 16.032,
+    "Dec": 58.565,
+    "VM": 4.01
+  },
+  {
+    "name": "",
+    "RA": 16.038,
+    "Dec": 22.804,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 16.047,
+    "Dec": 46.037,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 16.054,
+    "Dec": -49.23,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 16.056,
+    "Dec": -25.865,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 16.057,
+    "Dec": -38.603,
+    "VM": 4.9
+  },
+  {
+    "name": "",
+    "RA": 16.059,
+    "Dec": -57.775,
+    "VM": 4.63
+  },
+  {
+    "name": "Graffias",
+    "RA": 16.091,
+    "Dec": -19.805,
+    "VM": 2.56
+  },
+  {
+    "name": "",
+    "RA": 16.091,
+    "Dec": -19.802,
+    "VM": 4.9
+  },
+  {
+    "name": "",
+    "RA": 16.105,
+    "Dec": 67.81,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 16.108,
+    "Dec": -45.173,
+    "VM": 4.73
+  },
+  {
+    "name": "",
+    "RA": 16.11,
+    "Dec": -36.802,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 16.113,
+    "Dec": -20.669,
+    "VM": 3.93
+  },
+  {
+    "name": "",
+    "RA": 16.123,
+    "Dec": -20.869,
+    "VM": 4.31
+  },
+  {
+    "name": "",
+    "RA": 16.135,
+    "Dec": 17.047,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 16.135,
+    "Dec": -26.327,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 16.146,
+    "Dec": 44.935,
+    "VM": 4.23
+  },
+  {
+    "name": "",
+    "RA": 16.15,
+    "Dec": 36.491,
+    "VM": 4.73
+  },
+  {
+    "name": "",
+    "RA": 16.164,
+    "Dec": -3.467,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 16.165,
+    "Dec": -33.546,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 16.18,
+    "Dec": 75.878,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 16.184,
+    "Dec": -29.416,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 16.2,
+    "Dec": -19.461,
+    "VM": 4
+  },
+  {
+    "name": "",
+    "RA": 16.2,
+    "Dec": -10.064,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 16.202,
+    "Dec": -8.548,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 16.205,
+    "Dec": -27.926,
+    "VM": 4.58
+  },
+  {
+    "name": "",
+    "RA": 16.221,
+    "Dec": 5.021,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 16.225,
+    "Dec": -54.63,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 16.231,
+    "Dec": -11.838,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 16.239,
+    "Dec": -3.694,
+    "VM": 2.73
+  },
+  {
+    "name": "",
+    "RA": 16.245,
+    "Dec": 33.859,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 16.254,
+    "Dec": -47.372,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 16.257,
+    "Dec": -63.686,
+    "VM": 3.86
+  },
+  {
+    "name": "",
+    "RA": 16.26,
+    "Dec": -8.369,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 16.279,
+    "Dec": -53.811,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 16.284,
+    "Dec": -50.068,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 16.288,
+    "Dec": 59.755,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 16.292,
+    "Dec": 75.755,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 16.305,
+    "Dec": -28.614,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 16.305,
+    "Dec": -4.693,
+    "VM": 3.23
+  },
+  {
+    "name": "",
+    "RA": 16.322,
+    "Dec": -42.674,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 16.329,
+    "Dec": 46.313,
+    "VM": 3.91
+  },
+  {
+    "name": "",
+    "RA": 16.331,
+    "Dec": -50.156,
+    "VM": 4.01
+  },
+  {
+    "name": "",
+    "RA": 16.332,
+    "Dec": 39.709,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 16.339,
+    "Dec": -78.696,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 16.341,
+    "Dec": -78.667,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 16.344,
+    "Dec": -24.169,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 16.353,
+    "Dec": -25.593,
+    "VM": 2.9
+  },
+  {
+    "name": "",
+    "RA": 16.364,
+    "Dec": 69.109,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 16.365,
+    "Dec": 19.153,
+    "VM": 3.74
+  },
+  {
+    "name": "",
+    "RA": 16.368,
+    "Dec": 1.029,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 16.368,
+    "Dec": 30.892,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 16.373,
+    "Dec": 33.799,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 16.374,
+    "Dec": -49.572,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 16.375,
+    "Dec": 33.703,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 16.4,
+    "Dec": 61.514,
+    "VM": 2.73
+  },
+  {
+    "name": "",
+    "RA": 16.4,
+    "Dec": -39.193,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 16.402,
+    "Dec": -20.037,
+    "VM": 4.48
+  },
+  {
+    "name": "",
+    "RA": 16.409,
+    "Dec": -37.566,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 16.411,
+    "Dec": -29.705,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 16.424,
+    "Dec": 14.033,
+    "VM": 4.57
+  },
+  {
+    "name": "",
+    "RA": 16.426,
+    "Dec": -23.447,
+    "VM": 4.57
+  },
+  {
+    "name": "",
+    "RA": 16.45,
+    "Dec": -18.456,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 16.453,
+    "Dec": -47.555,
+    "VM": 4.46
+  },
+  {
+    "name": "",
+    "RA": 16.462,
+    "Dec": -7.598,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 16.463,
+    "Dec": -8.372,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 16.466,
+    "Dec": -64.058,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 16.466,
+    "Dec": 68.768,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 16.474,
+    "Dec": -70.084,
+    "VM": 4.9
+  },
+  {
+    "name": "",
+    "RA": 16.476,
+    "Dec": 0.665,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 16.477,
+    "Dec": 41.882,
+    "VM": 4.83
+  },
+  {
+    "name": "Antares",
+    "RA": 16.49,
+    "Dec": -26.432,
+    "VM": 1.06
+  },
+  {
+    "name": "",
+    "RA": 16.495,
+    "Dec": -46.243,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 16.503,
+    "Dec": -25.115,
+    "VM": 4.79
+  },
+  {
+    "name": "Kornephoros",
+    "RA": 16.504,
+    "Dec": 21.49,
+    "VM": 2.78
+  },
+  {
+    "name": "",
+    "RA": 16.509,
+    "Dec": 20.479,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 16.514,
+    "Dec": -61.634,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 16.515,
+    "Dec": 1.984,
+    "VM": 3.82
+  },
+  {
+    "name": "",
+    "RA": 16.519,
+    "Dec": -16.613,
+    "VM": 4.29
+  },
+  {
+    "name": "",
+    "RA": 16.523,
+    "Dec": -34.704,
+    "VM": 4.24
+  },
+  {
+    "name": "",
+    "RA": 16.528,
+    "Dec": -41.817,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 16.536,
+    "Dec": -21.466,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 16.543,
+    "Dec": 11.488,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 16.558,
+    "Dec": -78.897,
+    "VM": 3.86
+  },
+  {
+    "name": "",
+    "RA": 16.568,
+    "Dec": -44.045,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 16.568,
+    "Dec": 42.437,
+    "VM": 4.2
+  },
+  {
+    "name": "",
+    "RA": 16.572,
+    "Dec": -70.988,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 16.596,
+    "Dec": -65.495,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 16.598,
+    "Dec": -28.216,
+    "VM": 2.82
+  },
+  {
+    "name": "",
+    "RA": 16.604,
+    "Dec": 52.924,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 16.606,
+    "Dec": -35.255,
+    "VM": 4.18
+  },
+  {
+    "name": "",
+    "RA": 16.606,
+    "Dec": -42.859,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 16.619,
+    "Dec": -10.567,
+    "VM": 2.54
+  },
+  {
+    "name": "",
+    "RA": 16.633,
+    "Dec": 56.016,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 16.646,
+    "Dec": 48.928,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 16.682,
+    "Dec": 64.589,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 16.688,
+    "Dec": 31.603,
+    "VM": 2.81
+  },
+  {
+    "name": "",
+    "RA": 16.693,
+    "Dec": -17.742,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 16.715,
+    "Dec": 38.922,
+    "VM": 3.48
+  },
+  {
+    "name": "",
+    "RA": 16.718,
+    "Dec": -77.517,
+    "VM": 4.23
+  },
+  {
+    "name": "",
+    "RA": 16.755,
+    "Dec": 56.782,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 16.764,
+    "Dec": 8.583,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 16.766,
+    "Dec": 82.037,
+    "VM": 4.21
+  },
+  {
+    "name": "",
+    "RA": 16.778,
+    "Dec": -67.11,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 16.78,
+    "Dec": -39.377,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 16.796,
+    "Dec": 5.247,
+    "VM": 5.22
+  },
+  {
+    "name": "Atria",
+    "RA": 16.811,
+    "Dec": -69.028,
+    "VM": 1.91
+  },
+  {
+    "name": "",
+    "RA": 16.821,
+    "Dec": 45.983,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 16.83,
+    "Dec": -59.041,
+    "VM": 3.77
+  },
+  {
+    "name": "",
+    "RA": 16.831,
+    "Dec": -10.783,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 16.836,
+    "Dec": -34.293,
+    "VM": 2.29
+  },
+  {
+    "name": "",
+    "RA": 16.839,
+    "Dec": 7.248,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 16.859,
+    "Dec": -41.231,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 16.863,
+    "Dec": 24.656,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 16.865,
+    "Dec": -38.047,
+    "VM": 3
+  },
+  {
+    "name": "",
+    "RA": 16.872,
+    "Dec": -38.018,
+    "VM": 3.56
+  },
+  {
+    "name": "",
+    "RA": 16.883,
+    "Dec": 31.702,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 16.9,
+    "Dec": -42.362,
+    "VM": 4.7
+  },
+  {
+    "name": "",
+    "RA": 16.9,
+    "Dec": 10.165,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 16.901,
+    "Dec": -41.806,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 16.91,
+    "Dec": -42.361,
+    "VM": 3.62
+  },
+  {
+    "name": "",
+    "RA": 16.91,
+    "Dec": -6.154,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 16.915,
+    "Dec": 20.958,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 16.923,
+    "Dec": 18.433,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 16.934,
+    "Dec": 65.135,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 16.953,
+    "Dec": -33.259,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 16.961,
+    "Dec": 9.375,
+    "VM": 3.19
+  },
+  {
+    "name": "",
+    "RA": 16.977,
+    "Dec": -55.99,
+    "VM": 3.12
+  },
+  {
+    "name": "",
+    "RA": 16.993,
+    "Dec": -53.16,
+    "VM": 4.06
+  },
+  {
+    "name": "",
+    "RA": 17.005,
+    "Dec": 30.926,
+    "VM": 3.92
+  },
+  {
+    "name": "",
+    "RA": 17.018,
+    "Dec": -4.223,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 17.027,
+    "Dec": 33.568,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 17.031,
+    "Dec": -32.144,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 17.052,
+    "Dec": 14.092,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 17.052,
+    "Dec": -53.237,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 17.08,
+    "Dec": -34.123,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 17.089,
+    "Dec": 54.47,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 17.09,
+    "Dec": 12.741,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 17.134,
+    "Dec": 35.935,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 17.146,
+    "Dec": 65.715,
+    "VM": 3.17
+  },
+  {
+    "name": "",
+    "RA": 17.159,
+    "Dec": 40.777,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 17.163,
+    "Dec": -10.523,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 17.173,
+    "Dec": -15.725,
+    "VM": 2.43
+  },
+  {
+    "name": "",
+    "RA": 17.178,
+    "Dec": -44.558,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 17.203,
+    "Dec": -43.239,
+    "VM": 3.32
+  },
+  {
+    "name": "",
+    "RA": 17.208,
+    "Dec": 10.585,
+    "VM": 5.32
+  },
+  {
+    "name": "Rasalgethi",
+    "RA": 17.244,
+    "Dec": 14.39,
+    "VM": 2.78
+  },
+  {
+    "name": "",
+    "RA": 17.251,
+    "Dec": 24.839,
+    "VM": 3.12
+  },
+  {
+    "name": "",
+    "RA": 17.251,
+    "Dec": 36.809,
+    "VM": 3.16
+  },
+  {
+    "name": "",
+    "RA": 17.256,
+    "Dec": -26.603,
+    "VM": 4.33
+  },
+  {
+    "name": "",
+    "RA": 17.277,
+    "Dec": -0.445,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 17.289,
+    "Dec": 33.1,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 17.295,
+    "Dec": 37.291,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 17.3,
+    "Dec": -24.287,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 17.31,
+    "Dec": 10.864,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 17.318,
+    "Dec": -46.636,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 17.336,
+    "Dec": 25.538,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 17.339,
+    "Dec": 18.057,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 17.344,
+    "Dec": 32.468,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 17.347,
+    "Dec": -12.847,
+    "VM": 4.32
+  },
+  {
+    "name": "",
+    "RA": 17.348,
+    "Dec": 24.499,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 17.35,
+    "Dec": -21.113,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 17.367,
+    "Dec": -67.771,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 17.367,
+    "Dec": -25,
+    "VM": 3.27
+  },
+  {
+    "name": "",
+    "RA": 17.368,
+    "Dec": -70.123,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 17.388,
+    "Dec": -47.468,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 17.389,
+    "Dec": -28.143,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 17.395,
+    "Dec": 37.146,
+    "VM": 4.15
+  },
+  {
+    "name": "",
+    "RA": 17.404,
+    "Dec": -44.163,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 17.422,
+    "Dec": -55.53,
+    "VM": 2.84
+  },
+  {
+    "name": "",
+    "RA": 17.423,
+    "Dec": -56.378,
+    "VM": 3.31
+  },
+  {
+    "name": "",
+    "RA": 17.433,
+    "Dec": -50.634,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 17.44,
+    "Dec": -24.175,
+    "VM": 4.16
+  },
+  {
+    "name": "",
+    "RA": 17.442,
+    "Dec": 4.14,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 17.444,
+    "Dec": -5.087,
+    "VM": 4.53
+  },
+  {
+    "name": "",
+    "RA": 17.448,
+    "Dec": -45.843,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 17.456,
+    "Dec": -29.867,
+    "VM": 4.28
+  },
+  {
+    "name": "",
+    "RA": 17.48,
+    "Dec": 0.331,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 17.507,
+    "Dec": -1.063,
+    "VM": 5.31
+  },
+  {
+    "name": "Rastaban",
+    "RA": 17.507,
+    "Dec": 52.301,
+    "VM": 2.79
+  },
+  {
+    "name": "",
+    "RA": 17.512,
+    "Dec": 26.111,
+    "VM": 4.41
+  },
+  {
+    "name": "",
+    "RA": 17.513,
+    "Dec": -37.296,
+    "VM": 2.7
+  },
+  {
+    "name": "",
+    "RA": 17.518,
+    "Dec": -60.684,
+    "VM": 3.6
+  },
+  {
+    "name": "",
+    "RA": 17.524,
+    "Dec": -23.963,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 17.531,
+    "Dec": -49.876,
+    "VM": 2.84
+  },
+  {
+    "name": "",
+    "RA": 17.533,
+    "Dec": 68.135,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 17.536,
+    "Dec": 55.184,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 17.537,
+    "Dec": 86.586,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 17.538,
+    "Dec": 55.173,
+    "VM": 4.86
+  },
+  {
+    "name": "Shaula",
+    "RA": 17.56,
+    "Dec": -37.104,
+    "VM": 1.62
+  },
+  {
+    "name": "Rasalhague",
+    "RA": 17.582,
+    "Dec": 12.56,
+    "VM": 2.08
+  },
+  {
+    "name": "",
+    "RA": 17.583,
+    "Dec": 61.875,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 17.594,
+    "Dec": -46.506,
+    "VM": 4.56
+  },
+  {
+    "name": "",
+    "RA": 17.609,
+    "Dec": -38.635,
+    "VM": 4.26
+  },
+  {
+    "name": "",
+    "RA": 17.61,
+    "Dec": 48.586,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 17.616,
+    "Dec": 68.758,
+    "VM": 4.77
+  },
+  {
+    "name": "Sargas",
+    "RA": 17.622,
+    "Dec": -42.998,
+    "VM": 1.86
+  },
+  {
+    "name": "",
+    "RA": 17.626,
+    "Dec": -15.399,
+    "VM": 3.54
+  },
+  {
+    "name": "",
+    "RA": 17.631,
+    "Dec": -8.119,
+    "VM": 4.58
+  },
+  {
+    "name": "",
+    "RA": 17.635,
+    "Dec": -54.5,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 17.658,
+    "Dec": 46.006,
+    "VM": 3.82
+  },
+  {
+    "name": "",
+    "RA": 17.673,
+    "Dec": -49.416,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 17.69,
+    "Dec": -12.875,
+    "VM": 4.24
+  },
+  {
+    "name": "",
+    "RA": 17.699,
+    "Dec": 72.149,
+    "VM": 4.57
+  },
+  {
+    "name": "",
+    "RA": 17.708,
+    "Dec": -39.03,
+    "VM": 2.39
+  },
+  {
+    "name": "",
+    "RA": 17.724,
+    "Dec": -21.683,
+    "VM": 4.86
+  },
+  {
+    "name": "Cebalrai",
+    "RA": 17.725,
+    "Dec": 4.567,
+    "VM": 2.76
+  },
+  {
+    "name": "",
+    "RA": 17.736,
+    "Dec": -51.834,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 17.762,
+    "Dec": -64.724,
+    "VM": 3.61
+  },
+  {
+    "name": "",
+    "RA": 17.774,
+    "Dec": 27.721,
+    "VM": 3.42
+  },
+  {
+    "name": "",
+    "RA": 17.793,
+    "Dec": -27.831,
+    "VM": 4.53
+  },
+  {
+    "name": "",
+    "RA": 17.793,
+    "Dec": -40.127,
+    "VM": 2.99
+  },
+  {
+    "name": "",
+    "RA": 17.798,
+    "Dec": 2.707,
+    "VM": 3.75
+  },
+  {
+    "name": "",
+    "RA": 17.814,
+    "Dec": 25.623,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 17.818,
+    "Dec": 50.781,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 17.82,
+    "Dec": -31.703,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 17.824,
+    "Dec": 76.963,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 17.831,
+    "Dec": -37.043,
+    "VM": 3.19
+  },
+  {
+    "name": "",
+    "RA": 17.836,
+    "Dec": -40.09,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 17.888,
+    "Dec": 40.008,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 17.892,
+    "Dec": 56.873,
+    "VM": 3.73
+  },
+  {
+    "name": "",
+    "RA": 17.92,
+    "Dec": 72.005,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 17.924,
+    "Dec": 26.05,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 17.938,
+    "Dec": 37.251,
+    "VM": 3.86
+  },
+  {
+    "name": "Etamin",
+    "RA": 17.943,
+    "Dec": 51.489,
+    "VM": 2.24
+  },
+  {
+    "name": "",
+    "RA": 17.947,
+    "Dec": -44.342,
+    "VM": 4.85
+  },
+  {
+    "name": "",
+    "RA": 17.947,
+    "Dec": -4.082,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 17.963,
+    "Dec": 29.248,
+    "VM": 3.7
+  },
+  {
+    "name": "",
+    "RA": 17.963,
+    "Dec": -41.716,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 17.975,
+    "Dec": 30.189,
+    "VM": 4.41
+  },
+  {
+    "name": "",
+    "RA": 17.984,
+    "Dec": -9.774,
+    "VM": 3.32
+  },
+  {
+    "name": "",
+    "RA": 17.985,
+    "Dec": -30.253,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 17.997,
+    "Dec": -23.816,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 18.001,
+    "Dec": 16.751,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 18.004,
+    "Dec": 4.369,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 18.008,
+    "Dec": -3.69,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 18.011,
+    "Dec": 2.932,
+    "VM": 3.93
+  },
+  {
+    "name": "",
+    "RA": 18.025,
+    "Dec": 21.596,
+    "VM": 4.26
+  },
+  {
+    "name": "",
+    "RA": 18.029,
+    "Dec": 1.305,
+    "VM": 4.42
+  },
+  {
+    "name": "",
+    "RA": 18.04,
+    "Dec": 20.834,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 18.048,
+    "Dec": -24.282,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 18.051,
+    "Dec": -8.18,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 18.084,
+    "Dec": -29.58,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 18.091,
+    "Dec": 2.5,
+    "VM": 4.03
+  },
+  {
+    "name": "Nash",
+    "RA": 18.097,
+    "Dec": -30.424,
+    "VM": 2.98
+  },
+  {
+    "name": "",
+    "RA": 18.101,
+    "Dec": 22.219,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 18.111,
+    "Dec": -50.091,
+    "VM": 3.65
+  },
+  {
+    "name": "",
+    "RA": 18.114,
+    "Dec": -43.425,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 18.117,
+    "Dec": 30.562,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 18.122,
+    "Dec": 8.734,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 18.122,
+    "Dec": 9.564,
+    "VM": 3.71
+  },
+  {
+    "name": "",
+    "RA": 18.125,
+    "Dec": 43.462,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 18.126,
+    "Dec": 28.762,
+    "VM": 3.84
+  },
+  {
+    "name": "",
+    "RA": 18.134,
+    "Dec": 36.401,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 18.135,
+    "Dec": -28.457,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 18.143,
+    "Dec": -63.669,
+    "VM": 4.33
+  },
+  {
+    "name": "",
+    "RA": 18.146,
+    "Dec": 20.815,
+    "VM": 4.37
+  },
+  {
+    "name": "",
+    "RA": 18.148,
+    "Dec": 20.045,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 18.174,
+    "Dec": -62.002,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 18.178,
+    "Dec": 3.324,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 18.187,
+    "Dec": -45.954,
+    "VM": 4.52
+  },
+  {
+    "name": "",
+    "RA": 18.195,
+    "Dec": -23.701,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 18.198,
+    "Dec": 31.405,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 18.22,
+    "Dec": -41.336,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 18.229,
+    "Dec": -21.059,
+    "VM": 3.84
+  },
+  {
+    "name": "",
+    "RA": 18.232,
+    "Dec": 64.397,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 18.238,
+    "Dec": -21.713,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 18.254,
+    "Dec": -20.728,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 18.265,
+    "Dec": -44.206,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 18.285,
+    "Dec": -56.023,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 18.294,
+    "Dec": -36.762,
+    "VM": 3.1
+  },
+  {
+    "name": "",
+    "RA": 18.301,
+    "Dec": -27.043,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 18.319,
+    "Dec": 7.26,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 18.32,
+    "Dec": 24.446,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 18.331,
+    "Dec": 36.065,
+    "VM": 4.33
+  },
+  {
+    "name": "",
+    "RA": 18.336,
+    "Dec": -15.832,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 18.338,
+    "Dec": 21.961,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 18.346,
+    "Dec": 71.338,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 18.348,
+    "Dec": 3.377,
+    "VM": 4.85
+  },
+  {
+    "name": "Kaus Meridionalis",
+    "RA": 18.35,
+    "Dec": -29.828,
+    "VM": 2.72
+  },
+  {
+    "name": "",
+    "RA": 18.35,
+    "Dec": 28.87,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 18.351,
+    "Dec": 72.733,
+    "VM": 3.55
+  },
+  {
+    "name": "",
+    "RA": 18.355,
+    "Dec": -2.899,
+    "VM": 3.23
+  },
+  {
+    "name": "",
+    "RA": 18.359,
+    "Dec": 49.122,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 18.369,
+    "Dec": 23.285,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 18.372,
+    "Dec": -38.657,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 18.38,
+    "Dec": 17.827,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 18.381,
+    "Dec": -36.67,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 18.387,
+    "Dec": -61.494,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 18.393,
+    "Dec": -75.044,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 18.394,
+    "Dec": -8.934,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 18.395,
+    "Dec": 21.77,
+    "VM": 3.85
+  },
+  {
+    "name": "",
+    "RA": 18.399,
+    "Dec": 58.801,
+    "VM": 4.98
+  },
+  {
+    "name": "Kaus Australis",
+    "RA": 18.403,
+    "Dec": -34.385,
+    "VM": 1.79
+  },
+  {
+    "name": "",
+    "RA": 18.404,
+    "Dec": 39.507,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 18.405,
+    "Dec": -44.11,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 18.423,
+    "Dec": -20.542,
+    "VM": 4.81
+  },
+  {
+    "name": "",
+    "RA": 18.433,
+    "Dec": 65.563,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 18.448,
+    "Dec": -48.117,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 18.45,
+    "Dec": -45.968,
+    "VM": 3.49
+  },
+  {
+    "name": "",
+    "RA": 18.453,
+    "Dec": 0.196,
+    "VM": 5.2
+  },
+  {
+    "name": "Kaus Borealis",
+    "RA": 18.466,
+    "Dec": -25.422,
+    "VM": 2.82
+  },
+  {
+    "name": "",
+    "RA": 18.481,
+    "Dec": -49.071,
+    "VM": 4.1
+  },
+  {
+    "name": "",
+    "RA": 18.487,
+    "Dec": -14.566,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 18.495,
+    "Dec": -1.985,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 18.518,
+    "Dec": -32.989,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 18.523,
+    "Dec": -62.278,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 18.524,
+    "Dec": -18.403,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 18.529,
+    "Dec": -45.915,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 18.534,
+    "Dec": -45.757,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 18.539,
+    "Dec": -39.704,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 18.543,
+    "Dec": 57.046,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 18.545,
+    "Dec": -14.866,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 18.547,
+    "Dec": 30.554,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 18.558,
+    "Dec": -42.313,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 18.565,
+    "Dec": -24.032,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 18.566,
+    "Dec": 52.354,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 18.566,
+    "Dec": -33.017,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 18.584,
+    "Dec": -10.977,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 18.587,
+    "Dec": -8.244,
+    "VM": 3.85
+  },
+  {
+    "name": "",
+    "RA": 18.608,
+    "Dec": 9.122,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 18.61,
+    "Dec": 33.469,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 18.611,
+    "Dec": 6.672,
+    "VM": 5.43
+  },
+  {
+    "name": "Vega",
+    "RA": 18.616,
+    "Dec": 38.784,
+    "VM": 0.03
+  },
+  {
+    "name": "",
+    "RA": 18.66,
+    "Dec": -43.186,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 18.705,
+    "Dec": -9.053,
+    "VM": 4.7
+  },
+  {
+    "name": "",
+    "RA": 18.711,
+    "Dec": 55.539,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 18.717,
+    "Dec": -71.428,
+    "VM": 4.01
+  },
+  {
+    "name": "",
+    "RA": 18.725,
+    "Dec": -8.275,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 18.73,
+    "Dec": -38.323,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 18.739,
+    "Dec": -35.642,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 18.739,
+    "Dec": 39.67,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 18.74,
+    "Dec": 39.613,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 18.746,
+    "Dec": 37.605,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 18.747,
+    "Dec": 2.06,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 18.749,
+    "Dec": -39.686,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 18.757,
+    "Dec": -64.871,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 18.761,
+    "Dec": -26.991,
+    "VM": 3.17
+  },
+  {
+    "name": "",
+    "RA": 18.761,
+    "Dec": 20.546,
+    "VM": 4.19
+  },
+  {
+    "name": "",
+    "RA": 18.763,
+    "Dec": 74.086,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 18.768,
+    "Dec": 26.662,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 18.772,
+    "Dec": -22.392,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 18.773,
+    "Dec": 75.434,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 18.784,
+    "Dec": 18.182,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 18.786,
+    "Dec": -4.748,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 18.791,
+    "Dec": -5.705,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 18.796,
+    "Dec": -40.406,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 18.814,
+    "Dec": -43.68,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 18.828,
+    "Dec": -20.325,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 18.831,
+    "Dec": 32.551,
+    "VM": 5.22
+  },
+  {
+    "name": "Sheliak",
+    "RA": 18.835,
+    "Dec": 33.363,
+    "VM": 3.52
+  },
+  {
+    "name": "",
+    "RA": 18.853,
+    "Dec": 59.388,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 18.87,
+    "Dec": -62.188,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 18.871,
+    "Dec": 21.425,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 18.878,
+    "Dec": -52.107,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 18.887,
+    "Dec": 50.708,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 18.903,
+    "Dec": -22.745,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 18.907,
+    "Dec": 71.297,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 18.908,
+    "Dec": 36.899,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 18.912,
+    "Dec": -15.603,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 18.912,
+    "Dec": 22.645,
+    "VM": 4.57
+  },
+  {
+    "name": "",
+    "RA": 18.913,
+    "Dec": -87.606,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 18.914,
+    "Dec": 41.603,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 18.919,
+    "Dec": -22.671,
+    "VM": 5
+  },
+  {
+    "name": "Nunki",
+    "RA": 18.921,
+    "Dec": -26.297,
+    "VM": 2.05
+  },
+  {
+    "name": "",
+    "RA": 18.922,
+    "Dec": 43.946,
+    "VM": 4.08
+  },
+  {
+    "name": "",
+    "RA": 18.937,
+    "Dec": 4.204,
+    "VM": 4.62
+  },
+  {
+    "name": "",
+    "RA": 18.937,
+    "Dec": 4.202,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 18.938,
+    "Dec": -42.711,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 18.945,
+    "Dec": -37.343,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 18.949,
+    "Dec": -67.233,
+    "VM": 4.4
+  },
+  {
+    "name": "",
+    "RA": 18.95,
+    "Dec": 32.901,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 18.951,
+    "Dec": -5.846,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 18.956,
+    "Dec": -20.656,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 18.962,
+    "Dec": -21.107,
+    "VM": 3.52
+  },
+  {
+    "name": "",
+    "RA": 18.971,
+    "Dec": 17.361,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 18.974,
+    "Dec": -52.939,
+    "VM": 4.85
+  },
+  {
+    "name": "",
+    "RA": 18.977,
+    "Dec": -60.201,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 18.979,
+    "Dec": -37.107,
+    "VM": 4.83
+  },
+  {
+    "name": "",
+    "RA": 18.982,
+    "Dec": 32.69,
+    "VM": 3.25
+  },
+  {
+    "name": "",
+    "RA": 18.985,
+    "Dec": 13.622,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 18.994,
+    "Dec": 15.068,
+    "VM": 4.02
+  },
+  {
+    "name": "",
+    "RA": 18.996,
+    "Dec": 26.23,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 19,
+    "Dec": 32.146,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 19.004,
+    "Dec": 50.533,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 19.024,
+    "Dec": 46.935,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 19.028,
+    "Dec": -5.739,
+    "VM": 4.02
+  },
+  {
+    "name": "",
+    "RA": 19.044,
+    "Dec": -29.88,
+    "VM": 2.6
+  },
+  {
+    "name": "",
+    "RA": 19.048,
+    "Dec": -3.699,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 19.052,
+    "Dec": -42.095,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 19.074,
+    "Dec": -31.047,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 19.078,
+    "Dec": -21.741,
+    "VM": 3.76
+  },
+  {
+    "name": "",
+    "RA": 19.082,
+    "Dec": 53.397,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 19.083,
+    "Dec": -4.031,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 19.09,
+    "Dec": 13.863,
+    "VM": 2.99
+  },
+  {
+    "name": "",
+    "RA": 19.104,
+    "Dec": -4.883,
+    "VM": 3.43
+  },
+  {
+    "name": "",
+    "RA": 19.106,
+    "Dec": -52.341,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 19.107,
+    "Dec": -37.063,
+    "VM": 4.23
+  },
+  {
+    "name": "",
+    "RA": 19.116,
+    "Dec": -27.67,
+    "VM": 3.32
+  },
+  {
+    "name": "",
+    "RA": 19.116,
+    "Dec": 11.071,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 19.122,
+    "Dec": 36.1,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 19.124,
+    "Dec": 32.502,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 19.139,
+    "Dec": -40.497,
+    "VM": 4.57
+  },
+  {
+    "name": "",
+    "RA": 19.15,
+    "Dec": 6.073,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 19.153,
+    "Dec": 76.561,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 19.158,
+    "Dec": -37.904,
+    "VM": 4.11
+  },
+  {
+    "name": "Albaldah",
+    "RA": 19.163,
+    "Dec": -21.024,
+    "VM": 2.88
+  },
+  {
+    "name": "",
+    "RA": 19.165,
+    "Dec": -68.424,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 19.167,
+    "Dec": -39.341,
+    "VM": 4.1
+  },
+  {
+    "name": "",
+    "RA": 19.195,
+    "Dec": 56.859,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 19.209,
+    "Dec": 67.662,
+    "VM": 3.07
+  },
+  {
+    "name": "",
+    "RA": 19.211,
+    "Dec": -7.94,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 19.229,
+    "Dec": 2.294,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 19.229,
+    "Dec": 39.146,
+    "VM": 4.43
+  },
+  {
+    "name": "",
+    "RA": 19.232,
+    "Dec": 57.705,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 19.259,
+    "Dec": -25.257,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 19.259,
+    "Dec": 73.355,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 19.27,
+    "Dec": 21.39,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 19.273,
+    "Dec": -45.466,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 19.273,
+    "Dec": 38.134,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 19.285,
+    "Dec": 53.368,
+    "VM": 3.8
+  },
+  {
+    "name": "",
+    "RA": 19.294,
+    "Dec": -18.953,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 19.295,
+    "Dec": 23.026,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 19.297,
+    "Dec": 11.595,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 19.309,
+    "Dec": 1.085,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 19.342,
+    "Dec": -5.416,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 19.343,
+    "Dec": -0.892,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 19.344,
+    "Dec": 65.715,
+    "VM": 4.6
+  },
+  {
+    "name": "",
+    "RA": 19.361,
+    "Dec": -17.847,
+    "VM": 3.92
+  },
+  {
+    "name": "",
+    "RA": 19.362,
+    "Dec": -15.955,
+    "VM": 4.52
+  },
+  {
+    "name": "",
+    "RA": 19.377,
+    "Dec": -44.459,
+    "VM": 3.96
+  },
+  {
+    "name": "",
+    "RA": 19.381,
+    "Dec": 26.262,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 19.381,
+    "Dec": -54.424,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 19.387,
+    "Dec": -44.8,
+    "VM": 4.27
+  },
+  {
+    "name": "",
+    "RA": 19.398,
+    "Dec": -40.616,
+    "VM": 3.96
+  },
+  {
+    "name": "",
+    "RA": 19.402,
+    "Dec": 29.621,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 19.416,
+    "Dec": 11.944,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 19.421,
+    "Dec": -24.509,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 19.425,
+    "Dec": 19.798,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 19.425,
+    "Dec": -23.962,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 19.425,
+    "Dec": 3.115,
+    "VM": 3.36
+  },
+  {
+    "name": "",
+    "RA": 19.436,
+    "Dec": 36.318,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 19.442,
+    "Dec": 0.339,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 19.478,
+    "Dec": 24.665,
+    "VM": 4.44
+  },
+  {
+    "name": "",
+    "RA": 19.495,
+    "Dec": 51.73,
+    "VM": 3.76
+  },
+  {
+    "name": "",
+    "RA": 19.498,
+    "Dec": -26.986,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 19.511,
+    "Dec": -2.789,
+    "VM": 5.03
+  },
+  {
+    "name": "Albireo",
+    "RA": 19.512,
+    "Dec": 27.96,
+    "VM": 3.05
+  },
+  {
+    "name": "",
+    "RA": 19.513,
+    "Dec": 27.965,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 19.53,
+    "Dec": 34.453,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 19.539,
+    "Dec": 69.661,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 19.568,
+    "Dec": 7.379,
+    "VM": 4.45
+  },
+  {
+    "name": "",
+    "RA": 19.576,
+    "Dec": 19.773,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 19.578,
+    "Dec": 42.413,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 19.581,
+    "Dec": 29.463,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 19.585,
+    "Dec": -10.56,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 19.587,
+    "Dec": -48.099,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 19.607,
+    "Dec": 50.221,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 19.611,
+    "Dec": 44.695,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 19.612,
+    "Dec": -24.884,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 19.612,
+    "Dec": -1.287,
+    "VM": 4.36
+  },
+  {
+    "name": "",
+    "RA": 19.615,
+    "Dec": -7.027,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 19.626,
+    "Dec": -14.302,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 19.63,
+    "Dec": -4.648,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 19.653,
+    "Dec": 5.398,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 19.656,
+    "Dec": 30.153,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 19.657,
+    "Dec": 42.818,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 19.668,
+    "Dec": 18.014,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 19.679,
+    "Dec": -16.293,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 19.681,
+    "Dec": 45.525,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 19.684,
+    "Dec": 17.476,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 19.709,
+    "Dec": -16.124,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 19.709,
+    "Dec": 11.827,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 19.726,
+    "Dec": -15.47,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 19.729,
+    "Dec": 25.772,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 19.738,
+    "Dec": 37.354,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 19.75,
+    "Dec": 45.131,
+    "VM": 2.86
+  },
+  {
+    "name": "Tarazed",
+    "RA": 19.771,
+    "Dec": 10.613,
+    "VM": 2.72
+  },
+  {
+    "name": "",
+    "RA": 19.773,
+    "Dec": -19.761,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 19.774,
+    "Dec": 33.728,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 19.79,
+    "Dec": 18.534,
+    "VM": 3.68
+  },
+  {
+    "name": "",
+    "RA": 19.8,
+    "Dec": -56.363,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 19.803,
+    "Dec": 70.268,
+    "VM": 3.84
+  },
+  {
+    "name": "",
+    "RA": 19.816,
+    "Dec": 19.142,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 19.824,
+    "Dec": -72.503,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 19.843,
+    "Dec": 38.722,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 19.844,
+    "Dec": 52.988,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 19.846,
+    "Dec": -59.194,
+    "VM": 5.41
+  },
+  {
+    "name": "Altair",
+    "RA": 19.846,
+    "Dec": 8.868,
+    "VM": 0.76
+  },
+  {
+    "name": "",
+    "RA": 19.846,
+    "Dec": -10.764,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 19.85,
+    "Dec": 10.416,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 19.851,
+    "Dec": 22.61,
+    "VM": 4.9
+  },
+  {
+    "name": "",
+    "RA": 19.864,
+    "Dec": -39.874,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 19.875,
+    "Dec": 1.006,
+    "VM": 3.87
+  },
+  {
+    "name": "",
+    "RA": 19.888,
+    "Dec": 57.523,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 19.891,
+    "Dec": 24.08,
+    "VM": 4.57
+  },
+  {
+    "name": "",
+    "RA": 19.904,
+    "Dec": 8.461,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 19.921,
+    "Dec": -41.868,
+    "VM": 4.12
+  },
+  {
+    "name": "Alshain",
+    "RA": 19.922,
+    "Dec": 6.407,
+    "VM": 3.71
+  },
+  {
+    "name": "",
+    "RA": 19.927,
+    "Dec": 52.439,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 19.931,
+    "Dec": -26.3,
+    "VM": 4.7
+  },
+  {
+    "name": "",
+    "RA": 19.931,
+    "Dec": 38.487,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 19.932,
+    "Dec": 58.846,
+    "VM": 4.98
+  },
+  {
+    "name": "",
+    "RA": 19.937,
+    "Dec": 11.424,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 19.938,
+    "Dec": 35.083,
+    "VM": 3.89
+  },
+  {
+    "name": "",
+    "RA": 19.949,
+    "Dec": -27.17,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 19.952,
+    "Dec": -58.901,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 19.954,
+    "Dec": 40.368,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 19.966,
+    "Dec": -15.491,
+    "VM": 5.01
+  },
+  {
+    "name": "",
+    "RA": 19.979,
+    "Dec": 19.492,
+    "VM": 3.51
+  },
+  {
+    "name": "",
+    "RA": 19.983,
+    "Dec": -26.196,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 19.996,
+    "Dec": -35.276,
+    "VM": 4.37
+  },
+  {
+    "name": "",
+    "RA": 19.998,
+    "Dec": -34.698,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 19.999,
+    "Dec": 37.043,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 20.001,
+    "Dec": 17.517,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 20.01,
+    "Dec": -72.911,
+    "VM": 3.97
+  },
+  {
+    "name": "",
+    "RA": 20.018,
+    "Dec": 27.754,
+    "VM": 4.66
+  },
+  {
+    "name": "",
+    "RA": 20.023,
+    "Dec": 50.105,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 20.025,
+    "Dec": 64.821,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 20.029,
+    "Dec": -59.376,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 20.031,
+    "Dec": -66.944,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 20.034,
+    "Dec": 24.938,
+    "VM": 5.23
+  },
+  {
+    "name": "",
+    "RA": 20.044,
+    "Dec": -27.71,
+    "VM": 4.43
+  },
+  {
+    "name": "",
+    "RA": 20.047,
+    "Dec": 67.874,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 20.059,
+    "Dec": -37.941,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 20.072,
+    "Dec": -32.056,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 20.086,
+    "Dec": 19.991,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 20.092,
+    "Dec": 61.995,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 20.106,
+    "Dec": 35.972,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 20.115,
+    "Dec": 23.614,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 20.123,
+    "Dec": -52.881,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 20.145,
+    "Dec": -66.182,
+    "VM": 3.55
+  },
+  {
+    "name": "",
+    "RA": 20.148,
+    "Dec": 77.711,
+    "VM": 4.38
+  },
+  {
+    "name": "",
+    "RA": 20.157,
+    "Dec": 36.84,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 20.187,
+    "Dec": -36.101,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 20.188,
+    "Dec": -0.821,
+    "VM": 3.24
+  },
+  {
+    "name": "",
+    "RA": 20.221,
+    "Dec": -1.009,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 20.222,
+    "Dec": 46.816,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 20.223,
+    "Dec": 56.568,
+    "VM": 4.28
+  },
+  {
+    "name": "",
+    "RA": 20.227,
+    "Dec": 46.741,
+    "VM": 3.8
+  },
+  {
+    "name": "",
+    "RA": 20.237,
+    "Dec": 28.695,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 20.238,
+    "Dec": 15.198,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 20.242,
+    "Dec": 36.806,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 20.254,
+    "Dec": 25.592,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 20.258,
+    "Dec": 47.714,
+    "VM": 3.96
+  },
+  {
+    "name": "",
+    "RA": 20.258,
+    "Dec": 23.509,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 20.263,
+    "Dec": 27.814,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 20.28,
+    "Dec": 24.671,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 20.282,
+    "Dec": 40.365,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 20.294,
+    "Dec": -12.508,
+    "VM": 4.3
+  },
+  {
+    "name": "",
+    "RA": 20.296,
+    "Dec": 38.033,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 20.301,
+    "Dec": -12.545,
+    "VM": 3.58
+  },
+  {
+    "name": "",
+    "RA": 20.311,
+    "Dec": 34.983,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 20.323,
+    "Dec": -19.119,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 20.344,
+    "Dec": -12.759,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 20.35,
+    "Dec": -14.781,
+    "VM": 3.05
+  },
+  {
+    "name": "",
+    "RA": 20.368,
+    "Dec": 24.446,
+    "VM": 5.5
+  },
+  {
+    "name": "Sadr",
+    "RA": 20.37,
+    "Dec": 40.257,
+    "VM": 2.23
+  },
+  {
+    "name": "",
+    "RA": 20.386,
+    "Dec": 5.343,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 20.398,
+    "Dec": 32.19,
+    "VM": 4.43
+  },
+  {
+    "name": "Peacock",
+    "RA": 20.427,
+    "Dec": -56.735,
+    "VM": 1.94
+  },
+  {
+    "name": "",
+    "RA": 20.455,
+    "Dec": -18.212,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 20.471,
+    "Dec": 81.423,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 20.481,
+    "Dec": -17.814,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 20.49,
+    "Dec": 30.369,
+    "VM": 4.01
+  },
+  {
+    "name": "",
+    "RA": 20.493,
+    "Dec": 62.994,
+    "VM": 4.21
+  },
+  {
+    "name": "",
+    "RA": 20.494,
+    "Dec": -2.886,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 20.501,
+    "Dec": 48.952,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 20.522,
+    "Dec": 49.22,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 20.525,
+    "Dec": 74.955,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 20.554,
+    "Dec": 11.303,
+    "VM": 4.03
+  },
+  {
+    "name": "",
+    "RA": 20.565,
+    "Dec": 35.251,
+    "VM": 4.61
+  },
+  {
+    "name": "",
+    "RA": 20.565,
+    "Dec": -44.516,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 20.566,
+    "Dec": 13.027,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 20.588,
+    "Dec": 14.674,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 20.593,
+    "Dec": -60.582,
+    "VM": 4.75
+  },
+  {
+    "name": "",
+    "RA": 20.612,
+    "Dec": -2.55,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 20.626,
+    "Dec": 14.595,
+    "VM": 3.64
+  },
+  {
+    "name": "",
+    "RA": 20.626,
+    "Dec": -47.292,
+    "VM": 3.11
+  },
+  {
+    "name": "",
+    "RA": 20.626,
+    "Dec": -61.53,
+    "VM": 4.86
+  },
+  {
+    "name": "",
+    "RA": 20.63,
+    "Dec": 11.378,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 20.639,
+    "Dec": -1.105,
+    "VM": 4.31
+  },
+  {
+    "name": "",
+    "RA": 20.642,
+    "Dec": 21.201,
+    "VM": 4.81
+  },
+  {
+    "name": "",
+    "RA": 20.642,
+    "Dec": 24.116,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 20.652,
+    "Dec": 10.086,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 20.655,
+    "Dec": -14.955,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 20.657,
+    "Dec": 0.486,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 20.661,
+    "Dec": 15.912,
+    "VM": 3.77
+  },
+  {
+    "name": "",
+    "RA": 20.667,
+    "Dec": -60.549,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 20.667,
+    "Dec": -18.139,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 20.672,
+    "Dec": -33.432,
+    "VM": 5.47
+  },
+  {
+    "name": "Deneb",
+    "RA": 20.691,
+    "Dec": 45.28,
+    "VM": 1.25
+  },
+  {
+    "name": "",
+    "RA": 20.699,
+    "Dec": -66.761,
+    "VM": 5.14
+  },
+  {
+    "name": "",
+    "RA": 20.704,
+    "Dec": 50.34,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 20.724,
+    "Dec": 15.075,
+    "VM": 4.43
+  },
+  {
+    "name": "",
+    "RA": 20.734,
+    "Dec": -51.921,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 20.748,
+    "Dec": 25.271,
+    "VM": 4.92
+  },
+  {
+    "name": "",
+    "RA": 20.749,
+    "Dec": -66.203,
+    "VM": 3.42
+  },
+  {
+    "name": "",
+    "RA": 20.755,
+    "Dec": 61.839,
+    "VM": 3.41
+  },
+  {
+    "name": "",
+    "RA": 20.756,
+    "Dec": 57.58,
+    "VM": 4.52
+  },
+  {
+    "name": "",
+    "RA": 20.761,
+    "Dec": 30.72,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 20.768,
+    "Dec": -25.271,
+    "VM": 4.13
+  },
+  {
+    "name": "Gienah",
+    "RA": 20.77,
+    "Dec": 33.97,
+    "VM": 2.48
+  },
+  {
+    "name": "",
+    "RA": 20.772,
+    "Dec": -39.199,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 20.777,
+    "Dec": 16.124,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 20.778,
+    "Dec": 16.124,
+    "VM": 4.27
+  },
+  {
+    "name": "",
+    "RA": 20.786,
+    "Dec": 34.374,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 20.79,
+    "Dec": 36.491,
+    "VM": 4.53
+  },
+  {
+    "name": "",
+    "RA": 20.793,
+    "Dec": 80.552,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 20.795,
+    "Dec": -9.496,
+    "VM": 3.78
+  },
+  {
+    "name": "",
+    "RA": 20.796,
+    "Dec": -5.028,
+    "VM": 4.43
+  },
+  {
+    "name": "",
+    "RA": 20.808,
+    "Dec": -43.989,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 20.816,
+    "Dec": 46.114,
+    "VM": 4.81
+  },
+  {
+    "name": "",
+    "RA": 20.822,
+    "Dec": -68.777,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 20.825,
+    "Dec": -46.227,
+    "VM": 4.9
+  },
+  {
+    "name": "",
+    "RA": 20.833,
+    "Dec": -33.78,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 20.835,
+    "Dec": 44.059,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 20.858,
+    "Dec": -51.608,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 20.864,
+    "Dec": -26.919,
+    "VM": 4.12
+  },
+  {
+    "name": "",
+    "RA": 20.869,
+    "Dec": 27.097,
+    "VM": 4.56
+  },
+  {
+    "name": "",
+    "RA": 20.878,
+    "Dec": -8.983,
+    "VM": 4.73
+  },
+  {
+    "name": "",
+    "RA": 20.887,
+    "Dec": 44.387,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 20.888,
+    "Dec": 45.182,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 20.894,
+    "Dec": -39.81,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 20.898,
+    "Dec": 33.438,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 20.909,
+    "Dec": 28.058,
+    "VM": 5.03
+  },
+  {
+    "name": "",
+    "RA": 20.913,
+    "Dec": -58.454,
+    "VM": 3.67
+  },
+  {
+    "name": "",
+    "RA": 20.927,
+    "Dec": 13.722,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 20.948,
+    "Dec": -9.698,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 20.953,
+    "Dec": 41.167,
+    "VM": 3.94
+  },
+  {
+    "name": "",
+    "RA": 20.971,
+    "Dec": 22.326,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 20.985,
+    "Dec": 4.293,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 20.985,
+    "Dec": 4.295,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 20.997,
+    "Dec": 47.521,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 21.02,
+    "Dec": 46.156,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 21.022,
+    "Dec": -32.258,
+    "VM": 4.67
+  },
+  {
+    "name": "",
+    "RA": 21.049,
+    "Dec": -38.631,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 21.073,
+    "Dec": -19.855,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 21.079,
+    "Dec": -77.024,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 21.082,
+    "Dec": 43.928,
+    "VM": 3.72
+  },
+  {
+    "name": "",
+    "RA": 21.087,
+    "Dec": -54.727,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 21.099,
+    "Dec": -17.233,
+    "VM": 4.08
+  },
+  {
+    "name": "",
+    "RA": 21.107,
+    "Dec": -32.342,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 21.11,
+    "Dec": 47.648,
+    "VM": 4.56
+  },
+  {
+    "name": "",
+    "RA": 21.115,
+    "Dec": 38.749,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 21.119,
+    "Dec": -25.006,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 21.143,
+    "Dec": -21.194,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 21.146,
+    "Dec": -88.956,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 21.16,
+    "Dec": -11.372,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 21.172,
+    "Dec": 10.132,
+    "VM": 4.7
+  },
+  {
+    "name": "",
+    "RA": 21.216,
+    "Dec": 30.227,
+    "VM": 3.21
+  },
+  {
+    "name": "",
+    "RA": 21.218,
+    "Dec": -39.425,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 21.221,
+    "Dec": -27.619,
+    "VM": 5.41
+  },
+  {
+    "name": "",
+    "RA": 21.222,
+    "Dec": -70.126,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 21.241,
+    "Dec": 10.007,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 21.247,
+    "Dec": 38.045,
+    "VM": 3.74
+  },
+  {
+    "name": "",
+    "RA": 21.261,
+    "Dec": -20.652,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 21.262,
+    "Dec": -15.171,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 21.264,
+    "Dec": 5.248,
+    "VM": 3.92
+  },
+  {
+    "name": "",
+    "RA": 21.29,
+    "Dec": 39.395,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 21.299,
+    "Dec": 34.897,
+    "VM": 4.41
+  },
+  {
+    "name": "",
+    "RA": 21.299,
+    "Dec": -32.173,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 21.299,
+    "Dec": -17.985,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 21.308,
+    "Dec": 43.946,
+    "VM": 5.04
+  },
+  {
+    "name": "Alderamin",
+    "RA": 21.31,
+    "Dec": 62.586,
+    "VM": 2.45
+  },
+  {
+    "name": "",
+    "RA": 21.323,
+    "Dec": 64.872,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 21.331,
+    "Dec": -53.449,
+    "VM": 4.39
+  },
+  {
+    "name": "",
+    "RA": 21.346,
+    "Dec": -40.809,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 21.368,
+    "Dec": 19.805,
+    "VM": 4.08
+  },
+  {
+    "name": "",
+    "RA": 21.371,
+    "Dec": -16.835,
+    "VM": 4.28
+  },
+  {
+    "name": "",
+    "RA": 21.382,
+    "Dec": 6.811,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 21.403,
+    "Dec": -20.852,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 21.403,
+    "Dec": -12.878,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 21.421,
+    "Dec": -3.557,
+    "VM": 5.48
+  },
+  {
+    "name": "",
+    "RA": 21.441,
+    "Dec": -65.366,
+    "VM": 4.21
+  },
+  {
+    "name": "",
+    "RA": 21.444,
+    "Dec": -22.411,
+    "VM": 3.77
+  },
+  {
+    "name": "",
+    "RA": 21.448,
+    "Dec": 48.835,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 21.45,
+    "Dec": -42.548,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 21.456,
+    "Dec": 37.117,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 21.461,
+    "Dec": 27.609,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 21.463,
+    "Dec": 66.809,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 21.478,
+    "Dec": 70.561,
+    "VM": 3.23
+  },
+  {
+    "name": "",
+    "RA": 21.479,
+    "Dec": -21.807,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 21.479,
+    "Dec": -69.505,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 21.491,
+    "Dec": 46.541,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 21.499,
+    "Dec": 23.639,
+    "VM": 4.52
+  },
+  {
+    "name": "Sadalsuud",
+    "RA": 21.526,
+    "Dec": -5.571,
+    "VM": 2.9
+  },
+  {
+    "name": "",
+    "RA": 21.535,
+    "Dec": -41.179,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 21.566,
+    "Dec": 45.592,
+    "VM": 3.98
+  },
+  {
+    "name": "",
+    "RA": 21.58,
+    "Dec": 38.534,
+    "VM": 4.87
+  },
+  {
+    "name": "",
+    "RA": 21.616,
+    "Dec": 40.414,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 21.618,
+    "Dec": -19.466,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 21.629,
+    "Dec": -7.854,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 21.629,
+    "Dec": 19.319,
+    "VM": 5.46
+  },
+  {
+    "name": "",
+    "RA": 21.632,
+    "Dec": 62.082,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 21.659,
+    "Dec": 2.244,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 21.668,
+    "Dec": -16.662,
+    "VM": 3.69
+  },
+  {
+    "name": "",
+    "RA": 21.67,
+    "Dec": 43.274,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 21.691,
+    "Dec": -77.39,
+    "VM": 3.73
+  },
+  {
+    "name": "",
+    "RA": 21.692,
+    "Dec": -14.048,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 21.699,
+    "Dec": 71.311,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 21.7,
+    "Dec": -23.263,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 21.702,
+    "Dec": 51.19,
+    "VM": 4.69
+  },
+  {
+    "name": "",
+    "RA": 21.704,
+    "Dec": 5.68,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 21.711,
+    "Dec": -18.866,
+    "VM": 4.72
+  },
+  {
+    "name": "",
+    "RA": 21.718,
+    "Dec": 72.32,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 21.725,
+    "Dec": 58.78,
+    "VM": 4.23
+  },
+  {
+    "name": "",
+    "RA": 21.736,
+    "Dec": 28.743,
+    "VM": 4.49
+  },
+  {
+    "name": "Enif",
+    "RA": 21.736,
+    "Dec": 9.875,
+    "VM": 2.38
+  },
+  {
+    "name": "",
+    "RA": 21.742,
+    "Dec": 17.35,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 21.744,
+    "Dec": 25.645,
+    "VM": 4.14
+  },
+  {
+    "name": "",
+    "RA": 21.749,
+    "Dec": -33.026,
+    "VM": 4.35
+  },
+  {
+    "name": "",
+    "RA": 21.75,
+    "Dec": -9.082,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 21.757,
+    "Dec": 61.121,
+    "VM": 4.25
+  },
+  {
+    "name": "",
+    "RA": 21.768,
+    "Dec": 22.949,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 21.78,
+    "Dec": 49.31,
+    "VM": 4.23
+  },
+  {
+    "name": "",
+    "RA": 21.784,
+    "Dec": -16.127,
+    "VM": 2.85
+  },
+  {
+    "name": "",
+    "RA": 21.796,
+    "Dec": -30.898,
+    "VM": 5.02
+  },
+  {
+    "name": "",
+    "RA": 21.831,
+    "Dec": 30.174,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 21.836,
+    "Dec": 17.286,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 21.848,
+    "Dec": -82.719,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 21.884,
+    "Dec": 25.925,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 21.888,
+    "Dec": -13.552,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 21.899,
+    "Dec": -37.365,
+    "VM": 3
+  },
+  {
+    "name": "",
+    "RA": 21.94,
+    "Dec": -37.254,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 21.944,
+    "Dec": 63.626,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 21.965,
+    "Dec": -54.993,
+    "VM": 4.4
+  },
+  {
+    "name": "",
+    "RA": 21.988,
+    "Dec": 73.18,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 21.988,
+    "Dec": -38.395,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 22.014,
+    "Dec": -28.454,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 22.055,
+    "Dec": -56.786,
+    "VM": 4.69
+  },
+  {
+    "name": "",
+    "RA": 22.055,
+    "Dec": -2.155,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 22.063,
+    "Dec": 64.628,
+    "VM": 4.26
+  },
+  {
+    "name": "",
+    "RA": 22.065,
+    "Dec": 63.12,
+    "VM": 5.26
+  },
+  {
+    "name": "",
+    "RA": 22.08,
+    "Dec": -0.906,
+    "VM": 5.29
+  },
+  {
+    "name": "",
+    "RA": 22.083,
+    "Dec": 62.786,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 22.086,
+    "Dec": 62.28,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 22.095,
+    "Dec": 5.059,
+    "VM": 4.86
+  },
+  {
+    "name": "Sadalmelik",
+    "RA": 22.096,
+    "Dec": -0.32,
+    "VM": 2.95
+  },
+  {
+    "name": "",
+    "RA": 22.101,
+    "Dec": 45.014,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 22.102,
+    "Dec": -39.543,
+    "VM": 4.47
+  },
+  {
+    "name": "",
+    "RA": 22.107,
+    "Dec": -13.87,
+    "VM": 4.29
+  },
+  {
+    "name": "",
+    "RA": 22.117,
+    "Dec": 25.345,
+    "VM": 3.77
+  },
+  {
+    "name": "Alnair",
+    "RA": 22.137,
+    "Dec": -46.961,
+    "VM": 1.73
+  },
+  {
+    "name": "",
+    "RA": 22.14,
+    "Dec": -32.988,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 22.141,
+    "Dec": -34.044,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 22.163,
+    "Dec": 72.341,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 22.165,
+    "Dec": -34.015,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 22.166,
+    "Dec": 33.178,
+    "VM": 4.28
+  },
+  {
+    "name": "",
+    "RA": 22.169,
+    "Dec": -32.548,
+    "VM": 4.94
+  },
+  {
+    "name": "",
+    "RA": 22.17,
+    "Dec": 6.198,
+    "VM": 3.52
+  },
+  {
+    "name": "",
+    "RA": 22.177,
+    "Dec": -11.565,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 22.181,
+    "Dec": 58.201,
+    "VM": 3.39
+  },
+  {
+    "name": "",
+    "RA": 22.186,
+    "Dec": 50.823,
+    "VM": 5.38
+  },
+  {
+    "name": "",
+    "RA": 22.192,
+    "Dec": 59.414,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 22.197,
+    "Dec": 56.839,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 22.201,
+    "Dec": 60.759,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 22.213,
+    "Dec": 34.605,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 22.22,
+    "Dec": 86.108,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 22.231,
+    "Dec": 39.715,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 22.238,
+    "Dec": -21.075,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 22.239,
+    "Dec": -27.767,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 22.251,
+    "Dec": 57.044,
+    "VM": 4.18
+  },
+  {
+    "name": "",
+    "RA": 22.26,
+    "Dec": -41.347,
+    "VM": 4.79
+  },
+  {
+    "name": "",
+    "RA": 22.266,
+    "Dec": 37.749,
+    "VM": 4.14
+  },
+  {
+    "name": "",
+    "RA": 22.274,
+    "Dec": -41.627,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 22.28,
+    "Dec": -12.831,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 22.281,
+    "Dec": -7.783,
+    "VM": 4.17
+  },
+  {
+    "name": "",
+    "RA": 22.297,
+    "Dec": -77.512,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 22.304,
+    "Dec": -53.627,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 22.308,
+    "Dec": -60.26,
+    "VM": 2.87
+  },
+  {
+    "name": "",
+    "RA": 22.334,
+    "Dec": -80.44,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 22.337,
+    "Dec": -7.821,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 22.341,
+    "Dec": 5.789,
+    "VM": 5.37
+  },
+  {
+    "name": "",
+    "RA": 22.35,
+    "Dec": 46.537,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 22.355,
+    "Dec": 28.331,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 22.359,
+    "Dec": 12.205,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 22.36,
+    "Dec": -21.598,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 22.361,
+    "Dec": -1.387,
+    "VM": 3.86
+  },
+  {
+    "name": "",
+    "RA": 22.393,
+    "Dec": 52.229,
+    "VM": 4.42
+  },
+  {
+    "name": "",
+    "RA": 22.409,
+    "Dec": 49.476,
+    "VM": 4.55
+  },
+  {
+    "name": "",
+    "RA": 22.41,
+    "Dec": -72.255,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 22.416,
+    "Dec": -57.797,
+    "VM": 5.31
+  },
+  {
+    "name": "",
+    "RA": 22.421,
+    "Dec": 1.377,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 22.434,
+    "Dec": 70.771,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 22.456,
+    "Dec": -64.966,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 22.464,
+    "Dec": 4.696,
+    "VM": 4.78
+  },
+  {
+    "name": "",
+    "RA": 22.478,
+    "Dec": -39.132,
+    "VM": 5.47
+  },
+  {
+    "name": "",
+    "RA": 22.481,
+    "Dec": -0.02,
+    "VM": 3.65
+  },
+  {
+    "name": "",
+    "RA": 22.486,
+    "Dec": 58.415,
+    "VM": 4.07
+  },
+  {
+    "name": "",
+    "RA": 22.488,
+    "Dec": -43.496,
+    "VM": 3.97
+  },
+  {
+    "name": "",
+    "RA": 22.492,
+    "Dec": 47.707,
+    "VM": 4.34
+  },
+  {
+    "name": "",
+    "RA": 22.496,
+    "Dec": -43.749,
+    "VM": 4.12
+  },
+  {
+    "name": "",
+    "RA": 22.498,
+    "Dec": 78.824,
+    "VM": 5.45
+  },
+  {
+    "name": "",
+    "RA": 22.508,
+    "Dec": 43.123,
+    "VM": 4.52
+  },
+  {
+    "name": "",
+    "RA": 22.511,
+    "Dec": -10.678,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 22.522,
+    "Dec": 50.282,
+    "VM": 3.76
+  },
+  {
+    "name": "",
+    "RA": 22.525,
+    "Dec": -32.346,
+    "VM": 4.29
+  },
+  {
+    "name": "",
+    "RA": 22.55,
+    "Dec": -61.982,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 22.578,
+    "Dec": -20.708,
+    "VM": 5.21
+  },
+  {
+    "name": "",
+    "RA": 22.589,
+    "Dec": -0.117,
+    "VM": 4.04
+  },
+  {
+    "name": "",
+    "RA": 22.596,
+    "Dec": 73.643,
+    "VM": 5.08
+  },
+  {
+    "name": "",
+    "RA": 22.623,
+    "Dec": 51.545,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 22.629,
+    "Dec": -4.228,
+    "VM": 5.04
+  },
+  {
+    "name": "",
+    "RA": 22.644,
+    "Dec": 56.796,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 22.644,
+    "Dec": 63.584,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 22.654,
+    "Dec": 39.05,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 22.675,
+    "Dec": 44.276,
+    "VM": 4.5
+  },
+  {
+    "name": "",
+    "RA": 22.678,
+    "Dec": -27.044,
+    "VM": 4.18
+  },
+  {
+    "name": "",
+    "RA": 22.691,
+    "Dec": 10.831,
+    "VM": 3.41
+  },
+  {
+    "name": "",
+    "RA": 22.691,
+    "Dec": 40.225,
+    "VM": 5.25
+  },
+  {
+    "name": "",
+    "RA": 22.696,
+    "Dec": 29.308,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 22.711,
+    "Dec": -46.885,
+    "VM": 2.07
+  },
+  {
+    "name": "Matar",
+    "RA": 22.717,
+    "Dec": 30.221,
+    "VM": 2.93
+  },
+  {
+    "name": "",
+    "RA": 22.725,
+    "Dec": -41.414,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 22.726,
+    "Dec": -18.83,
+    "VM": 4.68
+  },
+  {
+    "name": "",
+    "RA": 22.735,
+    "Dec": 41.819,
+    "VM": 5.11
+  },
+  {
+    "name": "",
+    "RA": 22.761,
+    "Dec": -53.5,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 22.768,
+    "Dec": -81.382,
+    "VM": 4.13
+  },
+  {
+    "name": "",
+    "RA": 22.776,
+    "Dec": 23.566,
+    "VM": 3.97
+  },
+  {
+    "name": "",
+    "RA": 22.778,
+    "Dec": 12.173,
+    "VM": 4.2
+  },
+  {
+    "name": "",
+    "RA": 22.791,
+    "Dec": 83.154,
+    "VM": 4.77
+  },
+  {
+    "name": "",
+    "RA": 22.793,
+    "Dec": -19.613,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 22.809,
+    "Dec": -51.317,
+    "VM": 3.49
+  },
+  {
+    "name": "",
+    "RA": 22.827,
+    "Dec": -13.593,
+    "VM": 4.05
+  },
+  {
+    "name": "",
+    "RA": 22.828,
+    "Dec": 66.2,
+    "VM": 3.5
+  },
+  {
+    "name": "",
+    "RA": 22.83,
+    "Dec": 55.903,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 22.833,
+    "Dec": 24.602,
+    "VM": 3.51
+  },
+  {
+    "name": "",
+    "RA": 22.84,
+    "Dec": -80.124,
+    "VM": 5.32
+  },
+  {
+    "name": "",
+    "RA": 22.851,
+    "Dec": -39.157,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 22.867,
+    "Dec": 43.312,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 22.873,
+    "Dec": 9.836,
+    "VM": 5.16
+  },
+  {
+    "name": "",
+    "RA": 22.875,
+    "Dec": -32.876,
+    "VM": 4.46
+  },
+  {
+    "name": "",
+    "RA": 22.877,
+    "Dec": -7.58,
+    "VM": 3.73
+  },
+  {
+    "name": "",
+    "RA": 22.907,
+    "Dec": 84.346,
+    "VM": 4.7
+  },
+  {
+    "name": "",
+    "RA": 22.911,
+    "Dec": -15.821,
+    "VM": 3.27
+  },
+  {
+    "name": "",
+    "RA": 22.92,
+    "Dec": 8.816,
+    "VM": 4.91
+  },
+  {
+    "name": "",
+    "RA": 22.932,
+    "Dec": -32.54,
+    "VM": 4.2
+  },
+  {
+    "name": "",
+    "RA": 22.941,
+    "Dec": 49.734,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 22.951,
+    "Dec": 48.684,
+    "VM": 5.34
+  },
+  {
+    "name": "",
+    "RA": 22.958,
+    "Dec": 20.769,
+    "VM": 5.45
+  },
+  {
+    "name": "Fomalhaut",
+    "RA": 22.961,
+    "Dec": -29.622,
+    "VM": 1.17
+  },
+  {
+    "name": "",
+    "RA": 22.991,
+    "Dec": 0.963,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 23.001,
+    "Dec": 56.945,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 23.015,
+    "Dec": -52.754,
+    "VM": 4.11
+  },
+  {
+    "name": "",
+    "RA": 23.032,
+    "Dec": 42.326,
+    "VM": 3.62
+  },
+  {
+    "name": "",
+    "RA": 23.043,
+    "Dec": 42.758,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 23.058,
+    "Dec": -34.749,
+    "VM": 5.12
+  },
+  {
+    "name": "",
+    "RA": 23.059,
+    "Dec": 67.209,
+    "VM": 5.25
+  },
+  {
+    "name": "Scheat",
+    "RA": 23.063,
+    "Dec": 28.083,
+    "VM": 2.44
+  },
+  {
+    "name": "",
+    "RA": 23.065,
+    "Dec": 3.82,
+    "VM": 4.48
+  },
+  {
+    "name": "",
+    "RA": 23.07,
+    "Dec": 50.052,
+    "VM": 4.64
+  },
+  {
+    "name": "",
+    "RA": 23.078,
+    "Dec": -53.965,
+    "VM": 5.37
+  },
+  {
+    "name": "Markab",
+    "RA": 23.079,
+    "Dec": 15.205,
+    "VM": 2.49
+  },
+  {
+    "name": "",
+    "RA": 23.086,
+    "Dec": -7.694,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 23.11,
+    "Dec": 59.42,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 23.111,
+    "Dec": -23.743,
+    "VM": 4.48
+  },
+  {
+    "name": "",
+    "RA": 23.115,
+    "Dec": -43.52,
+    "VM": 4.28
+  },
+  {
+    "name": "",
+    "RA": 23.117,
+    "Dec": 9.409,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 23.119,
+    "Dec": 25.468,
+    "VM": 4.76
+  },
+  {
+    "name": "",
+    "RA": 23.128,
+    "Dec": 46.387,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 23.132,
+    "Dec": 75.387,
+    "VM": 4.41
+  },
+  {
+    "name": "",
+    "RA": 23.145,
+    "Dec": 2.128,
+    "VM": 5.42
+  },
+  {
+    "name": "",
+    "RA": 23.157,
+    "Dec": -21.172,
+    "VM": 3.68
+  },
+  {
+    "name": "",
+    "RA": 23.159,
+    "Dec": 8.677,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 23.165,
+    "Dec": -22.458,
+    "VM": 4.71
+  },
+  {
+    "name": "",
+    "RA": 23.167,
+    "Dec": 9.822,
+    "VM": 5.39
+  },
+  {
+    "name": "",
+    "RA": 23.173,
+    "Dec": -45.247,
+    "VM": 3.88
+  },
+  {
+    "name": "",
+    "RA": 23.196,
+    "Dec": 8.72,
+    "VM": 5.15
+  },
+  {
+    "name": "",
+    "RA": 23.209,
+    "Dec": 49.406,
+    "VM": 4.53
+  },
+  {
+    "name": "",
+    "RA": 23.239,
+    "Dec": -6.049,
+    "VM": 4.22
+  },
+  {
+    "name": "",
+    "RA": 23.265,
+    "Dec": -9.088,
+    "VM": 4.24
+  },
+  {
+    "name": "",
+    "RA": 23.281,
+    "Dec": -7.727,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 23.286,
+    "Dec": 3.282,
+    "VM": 3.7
+  },
+  {
+    "name": "",
+    "RA": 23.29,
+    "Dec": -58.236,
+    "VM": 3.99
+  },
+  {
+    "name": "",
+    "RA": 23.296,
+    "Dec": 49.015,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 23.298,
+    "Dec": -9.183,
+    "VM": 4.41
+  },
+  {
+    "name": "",
+    "RA": 23.31,
+    "Dec": 68.111,
+    "VM": 4.75
+  },
+  {
+    "name": "",
+    "RA": 23.314,
+    "Dec": -32.532,
+    "VM": 4.41
+  },
+  {
+    "name": "",
+    "RA": 23.316,
+    "Dec": -9.611,
+    "VM": 4.99
+  },
+  {
+    "name": "",
+    "RA": 23.319,
+    "Dec": -13.459,
+    "VM": 5.2
+  },
+  {
+    "name": "",
+    "RA": 23.325,
+    "Dec": 48.625,
+    "VM": 5.44
+  },
+  {
+    "name": "",
+    "RA": 23.339,
+    "Dec": 5.381,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 23.344,
+    "Dec": 23.74,
+    "VM": 4.58
+  },
+  {
+    "name": "",
+    "RA": 23.365,
+    "Dec": 31.812,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 23.378,
+    "Dec": -15.039,
+    "VM": 5.19
+  },
+  {
+    "name": "",
+    "RA": 23.383,
+    "Dec": -20.101,
+    "VM": 3.96
+  },
+  {
+    "name": "",
+    "RA": 23.385,
+    "Dec": 12.314,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 23.414,
+    "Dec": 62.283,
+    "VM": 4.96
+  },
+  {
+    "name": "",
+    "RA": 23.423,
+    "Dec": 23.404,
+    "VM": 4.42
+  },
+  {
+    "name": "",
+    "RA": 23.434,
+    "Dec": -20.642,
+    "VM": 4.38
+  },
+  {
+    "name": "",
+    "RA": 23.449,
+    "Dec": 1.256,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 23.466,
+    "Dec": 6.379,
+    "VM": 4.27
+  },
+  {
+    "name": "",
+    "RA": 23.468,
+    "Dec": -87.482,
+    "VM": 5.5
+  },
+  {
+    "name": "",
+    "RA": 23.486,
+    "Dec": 12.761,
+    "VM": 4.54
+  },
+  {
+    "name": "",
+    "RA": 23.501,
+    "Dec": 58.549,
+    "VM": 4.89
+  },
+  {
+    "name": "",
+    "RA": 23.521,
+    "Dec": 39.236,
+    "VM": 5.22
+  },
+  {
+    "name": "",
+    "RA": 23.55,
+    "Dec": -37.818,
+    "VM": 4.38
+  },
+  {
+    "name": "",
+    "RA": 23.555,
+    "Dec": -20.915,
+    "VM": 4.7
+  },
+  {
+    "name": "",
+    "RA": 23.558,
+    "Dec": 22.499,
+    "VM": 5.33
+  },
+  {
+    "name": "",
+    "RA": 23.566,
+    "Dec": 31.325,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 23.585,
+    "Dec": -42.615,
+    "VM": 4.69
+  },
+  {
+    "name": "",
+    "RA": 23.626,
+    "Dec": 46.458,
+    "VM": 3.81
+  },
+  {
+    "name": "",
+    "RA": 23.631,
+    "Dec": -45.492,
+    "VM": 4.74
+  },
+  {
+    "name": "",
+    "RA": 23.632,
+    "Dec": 18.401,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 23.636,
+    "Dec": 43.268,
+    "VM": 4.29
+  },
+  {
+    "name": "",
+    "RA": 23.652,
+    "Dec": 50.472,
+    "VM": 5.35
+  },
+  {
+    "name": "",
+    "RA": 23.656,
+    "Dec": 77.632,
+    "VM": 3.21
+  },
+  {
+    "name": "",
+    "RA": 23.663,
+    "Dec": -14.222,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 23.666,
+    "Dec": 5.626,
+    "VM": 4.13
+  },
+  {
+    "name": "",
+    "RA": 23.673,
+    "Dec": 44.334,
+    "VM": 4.15
+  },
+  {
+    "name": "",
+    "RA": 23.677,
+    "Dec": -32.073,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 23.693,
+    "Dec": -18.027,
+    "VM": 5.36
+  },
+  {
+    "name": "",
+    "RA": 23.696,
+    "Dec": -17.817,
+    "VM": 4.82
+  },
+  {
+    "name": "",
+    "RA": 23.701,
+    "Dec": 1.78,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 23.708,
+    "Dec": -15.448,
+    "VM": 5.27
+  },
+  {
+    "name": "",
+    "RA": 23.712,
+    "Dec": -14.545,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 23.723,
+    "Dec": 10.332,
+    "VM": 5.09
+  },
+  {
+    "name": "",
+    "RA": 23.733,
+    "Dec": 29.361,
+    "VM": 4.93
+  },
+  {
+    "name": "",
+    "RA": 23.737,
+    "Dec": -18.277,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 23.767,
+    "Dec": -18.678,
+    "VM": 5.28
+  },
+  {
+    "name": "",
+    "RA": 23.767,
+    "Dec": 46.42,
+    "VM": 4.97
+  },
+  {
+    "name": "",
+    "RA": 23.773,
+    "Dec": 3.487,
+    "VM": 4.95
+  },
+  {
+    "name": "",
+    "RA": 23.784,
+    "Dec": 58.652,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 23.788,
+    "Dec": -50.226,
+    "VM": 5.18
+  },
+  {
+    "name": "",
+    "RA": 23.799,
+    "Dec": 67.807,
+    "VM": 5.05
+  },
+  {
+    "name": "",
+    "RA": 23.799,
+    "Dec": -2.762,
+    "VM": 5.49
+  },
+  {
+    "name": "",
+    "RA": 23.814,
+    "Dec": 62.215,
+    "VM": 5.43
+  },
+  {
+    "name": "",
+    "RA": 23.815,
+    "Dec": -28.13,
+    "VM": 4.59
+  },
+  {
+    "name": "",
+    "RA": 23.856,
+    "Dec": -18.909,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 23.869,
+    "Dec": -82.019,
+    "VM": 5.1
+  },
+  {
+    "name": "",
+    "RA": 23.875,
+    "Dec": 19.12,
+    "VM": 5.06
+  },
+  {
+    "name": "",
+    "RA": 23.877,
+    "Dec": 10.947,
+    "VM": 5.3
+  },
+  {
+    "name": "",
+    "RA": 23.906,
+    "Dec": 57.499,
+    "VM": 4.51
+  },
+  {
+    "name": "",
+    "RA": 23.96,
+    "Dec": -64.298,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 23.963,
+    "Dec": 25.141,
+    "VM": 4.63
+  },
+  {
+    "name": "",
+    "RA": 23.978,
+    "Dec": -3.556,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 23.982,
+    "Dec": -52.746,
+    "VM": 5.13
+  },
+  {
+    "name": "",
+    "RA": 23.983,
+    "Dec": 55.755,
+    "VM": 4.88
+  },
+  {
+    "name": "",
+    "RA": 23.989,
+    "Dec": 6.863,
+    "VM": 4.03
+  },
+  {
+    "name": "",
+    "RA": 23.999,
+    "Dec": -65.577,
+    "VM": 4.49
+  },
+  {
+    "name": "",
+    "RA": 5.278,
+    "Dec": 46.001,
+    "VM": 0.96
+  },
+  {
+    "name": "",
+    "RA": 7.577,
+    "Dec": 31.891,
+    "VM": 2.85
+  },
+  {
+    "name": "",
+    "RA": 8.745,
+    "Dec": -54.708,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 9.512,
+    "Dec": -40.466,
+    "VM": 4.65
+  },
+  {
+    "name": "",
+    "RA": 11.303,
+    "Dec": 31.529,
+    "VM": 4.33
+  },
+  {
+    "name": "",
+    "RA": 11.303,
+    "Dec": 31.529,
+    "VM": 4.8
+  },
+  {
+    "name": "",
+    "RA": 12.694,
+    "Dec": -1.449,
+    "VM": 3.52
+  },
+  {
+    "name": "",
+    "RA": 13.166,
+    "Dec": 17.529,
+    "VM": 5.17
+  },
+  {
+    "name": "",
+    "RA": 13.399,
+    "Dec": 54.92,
+    "VM": 3.95
+  },
+  {
+    "name": "",
+    "RA": 16.073,
+    "Dec": -11.375,
+    "VM": 4.84
+  },
+  {
+    "name": "",
+    "RA": 16.073,
+    "Dec": -11.375,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 16.688,
+    "Dec": 31.601,
+    "VM": 5.4
+  },
+  {
+    "name": "",
+    "RA": 17.173,
+    "Dec": -15.727,
+    "VM": 3.4
+  },
+  {
+    "name": "",
+    "RA": 17.256,
+    "Dec": -26.603,
+    "VM": 5.07
+  },
+  {
+    "name": "",
+    "RA": 18.051,
+    "Dec": -8.182,
+    "VM": 5.24
+  },
+  {
+    "name": "",
+    "RA": 19.107,
+    "Dec": -37.065,
+    "VM": 5
+  },
+  {
+    "name": "",
+    "RA": 21.241,
+    "Dec": 10.006,
+    "VM": 5.4
+  }
 ];

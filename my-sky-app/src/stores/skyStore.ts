@@ -9,6 +9,7 @@ export interface RenderableBody extends PositionData {
   label: string;
   imageId: string;
   isStar: boolean;
+  isInteractive: boolean;
   visualMagnitude?: number;
 }
 
@@ -21,7 +22,7 @@ export const useSkyStore = defineStore('sky', () => {
   const currentDate = ref<Date>(new Date())
   const latitude = ref<number>(51.467)
   const longitude = ref<number>(-2.583)
-  const visMagThreshold = ref<number>(3.5)
+  const visMagThreshold = ref<number>(5.5)
   
   // PERFORMANCE UPGRADE: shallowRef prevents Vue from deep-proxying every 
   // coordinate 60 times a second, saving massive CPU overhead during tweens.
@@ -118,6 +119,7 @@ export const useSkyStore = defineStore('sky', () => {
           label: planetName.charAt(0).toUpperCase() + planetName.slice(1),
           imageId: planetName === 'moon' ? 'moon_phases_38' : planetName,
           isStar: false,
+          isInteractive: true,
         })
       }
     })
@@ -130,6 +132,7 @@ export const useSkyStore = defineStore('sky', () => {
       label: 'Sun',
       imageId: 'sun',
       isStar: true,
+      isInteractive: true,
       visualMagnitude: -26.74
     })
 
@@ -139,10 +142,12 @@ export const useSkyStore = defineStore('sky', () => {
         const aa = PlanetaryPositions.azimuthAltitude(star.RA, star.Dec, currentDate.value)
         bodies.push({
           ...aa,
-          id: star.name,
-          label: star.name,
+          id: star.name || `Star-${star.RA}`, // Fallback ID for unnamed stars
+          label: star.name || 'Unknown Star',
           imageId: 'star10',
           isStar: true,
+          // NEW: Only interactive if it has a real name!
+          isInteractive: star.name.trim().length > 0, 
           visualMagnitude: star.VM
         })
       }
