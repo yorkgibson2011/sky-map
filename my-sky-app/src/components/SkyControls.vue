@@ -13,9 +13,7 @@ function getTzOffsetMs(date: Date, timeZone: string) {
     const tzStr = date.toLocaleString('en-US', { timeZone });
     const utcStr = date.toLocaleString('en-US', { timeZone: 'UTC' });
     return new Date(tzStr).getTime() - new Date(utcStr).getTime();
-  } catch (e) {
-    return 0;
-  }
+  } catch (e) { return 0; }
 }
 
 function formatWithOffset(absoluteDate: Date, offsetMs: number): string {
@@ -24,19 +22,15 @@ function formatWithOffset(absoluteDate: Date, offsetMs: number): string {
   return `${localDate.getUTCFullYear()}-${pad(localDate.getUTCMonth() + 1)}-${pad(localDate.getUTCDate())}T${pad(localDate.getUTCHours())}:${pad(localDate.getUTCMinutes())}`;
 }
 
-const visualOffsetMs = ref(getTzOffsetMs(skyStore.currentDate, skyStore.timezone))
+const visualOffsetMs = ref(getTzOffsetMs(skyStore.targetDate, skyStore.timezone))
 let tzTweenId: number | null = null
 
-function easeInOutCubic(x: number): number {
-  return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
-}
+function easeInOutCubic(x: number): number { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
 
 watch(() => skyStore.timezone, (newTz) => {
   const startOffset = visualOffsetMs.value
-  const targetOffset = getTzOffsetMs(skyStore.currentDate, newTz)
-  
+  const targetOffset = getTzOffsetMs(skyStore.targetDate, newTz)
   if (startOffset === targetOffset) return
-
   if (tzTweenId) cancelAnimationFrame(tzTweenId)
   
   const startTime = performance.now()
@@ -57,29 +51,28 @@ watch(() => skyStore.timezone, (newTz) => {
   tzTweenId = requestAnimationFrame(step)
 })
 
-const dateTimeInput = ref<string>(formatWithOffset(skyStore.currentDate, visualOffsetMs.value))
+const dateTimeInput = ref<string>(formatWithOffset(skyStore.targetDate, visualOffsetMs.value))
+const isInputFocused = ref(false)
 
-watch([() => skyStore.currentDate, visualOffsetMs], ([newDate, newOffset]) => {
+watch([() => skyStore.targetDate, visualOffsetMs], ([newDate, newOffset]) => {
+  // THE SHIELD: Do NOT overwrite the input if the user is interacting with it!
+  if (isInputFocused.value) return;
+  
   const newStr = formatWithOffset(newDate, newOffset)
-  if (dateTimeInput.value !== newStr) {
-    dateTimeInput.value = newStr
-  }
+  if (dateTimeInput.value !== newStr) dateTimeInput.value = newStr
 })
 
 watch(selectedCity, (newCity) => {
   skyStore.setLocation(newCity.lat, newCity.lon, newCity.tz)
 })
 
-// Listen to target coordinates so the dropdown snaps instantly!
 watch([() => skyStore.targetLatitude, () => skyStore.targetLongitude], ([targetLat, targetLon]) => {
   const matchedCity = CITIES.find(c => c.lat === targetLat && c.lon === targetLon)
-  if (matchedCity && matchedCity.name !== selectedCity.value.name) {
-    selectedCity.value = matchedCity
-  }
+  if (matchedCity && matchedCity.name !== selectedCity.value.name) selectedCity.value = matchedCity
 })
 
 function stepForwardOneDay() {
-  const nextDay = new Date(skyStore.currentDate)
+  const nextDay = new Date(skyStore.targetDate)
   nextDay.setDate(nextDay.getDate() + 1)
   skyStore.setDate(nextDay)
 }
@@ -88,9 +81,13 @@ function onDateChange(event: Event) {
   const target = event.target as HTMLInputElement
   if (target.value) {
     const localDateAsUtc = new Date(target.value + 'Z')
+    
+    // Safely abort if the browser passes a corrupted string while typing
+    if (isNaN(localDateAsUtc.getTime())) return; 
+    
     const trueOffsetMs = getTzOffsetMs(localDateAsUtc, skyStore.timezone)
     const absoluteDate = new Date(localDateAsUtc.getTime() - trueOffsetMs)
-    skyStore.setDate(absoluteDate)
+    skyStore.setDate(absoluteDate, 1500)
   }
 }
 </script>
@@ -108,7 +105,20 @@ function onDateChange(event: Event) {
     
     <div class="control-group">
       <label for="date-time-select">Local Time ({{ skyStore.timezone.split('/')[1]?.replace('_', ' ') || 'UTC' }})</label>
-      <input id="date-time-select" type="datetime-local" :value="dateTimeInput" @change="onDateChange" />
+      <input 
+        id="date-time-select" 
+        type="datetime-local" 
+        :value="dateTimeInput" 
+        @input="onDateChange"
+        @change="onDateChange" 
+        @focus="isInputFocused = true"
+        @blur="isInputFocused = false"
+      />
+    </div>
+
+    <div class="control-group row-group">
+      <input type="checkbox" id="atmosphere-toggle" v-model="skyStore.showAtmosphere" />
+      <label for="atmosphere-toggle" class="checkbox-label">Atmosphere & Daylight</label>
     </div>
     
     <div class="control-group">
@@ -121,8 +131,11 @@ function onDateChange(event: Event) {
 <style scoped>
 .controls-panel { position: absolute; top: 20px; left: 20px; background: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); padding: 15px 20px; border-radius: 8px; border: 1px solid #444; display: flex; flex-direction: column; gap: 15px; color: #fff; font-family: sans-serif; min-width: 250px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); z-index: 10; }
 .control-group { display: flex; flex-direction: column; gap: 5px; }
+.row-group { flex-direction: row; align-items: center; gap: 10px; margin: 5px 0;}
 label { font-size: 0.85rem; color: #aaa; text-transform: uppercase; letter-spacing: 0.5px; }
-select, input { padding: 8px; border-radius: 4px; border: 1px solid #555; background: #222; color: white; outline: none; font-size: 1rem; }
+.checkbox-label { cursor: pointer; color: #fff; text-transform: none; letter-spacing: 0; font-size: 0.95rem;}
+select, input:not([type="checkbox"]) { padding: 8px; border-radius: 4px; border: 1px solid #555; background: #222; color: white; outline: none; font-size: 1rem; }
+input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; accent-color: #3a86ff;}
 button { padding: 8px 12px; background: #3a86ff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
 button:hover { background: #2a66cc; }
 </style>

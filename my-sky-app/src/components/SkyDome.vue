@@ -23,16 +23,14 @@ async function preloadImages() {
     'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 
     'uranus', 'neptune', 'sun', 'moon_phases_38'
   ]
-
   const loadPromises = assetNames.map((name) => {
     return new Promise<void>((resolve) => {
       const img = new Image()
       img.src = new URL(`../assets/${name}.png`, import.meta.url).href
       img.onload = () => { imageCache[name] = img; resolve() }
-      img.onerror = () => { console.warn(`Failed to load asset: ${name}.png`); resolve() }
+      img.onerror = () => { resolve() }
     })
   })
-
   await Promise.all(loadPromises)
   imagesLoaded.value = true
   drawSky()
@@ -42,40 +40,29 @@ function getCoordinates(azimuth: number, altitude: number) {
   const radius = ((90 - altitude) / 180) * BG_SIZE
   const top = NumberUtils.cosD(azimuth) * radius * NORTH
   const left = NumberUtils.sinD(azimuth) * radius * NORTH
-
-  return {
-    x: (CANVAS_WIDTH / 2) + left,
-    y: (CANVAS_HEIGHT / 2) + top
-  }
+  return { x: (CANVAS_WIDTH / 2) + left, y: (CANVAS_HEIGHT / 2) + top }
 }
 
 function handleMouseMove(event: MouseEvent) {
   const canvas = canvasRef.value
   if (!canvas) return
-
   const rect = canvas.getBoundingClientRect()
   const x = (event.clientX - rect.left) * (canvas.width / rect.width)
   const y = (event.clientY - rect.top) * (canvas.height / rect.height)
-
   mouseX.value = event.clientX
   mouseY.value = event.clientY
 
   let foundBody: RenderableBody | null = null
-
   for (let i = skyStore.activeBodies.length - 1; i >= 0; i--) {
     const body = skyStore.activeBodies[i]
     if (body.altitude === undefined || !body.isInteractive) continue
-
     const bodyCoords = getCoordinates(body.azimuth!, body.altitude)
     const dx = x - bodyCoords.x
     const dy = y - bodyCoords.y
     const distance = Math.sqrt(dx * dx + dy * dy)
-
     const hitRadius = body.isStar && body.id !== 'sun' ? 6 : 20
-
     if (distance <= hitRadius) {
-      foundBody = body
-      break 
+      foundBody = body; break 
     }
   }
 
@@ -85,9 +72,7 @@ function handleMouseMove(event: MouseEvent) {
   }
 }
 
-function handleMouseLeave() {
-  hoveredBody.value = null
-}
+function handleMouseLeave() { hoveredBody.value = null }
 
 function drawSky() {
   const canvas = canvasRef.value
@@ -96,54 +81,83 @@ function drawSky() {
   if (!ctx) return
 
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-
   const centerX = CANVAS_WIDTH / 2
   const centerY = CANVAS_HEIGHT / 2
 
-  // 1. Draw Cardinal Crosshairs (N, E, S, W)
+  // 1. Crosshairs
   ctx.beginPath()
-  ctx.moveTo(centerX, centerY - (BG_SIZE / 2))
-  ctx.lineTo(centerX, centerY + (BG_SIZE / 2))
-  ctx.moveTo(centerX - (BG_SIZE / 2), centerY)
-  ctx.lineTo(centerX + (BG_SIZE / 2), centerY)
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)'
-  ctx.lineWidth = 1
-  ctx.stroke()
+  ctx.moveTo(centerX, centerY - (BG_SIZE / 2)); ctx.lineTo(centerX, centerY + (BG_SIZE / 2))
+  ctx.moveTo(centerX - (BG_SIZE / 2), centerY); ctx.lineTo(centerX + (BG_SIZE / 2), centerY)
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)'; ctx.lineWidth = 1; ctx.stroke()
 
-  // 2. The Actual Horizon (Outer Ring: 0° Altitude)
+  // 2. DAY/NIGHT BACKGROUND BLENDING
   ctx.beginPath()
   ctx.arc(centerX, centerY, BG_SIZE / 2, 0, Math.PI * 2)
-  ctx.strokeStyle = '#444444'
-  ctx.lineWidth = 2
-  ctx.stroke()
+  ctx.fillStyle = '#0a0a0c'
+  ctx.fill()
 
-  // Add Horizon Labels
-  ctx.fillStyle = '#666666'
-  ctx.font = '11px sans-serif'
-  ctx.textAlign = 'center'
+  const sunPos = skyStore.activeBodies.find(b => b.id === 'sun')
+  let starVisibility = 1.0;
+
+  if (skyStore.showAtmosphere && sunPos && sunPos.altitude !== undefined) {
+    const alt = sunPos.altitude;
+    const dayIntensity = Math.max(0, Math.min(1, alt / 15));
+    const sunsetIntensity = Math.max(0, Math.min(1, 1 - Math.abs(alt) / 10));
+    const twilightIntensity = Math.max(0, Math.min(1, 1 - Math.abs(alt + 8) / 10));
+
+    if (twilightIntensity > 0) { ctx.fillStyle = `rgba(30, 40, 80, ${twilightIntensity})`; ctx.fill(); }
+    if (sunsetIntensity > 0) { ctx.fillStyle = `rgba(220, 90, 40, ${sunsetIntensity * 0.6})`; ctx.fill(); }
+    if (dayIntensity > 0) { ctx.fillStyle = `rgba(50, 140, 220, ${dayIntensity})`; ctx.fill(); }
+
+    starVisibility = Math.max(0, Math.min(1, (alt + 2) / -10));
+  }
+
+  ctx.strokeStyle = '#444444'; ctx.lineWidth = 2; ctx.stroke()
+
+  ctx.fillStyle = '#666666'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center'
   ctx.fillText('N', centerX, centerY - (BG_SIZE / 2) - 10)
   ctx.fillText('S', centerX, centerY + (BG_SIZE / 2) + 20)
-  ctx.textAlign = 'left'
-  ctx.fillText('HORIZON (0°)', centerX + (BG_SIZE / 2) + 10, centerY + 4)
-  ctx.textAlign = 'right'
-  ctx.fillText('E', centerX - (BG_SIZE / 2) - 10, centerY + 4)
+  ctx.textAlign = 'left'; ctx.fillText('HORIZON (0°)', centerX + (BG_SIZE / 2) + 10, centerY + 4)
+  ctx.textAlign = 'right'; ctx.fillText('E', centerX - (BG_SIZE / 2) - 10, centerY + 4)
 
-  // 3. The 45° Altitude Ring (Inner Dashed Ring)
-  ctx.beginPath()
-  ctx.arc(centerX, centerY, BG_SIZE / 4, 0, Math.PI * 2)
-  ctx.strokeStyle = 'rgba(58, 134, 255, 0.3)' 
-  ctx.setLineDash([4, 4]) 
-  ctx.stroke()
-  ctx.setLineDash([]) 
-
-  // Add 45° Label
-  ctx.fillStyle = 'rgba(58, 134, 255, 0.5)'
-  ctx.textAlign = 'left'
+  // 3. 45° Altitude Ring
+  ctx.beginPath(); ctx.arc(centerX, centerY, BG_SIZE / 4, 0, Math.PI * 2)
+  ctx.strokeStyle = 'rgba(58, 134, 255, 0.3)'; ctx.setLineDash([4, 4]); ctx.stroke(); ctx.setLineDash([]) 
+  ctx.fillStyle = 'rgba(58, 134, 255, 0.5)'; ctx.textAlign = 'left'
   ctx.fillText('45° ALT', centerX + (BG_SIZE / 4) + 5, centerY - 5)
 
-  // 4. Draw the celestial bodies
+  // 4. Sun's Path (Sunset Line) - NO MATH IN THE RENDER LOOP!
+  if (skyStore.sunPath.length > 0) {
+    ctx.beginPath()
+    let isDrawingPath = false
+    
+    skyStore.sunPath.forEach((pos) => {
+      // THE FIX: If we hit a null, lift the pen!
+      if (pos === null) {
+        isDrawingPath = false
+      } else {
+        const coords = getCoordinates(pos.azimuth, pos.altitude)
+        if (!isDrawingPath) { 
+          ctx.moveTo(coords.x, coords.y)
+          isDrawingPath = true 
+        } else { 
+          ctx.lineTo(coords.x, coords.y) 
+        }
+      }
+    })
+    ctx.strokeStyle = 'rgba(255, 165, 0, 0.6)'; ctx.lineWidth = 2; ctx.setLineDash([5, 5]); ctx.stroke(); ctx.setLineDash([])
+  }
+
+  // 5. Draw Celestial Bodies
   skyStore.activeBodies.forEach(body => {
     if (body.azimuth === undefined || body.altitude === undefined) return
+    
+    const isSunOrMoon = body.id === 'sun' || body.id === 'moon'
+    if (!isSunOrMoon) {
+      if (starVisibility === 0) return 
+      ctx.globalAlpha = starVisibility 
+    }
+
     const { x, y } = getCoordinates(body.azimuth, body.altitude)
 
     if (body.imageId === 'moon_phases_38') {
@@ -172,12 +186,15 @@ function drawSky() {
       const img = imageCache[body.imageId]
       if (img) ctx.drawImage(img, Math.round(x - img.width / 2), Math.round(y - img.height / 2), img.width, img.height)
     }
+
+    ctx.globalAlpha = 1.0
   })
 }
 
 onMounted(() => preloadImages())
 
 watch(() => skyStore.activeBodies, () => drawSky(), { deep: true })
+watch(() => skyStore.showAtmosphere, () => drawSky())
 </script>
 
 <template>

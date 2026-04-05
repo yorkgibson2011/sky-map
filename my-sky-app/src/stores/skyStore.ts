@@ -18,16 +18,20 @@ function easeInOutCubic(x: number): number {
 
 export const useSkyStore = defineStore('sky', () => {
   const currentDate = ref<Date>(new Date())
+  const targetDate = ref<Date>(new Date()) 
+  
   const latitude = ref<number>(51.467)
   const longitude = ref<number>(-2.583)
-  
-  // Instant targets so the dropdown can sync immediately
   const targetLatitude = ref<number>(51.467)
   const targetLongitude = ref<number>(-2.583)
-  
   const timezone = ref<string>('Europe/London')
+  const showAtmosphere = ref<boolean>(true)
   const visMagThreshold = ref<number>(5.5)
+  
   const activeBodies = shallowRef<RenderableBody[]>([])
+  // NEW: Store the sunset line coordinates in state
+  // NEW: Allow null values to act as a "pen lift" break in the line
+  const sunPath = shallowRef<({azimuth: number, altitude: number} | null)[]>([])
 
   let animationFrameId: number | null = null;
   const isLiveTime = ref(true)
@@ -35,7 +39,9 @@ export const useSkyStore = defineStore('sky', () => {
 
   setInterval(() => {
     if (isLiveTime.value && !animationFrameId) {
-      currentDate.value = new Date()
+      const now = new Date()
+      currentDate.value = now
+      targetDate.value = now 
       recalculateSky()
     }
   }, 1000)
@@ -79,8 +85,11 @@ export const useSkyStore = defineStore('sky', () => {
     animationFrameId = requestAnimationFrame(step)
   }
 
-  function setDate(targetDate: Date, durationMs = 1500, isUserAction = true) {
+  function setDate(newTargetDate: Date, durationMs = 1500, isUserAction = true) {
+    if (isNaN(newTargetDate.getTime())) return;
+
     if (animationFrameId) cancelAnimationFrame(animationFrameId)
+    targetDate.value = newTargetDate
 
     if (isUserAction) {
       isLiveTime.value = false
@@ -93,14 +102,14 @@ export const useSkyStore = defineStore('sky', () => {
 
     const startTime = performance.now()
     const startMs = currentDate.value.getTime()
-    const targetMs = targetDate.getTime()
+    const targetMs = newTargetDate.getTime()
 
     function step(currentTime: number) {
       const elapsed = currentTime - startTime
       let progress = elapsed / durationMs
       if (progress >= 1) {
         progress = 1
-        currentDate.value = targetDate
+        currentDate.value = newTargetDate
         recalculateSky()
         animationFrameId = null
         return
@@ -115,6 +124,36 @@ export const useSkyStore = defineStore('sky', () => {
   }
 
   function recalculateSky() {
+    // 1. CALCULATE THE SUNSET LINE FIRST
+    const path: ({azimuth: number, altitude: number} | null)[] = []
+    let sunWasUp = false
+    
+    // Check 12 hours before and 12 hours after the current time
+    // This ensures we capture the correct daylight arc for the timezone we are looking at!
+    for (let hour = -12; hour <= 12; hour += 0.25) { 
+      const testDate = new Date(currentDate.value.getTime() + hour * 60 * 60 * 1000)
+      const tempSunPos = PlanetaryPositions.sun(testDate)
+      
+      if (tempSunPos.altitude !== undefined && tempSunPos.azimuth !== undefined) {
+        if (tempSunPos.altitude >= 0) {
+          path.push({ azimuth: tempSunPos.azimuth, altitude: tempSunPos.altitude })
+          sunWasUp = true
+        } else if (sunWasUp) {
+          // The sun just went below the horizon! Push a null to break the line.
+          path.push(null) 
+          sunWasUp = false
+        }
+      }
+    }
+    sunPath.value = path
+
+    // 2. THE SHIELD: Instantly wipe the math cache clean!
+    // This stops the sunset line from corrupting the planets' geocentric coordinates.
+    PlanetaryPositions.lastDate = new Date(0)
+    PlanetaryPositions.lastSunDate = new Date(0)
+    PlanetaryPositions.lastSun = null
+
+    // 3. NOW CALCULATE THE PLANETS
     const bodies: RenderableBody[] = []
     
     PlanetaryPositions.PLANET_NAMES.forEach((planetName) => {
@@ -166,13 +205,16 @@ export const useSkyStore = defineStore('sky', () => {
 
   return {
     currentDate,
+    targetDate,
     latitude,
     longitude,
     targetLatitude,
     targetLongitude,
     timezone,
+    showAtmosphere,
     visMagThreshold,
     activeBodies,
+    sunPath, // Export the path to the component!
     setLocation,
     setDate,
     recalculateSky
