@@ -84,13 +84,7 @@ function drawSky() {
   const centerX = CANVAS_WIDTH / 2
   const centerY = CANVAS_HEIGHT / 2
 
-  // 1. Crosshairs
-  ctx.beginPath()
-  ctx.moveTo(centerX, centerY - (BG_SIZE / 2)); ctx.lineTo(centerX, centerY + (BG_SIZE / 2))
-  ctx.moveTo(centerX - (BG_SIZE / 2), centerY); ctx.lineTo(centerX + (BG_SIZE / 2), centerY)
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)'; ctx.lineWidth = 1; ctx.stroke()
-
-  // 2. DAY/NIGHT BACKGROUND BLENDING
+  // 1. DAY/NIGHT BACKGROUND BLENDING (Drawn first so it stays at the back)
   ctx.beginPath()
   ctx.arc(centerX, centerY, BG_SIZE / 2, 0, Math.PI * 2)
   ctx.fillStyle = '#0a0a0c'
@@ -112,8 +106,16 @@ function drawSky() {
     starVisibility = Math.max(0, Math.min(1, (alt + 2) / -10));
   }
 
+  // Draw the Horizon Ring
   ctx.strokeStyle = '#444444'; ctx.lineWidth = 2; ctx.stroke()
 
+  // 2. THE CROSSHAIRS (Moved here so they paint ON TOP of the background!)
+  ctx.beginPath()
+  ctx.moveTo(centerX, centerY - (BG_SIZE / 2)); ctx.lineTo(centerX, centerY + (BG_SIZE / 2))
+  ctx.moveTo(centerX - (BG_SIZE / 2), centerY); ctx.lineTo(centerX + (BG_SIZE / 2), centerY)
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)'; ctx.lineWidth = 1; ctx.stroke()
+
+  // Add Horizon Labels
   ctx.fillStyle = '#666666'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center'
   ctx.fillText('N', centerX, centerY - (BG_SIZE / 2) - 10)
   ctx.fillText('S', centerX, centerY + (BG_SIZE / 2) + 20)
@@ -126,13 +128,11 @@ function drawSky() {
   ctx.fillStyle = 'rgba(58, 134, 255, 0.5)'; ctx.textAlign = 'left'
   ctx.fillText('45° ALT', centerX + (BG_SIZE / 4) + 5, centerY - 5)
 
-  // 4. Sun's Path (Sunset Line) - NO MATH IN THE RENDER LOOP!
+  // 4. Sun's Path (Sunset Line)
   if (skyStore.sunPath.length > 0) {
     ctx.beginPath()
     let isDrawingPath = false
-    
     skyStore.sunPath.forEach((pos) => {
-      // THE FIX: If we hit a null, lift the pen!
       if (pos === null) {
         isDrawingPath = false
       } else {
