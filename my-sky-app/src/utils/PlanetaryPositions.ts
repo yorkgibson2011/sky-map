@@ -34,7 +34,6 @@ export interface PositionData {
 export const PlanetaryPositions = {
   epoch: new Date(1999, 11, 31, 0, 0, 0, 0),
   YEAR_DAYS: 365.256898326,
-  // Pluto has been officially retired from the array
   PLANET_NAMES: ["mercury", "venus", "earth", "moon", "mars", "jupiter", "saturn", "uranus", "neptune"],
 
   MOON_SYNODIC_PERIOD: 29.5306,
@@ -74,7 +73,7 @@ export const PlanetaryPositions = {
       let LST = 0;
       if (this.lastSunDate.getTime() !== date.getTime() || !this.lastLST || this.lastLon !== this.longitude) {
         this.lastSunDate = date;
-        this.lastLon = this.longitude; // Store the new longitude
+        this.lastLon = this.longitude; 
         this.lastLST = this.localSiderealTime(date, lonsun);
         this.lastSun = this.sun(date); 
       }
@@ -314,7 +313,7 @@ export const PlanetaryPositions = {
     
     if (this.lastDate.getTime() !== date.getTime() || !this.lastLST || this.lastLon !== this.longitude) {
       this.lastDate = date;
-      this.lastLon = this.longitude; // Store the new longitude
+      this.lastLon = this.longitude;
       this.lastLST = this.localSiderealTime(date, lonsun);
     }
     const LST = this.lastLST;
@@ -332,6 +331,21 @@ export const PlanetaryPositions = {
     const altitude = NumberUtils.atan2D(zhor, Math.sqrt(xhor * xhor + yhor * yhor));
     
     return { azimuth, altitude, LST, HA };
+  },
+
+  // --- NEW: Bulletproof Absolute Moon Phase Calculator ---
+  getAbsoluteMoonPhase(date: Date): number {
+    // Exact New Moon epoch: Jan 6, 2000, 18:14 UTC
+    const newMoonEpoch = Date.UTC(2000, 0, 6, 18, 14, 0);
+    const lunarMonthMs = 29.53058867 * 24 * 60 * 60 * 1000;
+    
+    const msSinceNewMoon = date.getTime() - newMoonEpoch;
+    let phaseFraction = (msSinceNewMoon % lunarMonthMs) / lunarMonthMs;
+    
+    if (phaseFraction < 0) phaseFraction += 1;
+    
+    // Returns a float mapping exactly to your 30 frame sprite sheet (0 to 29.99)
+    return phaseFraction * 30;
   },
 
   getPosition(oe: OrbitalElements, special?: string): PositionData {
@@ -382,6 +396,7 @@ export const PlanetaryPositions = {
     let moonPhase = 0;
 
     if (special === "moon") {
+      // KEEP the parallax math so the Moon draws in the correct place in the sky!
       const mpar = NumberUtils.asinD(1 / rg);
       const gclat = this.latitude - 0.1924 * NumberUtils.sinD(2 * this.latitude);
       const rho = 0.99833 + 0.00167 * NumberUtils.cosD(2 * this.latitude);
@@ -390,8 +405,8 @@ export const PlanetaryPositions = {
       RA = RA - mpar * rho * NumberUtils.cosD(gclat) * NumberUtils.sinD(aa.HA) / NumberUtils.cosD(Dec);
       Dec = Dec - mpar * rho * NumberUtils.sinD(gclat) * NumberUtils.sinD(g - Dec) / NumberUtils.sinD(g);
       
-      const moonSunAngle = NumberUtils.normaliseDegrees(360 - (aa.HA - sun.HA!)) / (360 / this.MOON_SYNODIC_PERIOD);
-      moonPhase = Math.round(moonSunAngle);
+      // THE FIX: Ditch the old `moonSunAngle` calculation and use the absolute timestamp!
+      moonPhase = this.getAbsoluteMoonPhase(date);
     }
 
     return {
