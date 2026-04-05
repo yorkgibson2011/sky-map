@@ -21,9 +21,11 @@ export const useSkyStore = defineStore('sky', () => {
   const latitude = ref<number>(51.467)
   const longitude = ref<number>(-2.583)
   
-  // NEW: The Store now tracks the timezone!
-  const timezone = ref<string>('Europe/London')
+  // Instant targets so the dropdown can sync immediately
+  const targetLatitude = ref<number>(51.467)
+  const targetLongitude = ref<number>(-2.583)
   
+  const timezone = ref<string>('Europe/London')
   const visMagThreshold = ref<number>(5.5)
   const activeBodies = shallowRef<RenderableBody[]>([])
 
@@ -38,12 +40,12 @@ export const useSkyStore = defineStore('sky', () => {
     }
   }, 1000)
 
-  // NEW: Added targetTz to the arguments
   function setLocation(targetLat: number, targetLon: number, targetTz: string = 'Europe/London', durationMs = 1500) {
     if (animationFrameId) cancelAnimationFrame(animationFrameId)
 
-    // Immediately update the timezone so the UI reflects the change right away
     timezone.value = targetTz;
+    targetLatitude.value = targetLat;
+    targetLongitude.value = targetLon;
 
     const startLat = latitude.value
     const startLon = longitude.value
@@ -166,6 +168,8 @@ export const useSkyStore = defineStore('sky', () => {
     currentDate,
     latitude,
     longitude,
+    targetLatitude,
+    targetLongitude,
     timezone,
     visMagThreshold,
     activeBodies,

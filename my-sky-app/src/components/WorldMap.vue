@@ -2,15 +2,11 @@
 import { ref } from 'vue'
 import { useSkyStore } from '../stores/skyStore'
 import { CITIES, type City } from '../utils/CityData'
-
-// Import the PNG asset so Vite knows to bundle it
 import mapImage from '../assets/world-map.png'
 
 const skyStore = useSkyStore()
-
 const widgetState = ref<'normal' | 'minimized' | 'maximized'>('normal')
 
-// Hover and Interaction State
 const hoveredCity = ref<City | null>(null)
 const mouseX = ref(0)
 const mouseY = ref(0)
@@ -21,22 +17,18 @@ function getMercatorXY(lat: number, lon: number) {
   const x = (lon + 180) * (100 / 360)
   const latRad = (clampedLat * Math.PI) / 180
   const mercN = Math.log(Math.tan(Math.PI / 4 + latRad / 2))
-  
-  // Math tuned for your 95.88 height graphic
   const y = 46 - (100 * mercN) / (2 * Math.PI)
   return { x, y }
 }
 
 function handleMapMouseMove(e: MouseEvent) {
   if (!svgRef.value) return
-
   mouseX.value = e.clientX
   mouseY.value = e.clientY
 
   const rect = svgRef.value.getBoundingClientRect()
   const clientX = e.clientX - rect.left
   const clientY = e.clientY - rect.top
-  
   const svgX = (clientX / rect.width) * 100
   const svgY = (clientY / rect.height) * 95.88
 
@@ -46,13 +38,11 @@ function handleMapMouseMove(e: MouseEvent) {
   for (const city of CITIES) {
     const pos = getMercatorXY(city.lat, city.lon)
     const dist = Math.sqrt(Math.pow(svgX - pos.x, 2) + Math.pow(svgY - pos.y, 2))
-    
     if (dist < minDistance) {
       minDistance = dist
       nearestCity = city
     }
   }
-
   hoveredCity.value = nearestCity
 }
 
@@ -62,7 +52,6 @@ function handleMapMouseLeave() {
 
 function handleMapClick() {
   if (hoveredCity.value) {
-    // THE FINAL LINK: Pass the timezone (tz) to the store!
     skyStore.setLocation(hoveredCity.value.lat, hoveredCity.value.lon, hoveredCity.value.tz)
     if (widgetState.value === 'maximized') widgetState.value = 'normal'
   }
@@ -71,7 +60,6 @@ function handleMapClick() {
 
 <template>
   <div class="map-widget" :class="widgetState">
-    
     <div class="widget-header">
       <span class="title">Location Map</span>
       <div class="window-controls">
@@ -91,13 +79,12 @@ function handleMapClick() {
         @mouseleave="handleMapMouseLeave"
         @click="handleMapClick"
       >
-        
         <image :href="mapImage" x="0" y="0" width="100" height="95.88" />
 
-        <g v-for="city in CITIES" :key="city.name">
+        <g v-for="city in CITIES" :key="city.name + '-' + city.country">
           <circle 
             class="city-dot" 
-            :class="{ 'is-hovered': hoveredCity?.name === city.name }"
+            :class="{ 'is-hovered': hoveredCity?.name === city.name && hoveredCity?.country === city.country }"
             :cx="getMercatorXY(city.lat, city.lon).x" 
             :cy="getMercatorXY(city.lat, city.lon).y" 
             r="0.4" 
@@ -130,33 +117,13 @@ function handleMapClick() {
 .window-controls button { background: transparent; border: none; color: #888; cursor: pointer; padding: 0 5px; font-size: 1.1rem; transition: color 0.2s; }
 .window-controls button:hover { color: #fff; }
 .widget-body { padding: 10px; width: 100%; box-sizing: border-box; }
-
-/* The SVG Map Canvas */
-.mercator-map { 
-  width: 100%; 
-  height: auto; 
-  display: block; 
-  cursor: crosshair; 
-}
-
-/* Dots */
-.city-dot { 
-  fill: #aaa; /* Slightly brightened the dots so they show up better on a PNG */
-  pointer-events: none; 
-  transition: fill 0.2s, r 0.2s;
-}
-
-.city-dot.is-hovered {
-  fill: #fff;
-  r: 0.6;
-}
-
+.mercator-map { width: 100%; height: auto; display: block; cursor: crosshair; }
+.city-dot { fill: #aaa; pointer-events: none; transition: fill 0.2s, r 0.2s; }
+.city-dot.is-hovered { fill: #fff; r: 0.6; }
 .active-indicator { will-change: transform; transition: transform 0.1s linear; }
 .active-dot { fill: #3a86ff; }
 .pulse-ring { fill: transparent; stroke: #3a86ff; stroke-width: 0.2; animation: pulse 2s infinite; }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(3); opacity: 0; } }
-
-/* Tooltip */
 .map-tooltip { position: fixed; background: rgba(15, 15, 25, 0.95); border: 1px solid #444; border-radius: 4px; padding: 8px 12px; color: #fff; pointer-events: none; z-index: 9999; font-family: sans-serif; display: flex; flex-direction: column; gap: 4px; margin-top: 15px;}
 .map-tooltip strong { color: #3a86ff; font-size: 0.95rem; }
 .map-tooltip span { color: #aaa; font-size: 0.8rem; }

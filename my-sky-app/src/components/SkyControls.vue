@@ -8,54 +8,71 @@ const skyStore = useSkyStore()
 const initialCity = CITIES.find(c => c.name === 'Bristol') || CITIES[0]
 const selectedCity = ref<City>(initialCity)
 
-// --- NEW: Timezone Transformation Helpers ---
-
-// Calculates the millisecond difference between UTC and the target timezone at a specific date
 function getTzOffsetMs(date: Date, timeZone: string) {
   try {
     const tzStr = date.toLocaleString('en-US', { timeZone });
     const utcStr = date.toLocaleString('en-US', { timeZone: 'UTC' });
     return new Date(tzStr).getTime() - new Date(utcStr).getTime();
   } catch (e) {
-    return 0; // Fallback to UTC if something fails
+    return 0;
   }
 }
 
-// Converts the absolute Date object into a local string formatted for the HTML input
-function formatForTimezone(absoluteDate: Date, timeZone: string): string {
-  const offsetMs = getTzOffsetMs(absoluteDate, timeZone);
+function formatWithOffset(absoluteDate: Date, offsetMs: number): string {
   const localDate = new Date(absoluteDate.getTime() + offsetMs);
-  
   const pad = (n: number) => n.toString().padStart(2, '0');
   return `${localDate.getUTCFullYear()}-${pad(localDate.getUTCMonth() + 1)}-${pad(localDate.getUTCDate())}T${pad(localDate.getUTCHours())}:${pad(localDate.getUTCMinutes())}`;
 }
 
-// Converts a local string from the HTML input back into an absolute Date object
-function parseFromTimezone(localStr: string, timeZone: string): Date {
-  const localDateAsUtc = new Date(localStr + 'Z');
-  const offsetMs = getTzOffsetMs(localDateAsUtc, timeZone);
-  return new Date(localDateAsUtc.getTime() - offsetMs);
+const visualOffsetMs = ref(getTzOffsetMs(skyStore.currentDate, skyStore.timezone))
+let tzTweenId: number | null = null
+
+function easeInOutCubic(x: number): number {
+  return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 }
 
-// --------------------------------------------
+watch(() => skyStore.timezone, (newTz) => {
+  const startOffset = visualOffsetMs.value
+  const targetOffset = getTzOffsetMs(skyStore.currentDate, newTz)
+  
+  if (startOffset === targetOffset) return
 
-const dateTimeInput = ref<string>(formatForTimezone(skyStore.currentDate, skyStore.timezone))
+  if (tzTweenId) cancelAnimationFrame(tzTweenId)
+  
+  const startTime = performance.now()
+  const durationMs = 1500 
 
-// Update the input when either the ticking clock changes OR the user selects a new city timezone
-watch([() => skyStore.currentDate, () => skyStore.timezone], ([newDate, newTz]) => {
-  const newStr = formatForTimezone(newDate, newTz)
+  function step(currentTime: number) {
+    const elapsed = currentTime - startTime
+    let progress = elapsed / durationMs
+    if (progress >= 1) {
+      visualOffsetMs.value = targetOffset
+      tzTweenId = null
+      return
+    }
+    const eased = easeInOutCubic(progress)
+    visualOffsetMs.value = startOffset + (targetOffset - startOffset) * eased
+    tzTweenId = requestAnimationFrame(step)
+  }
+  tzTweenId = requestAnimationFrame(step)
+})
+
+const dateTimeInput = ref<string>(formatWithOffset(skyStore.currentDate, visualOffsetMs.value))
+
+watch([() => skyStore.currentDate, visualOffsetMs], ([newDate, newOffset]) => {
+  const newStr = formatWithOffset(newDate, newOffset)
   if (dateTimeInput.value !== newStr) {
     dateTimeInput.value = newStr
   }
 })
 
 watch(selectedCity, (newCity) => {
-  // Pass the timezone string to the store!
   skyStore.setLocation(newCity.lat, newCity.lon, newCity.tz)
 })
 
-watch([() => skyStore.latitude, () => skyStore.longitude], ([currentLat, currentLon]) => {
-  const matchedCity = CITIES.find(c => c.lat === currentLat && c.lon === currentLon)
+// Listen to target coordinates so the dropdown snaps instantly!
+watch([() => skyStore.targetLatitude, () => skyStore.targetLongitude], ([targetLat, targetLon]) => {
+  const matchedCity = CITIES.find(c => c.lat === targetLat && c.lon === targetLon)
   if (matchedCity && matchedCity.name !== selectedCity.value.name) {
     selectedCity.value = matchedCity
   }
@@ -70,8 +87,9 @@ function stepForwardOneDay() {
 function onDateChange(event: Event) {
   const target = event.target as HTMLInputElement
   if (target.value) {
-    // Parse the local input back into absolute time
-    const absoluteDate = parseFromTimezone(target.value, skyStore.timezone)
+    const localDateAsUtc = new Date(target.value + 'Z')
+    const trueOffsetMs = getTzOffsetMs(localDateAsUtc, skyStore.timezone)
+    const absoluteDate = new Date(localDateAsUtc.getTime() - trueOffsetMs)
     skyStore.setDate(absoluteDate)
   }
 }
@@ -82,7 +100,7 @@ function onDateChange(event: Event) {
     <div class="control-group">
       <label for="city-select">Location</label>
       <select id="city-select" v-model="selectedCity">
-        <option v-for="city in CITIES" :key="city.name" :value="city">
+        <option v-for="city in CITIES" :key="city.name + '-' + city.country" :value="city">
           {{ city.name }}, {{ city.country }}
         </option>
       </select>
