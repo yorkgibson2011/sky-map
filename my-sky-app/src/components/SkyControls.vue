@@ -87,20 +87,26 @@ function onDateChange(event: Event) {
 }
 
 // ==========================================
-// NEW: Playback Speed Array & Methods
+// Expanded Playback Rates
 // ==========================================
 const RATES = [
-  { label: '-1 Wk / s', val: -604800 },
-  { label: '-1 Day / s', val: -86400 },
-  { label: '-1 Hr / s', val: -3600 },
-  { label: '-1 Min / s', val: -60 },
+  { label: '-1 Wk/s', val: -604800 },
+  { label: '-1 Day/s', val: -86400 },
+  { label: '-4 Hr/s', val: -14400 },
+  { label: '-1 Hr/s', val: -3600 },
+  { label: '-30 Min/s', val: -1800 },
+  { label: '-15 Min/s', val: -900 },
+  { label: '-1 Min/s', val: -60 },
   { label: 'Realtime', val: 1 },
-  { label: '1 Min / s', val: 60 },
-  { label: '1 Hr / s', val: 3600 },
-  { label: '1 Day / s', val: 86400 },
-  { label: '1 Wk / s', val: 604800 }
+  { label: '1 Min/s', val: 60 },
+  { label: '15 Min/s', val: 900 },
+  { label: '30 Min/s', val: 1800 },
+  { label: '1 Hr/s', val: 3600 },
+  { label: '4 Hr/s', val: 14400 },
+  { label: '1 Day/s', val: 86400 },
+  { label: '1 Wk/s', val: 604800 }
 ]
-const rateIndex = ref(6) // Default to "1 Hr / s"
+const rateIndex = ref(11) // Default to "1 Hr / s"
 
 function slower() {
   if (rateIndex.value > 0) {
@@ -151,18 +157,27 @@ function faster() {
       <button @click="stepForwardOneDay" class="full-btn">+1 Day Jump</button>
       
       <div class="playback-controls">
-        <button @click="slower" :disabled="rateIndex === 0" title="Slower" class="scrub-btn">⏪</button>
-        <button @click="skyStore.togglePlay" class="play-btn" :class="{ 'is-active': skyStore.isPlaying }">
-          {{ skyStore.isPlaying ? '⏸️ ' + RATES[rateIndex].label : '▶️ ' + RATES[rateIndex].label }}
+        <button @click="slower" :disabled="rateIndex === 0" title="Slower" class="scrub-btn icon-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z"/></svg>
         </button>
-        <button @click="faster" :disabled="rateIndex === RATES.length - 1" title="Faster" class="scrub-btn">⏩</button>
+        
+        <button @click="skyStore.togglePlay" class="play-btn" :class="{ 'is-active': skyStore.isPlaying }">
+          <svg v-if="skyStore.isPlaying" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          <svg v-else viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <span>{{ RATES[rateIndex].label }}</span>
+        </button>
+        
+        <button @click="faster" :disabled="rateIndex === RATES.length - 1" title="Faster" class="scrub-btn icon-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z"/></svg>
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.controls-panel { position: absolute; top: 20px; left: 20px; background: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); padding: 15px 20px; border-radius: 8px; border: 1px solid #444; display: flex; flex-direction: column; gap: 15px; color: #fff; font-family: sans-serif; min-width: 250px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); z-index: 10; }
+/* Notice: Position Absolute has been removed so it flows in the sidebar */
+.controls-panel { background: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); padding: 15px 20px; border-radius: 8px; border: 1px solid #444; display: flex; flex-direction: column; gap: 15px; color: #fff; font-family: sans-serif; width: 100%; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); z-index: 10; }
 .control-group { display: flex; flex-direction: column; gap: 5px; }
 .row-group { flex-direction: row; align-items: center; gap: 10px; margin: 5px 0;}
 label { font-size: 0.85rem; color: #aaa; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -175,10 +190,14 @@ button:hover:not(:disabled) { background: #2a66cc; }
 button:active:not(:disabled) { transform: scale(0.97); }
 button:disabled { opacity: 0.5; cursor: not-allowed; background: #444; }
 
+.full-btn { width: 100%; margin-bottom: 5px; }
 .playback-controls { display: flex; gap: 5px; margin-top: 5px; }
-.scrub-btn { flex: 1; padding: 8px 0; background: #444; font-size: 1.1rem; }
+.scrub-btn { flex: 1; padding: 8px 0; background: #444; display: flex; justify-content: center; align-items: center; }
 .scrub-btn:hover:not(:disabled) { background: #555; }
-.play-btn { flex: 3; display: flex; justify-content: center; align-items: center; gap: 5px; }
+.play-btn { flex: 3; display: flex; justify-content: center; align-items: center; gap: 8px; }
 .play-btn.is-active { background: #ff3a5e; }
 .play-btn.is-active:hover { background: #cc2a4a; }
+
+/* SVG Icon Sizing */
+.icon-btn svg, .play-btn svg { width: 18px; height: 18px; }
 </style>

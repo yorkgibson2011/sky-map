@@ -169,24 +169,19 @@ export const useSkyStore = defineStore('sky', () => {
   }
 
   function recalculateSky() {
+    // Inside recalculateSky() in skyStore.ts
     const startOfDay = new Date(currentDate.value)
     startOfDay.setHours(0, 0, 0, 0)
     
     const path: ({azimuth: number, altitude: number} | null)[] = []
-    let sunWasUp = false
     
     for (let hour = -12; hour <= 12; hour += 0.25) { 
       const testDate = new Date(currentDate.value.getTime() + hour * 60 * 60 * 1000)
       const tempSunPos = PlanetaryPositions.sun(testDate)
       
       if (tempSunPos.altitude !== undefined && tempSunPos.azimuth !== undefined) {
-        if (tempSunPos.altitude >= 0) {
-          path.push({ azimuth: tempSunPos.azimuth, altitude: tempSunPos.altitude })
-          sunWasUp = true
-        } else if (sunWasUp) {
-          path.push(null) 
-          sunWasUp = false
-        }
+        // THE FIX: Push every single point to form a complete 24-hour ring!
+        path.push({ azimuth: tempSunPos.azimuth, altitude: tempSunPos.altitude })
       }
     }
     sunPath.value = path

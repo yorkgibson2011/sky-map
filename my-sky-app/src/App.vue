@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import SkyDome from './components/SkyDome.vue'
-import SkyControls from './components/SkyControls.vue'
-import WorldMap from './components/WorldMap.vue'
+import SidePanel from './components/SidePanel.vue'
 </script>
 
 <template>
   <div class="app-wrapper">
-    <SkyControls />
     <SkyDome />
-    <WorldMap />
+    <SidePanel />
   </div>
 </template>
 

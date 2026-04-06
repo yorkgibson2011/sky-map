@@ -121,13 +121,13 @@ function drawSky() {
     starVisibility = Math.max(0, Math.min(1, (alt + 2) / -10));
   }
 
-  ctx.strokeStyle = '#444444'; ctx.lineWidth = 2; ctx.stroke()
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)'; ctx.lineWidth = 2; ctx.stroke()
 
   // 2. THE CROSSHAIRS
   ctx.beginPath()
   ctx.moveTo(centerX, centerY - bgRadius); ctx.lineTo(centerX, centerY + bgRadius)
   ctx.moveTo(centerX - bgRadius, centerY); ctx.lineTo(centerX + bgRadius, centerY)
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)'; ctx.lineWidth = 1; ctx.stroke()
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)'; ctx.lineWidth = 1; ctx.stroke()
 
   ctx.fillStyle = '#666666'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center'
   ctx.fillText('N', centerX, centerY - bgRadius - 10)
@@ -158,7 +158,10 @@ function drawSky() {
         }
       }
     })
-    ctx.strokeStyle = 'rgba(255, 165, 0, 0.6)'; ctx.lineWidth = 2; ctx.setLineDash([5, 5]); ctx.stroke(); ctx.setLineDash([])
+    // THE FIX: Solid line, and alpha dropped to 0.3
+    ctx.strokeStyle = 'rgba(255, 165, 0, 0.15)'; 
+    ctx.lineWidth = 2; 
+    ctx.stroke(); 
   }
 
   // 5. Draw Celestial Bodies

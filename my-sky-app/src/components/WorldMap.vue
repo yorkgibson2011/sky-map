@@ -53,6 +53,7 @@ function handleMapMouseLeave() {
 function handleMapClick() {
   if (hoveredCity.value) {
     skyStore.setLocation(hoveredCity.value.lat, hoveredCity.value.lon, hoveredCity.value.tz)
+    // Instantly collapse back to the sidebar when a city is chosen!
     if (widgetState.value === 'maximized') widgetState.value = 'normal'
   }
 }
@@ -108,10 +109,25 @@ function handleMapClick() {
 </template>
 
 <style scoped>
-.map-widget { position: absolute; bottom: 20px; left: 20px; background: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); border: 1px solid #444; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 10; overflow: hidden; font-family: sans-serif;}
-.map-widget.normal { width: 350px; }
-.map-widget.maximized { width: 80vw; max-width: 900px; bottom: 50px; left: 50%; transform: translateX(-50%); }
-.map-widget.minimized { width: 200px; height: 42px; }
+/* Notice: Position Absolute has been removed */
+.map-widget { position: relative; width: 100%; box-sizing: border-box; background: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); border: 1px solid #444; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 10; overflow: hidden; font-family: sans-serif;}
+
+/* Minimized shrinks it cleanly in the flex column */
+.map-widget.minimized { height: 42px; }
+
+/* THE MODAL TAKEOVER TRICK */
+.map-widget.maximized { 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 80vw; 
+  max-width: 1000px; 
+  z-index: 9999; 
+  /* A massive box-shadow acts as a darkened backdrop for the modal */
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8), 0 4px 25px rgba(0, 0, 0, 0.7);
+}
+
 .widget-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; background: rgba(20, 20, 20, 0.9); border-bottom: 1px solid #444; user-select: none; }
 .widget-header .title { color: #ccc; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .window-controls button { background: transparent; border: none; color: #888; cursor: pointer; padding: 0 5px; font-size: 1.1rem; transition: color 0.2s; }
@@ -124,7 +140,7 @@ function handleMapClick() {
 .active-dot { fill: #3a86ff; }
 .pulse-ring { fill: transparent; stroke: #3a86ff; stroke-width: 0.2; animation: pulse 2s infinite; }
 @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(3); opacity: 0; } }
-.map-tooltip { position: fixed; background: rgba(15, 15, 25, 0.95); border: 1px solid #444; border-radius: 4px; padding: 8px 12px; color: #fff; pointer-events: none; z-index: 9999; font-family: sans-serif; display: flex; flex-direction: column; gap: 4px; margin-top: 15px;}
+.map-tooltip { position: fixed; background: rgba(15, 15, 25, 0.95); border: 1px solid #444; border-radius: 4px; padding: 8px 12px; color: #fff; pointer-events: none; z-index: 99999; font-family: sans-serif; display: flex; flex-direction: column; gap: 4px; margin-top: 15px;}
 .map-tooltip strong { color: #3a86ff; font-size: 0.95rem; }
 .map-tooltip span { color: #aaa; font-size: 0.8rem; }
 </style>
