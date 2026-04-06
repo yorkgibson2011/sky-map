@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { useSkyStore, type RenderableBody } from '../stores/skyStore'
 import { NumberUtils } from '../utils/NumberUtils'
 
 const skyStore = useSkyStore()
 
+const containerRef = ref<HTMLDivElement | null>(null)
 const canvasRef = ref<HTMLCanvasElement | null>(null)
+let resizeObserver: ResizeObserver | null = null
+
 const imagesLoaded = ref(false)
 const imageCache: Record<string, HTMLImageElement> = {}
 
@@ -13,10 +16,11 @@ const hoveredBody = ref<RenderableBody | null>(null)
 const mouseX = ref(0)
 const mouseY = ref(0)
 
-const BG_SIZE = 720
+// NEW: Reactive dimensions
+const CANVAS_WIDTH = ref(1000)
+const CANVAS_HEIGHT = ref(920)
+const BG_SIZE = ref(720)
 const NORTH = -1
-const CANVAS_WIDTH = 1000
-const CANVAS_HEIGHT = 920
 
 async function preloadImages() {
   const assetNames = [
@@ -37,18 +41,22 @@ async function preloadImages() {
 }
 
 function getCoordinates(azimuth: number, altitude: number) {
-  const radius = ((90 - altitude) / 180) * BG_SIZE
+  const radius = ((90 - altitude) / 180) * BG_SIZE.value
   const top = NumberUtils.cosD(azimuth) * radius * NORTH
   const left = NumberUtils.sinD(azimuth) * radius * NORTH
-  return { x: (CANVAS_WIDTH / 2) + left, y: (CANVAS_HEIGHT / 2) + top }
+  return { x: (CANVAS_WIDTH.value / 2) + left, y: (CANVAS_HEIGHT.value / 2) + top }
 }
 
 function handleMouseMove(event: MouseEvent) {
   const canvas = canvasRef.value
   if (!canvas) return
+  
   const rect = canvas.getBoundingClientRect()
-  const x = (event.clientX - rect.left) * (canvas.width / rect.width)
-  const y = (event.clientY - rect.top) * (canvas.height / rect.height)
+  
+  // Because we scale the canvas context by DPR, CSS pixels map exactly 1:1 to our logic!
+  const x = event.clientX - rect.left
+  const y = event.clientY - rect.top
+  
   mouseX.value = event.clientX
   mouseY.value = event.clientY
 
@@ -80,13 +88,20 @@ function drawSky() {
   const ctx = canvas.getContext('2d')
   if (!ctx) return
 
+  const dpr = window.devicePixelRatio || 1
+  // Reset transform to identity before clearing and scaling
+  ctx.resetTransform()
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  const centerX = CANVAS_WIDTH / 2
-  const centerY = CANVAS_HEIGHT / 2
+  // Scale the context so our CSS pixel math draws perfectly crisp on Retina/4K screens
+  ctx.scale(dpr, dpr)
 
-  // 1. DAY/NIGHT BACKGROUND BLENDING (Drawn first so it stays at the back)
+  const centerX = CANVAS_WIDTH.value / 2
+  const centerY = CANVAS_HEIGHT.value / 2
+  const bgRadius = BG_SIZE.value / 2
+
+  // 1. DAY/NIGHT BACKGROUND BLENDING
   ctx.beginPath()
-  ctx.arc(centerX, centerY, BG_SIZE / 2, 0, Math.PI * 2)
+  ctx.arc(centerX, centerY, bgRadius, 0, Math.PI * 2)
   ctx.fillStyle = '#0a0a0c'
   ctx.fill()
 
@@ -106,29 +121,27 @@ function drawSky() {
     starVisibility = Math.max(0, Math.min(1, (alt + 2) / -10));
   }
 
-  // Draw the Horizon Ring
   ctx.strokeStyle = '#444444'; ctx.lineWidth = 2; ctx.stroke()
 
-  // 2. THE CROSSHAIRS (Moved here so they paint ON TOP of the background!)
+  // 2. THE CROSSHAIRS
   ctx.beginPath()
-  ctx.moveTo(centerX, centerY - (BG_SIZE / 2)); ctx.lineTo(centerX, centerY + (BG_SIZE / 2))
-  ctx.moveTo(centerX - (BG_SIZE / 2), centerY); ctx.lineTo(centerX + (BG_SIZE / 2), centerY)
+  ctx.moveTo(centerX, centerY - bgRadius); ctx.lineTo(centerX, centerY + bgRadius)
+  ctx.moveTo(centerX - bgRadius, centerY); ctx.lineTo(centerX + bgRadius, centerY)
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)'; ctx.lineWidth = 1; ctx.stroke()
 
-  // Add Horizon Labels
   ctx.fillStyle = '#666666'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center'
-  ctx.fillText('N', centerX, centerY - (BG_SIZE / 2) - 10)
-  ctx.fillText('S', centerX, centerY + (BG_SIZE / 2) + 20)
-  ctx.textAlign = 'left'; ctx.fillText('HORIZON (0°)', centerX + (BG_SIZE / 2) + 10, centerY + 4)
-  ctx.textAlign = 'right'; ctx.fillText('E', centerX - (BG_SIZE / 2) - 10, centerY + 4)
+  ctx.fillText('N', centerX, centerY - bgRadius - 10)
+  ctx.fillText('S', centerX, centerY + bgRadius + 20)
+  ctx.textAlign = 'left'; ctx.fillText('HORIZON (0°)', centerX + bgRadius + 10, centerY + 4)
+  ctx.textAlign = 'right'; ctx.fillText('E', centerX - bgRadius - 10, centerY + 4)
 
   // 3. 45° Altitude Ring
-  ctx.beginPath(); ctx.arc(centerX, centerY, BG_SIZE / 4, 0, Math.PI * 2)
+  ctx.beginPath(); ctx.arc(centerX, centerY, bgRadius / 2, 0, Math.PI * 2)
   ctx.strokeStyle = 'rgba(58, 134, 255, 0.3)'; ctx.setLineDash([4, 4]); ctx.stroke(); ctx.setLineDash([]) 
   ctx.fillStyle = 'rgba(58, 134, 255, 0.5)'; ctx.textAlign = 'left'
-  ctx.fillText('45° ALT', centerX + (BG_SIZE / 4) + 5, centerY - 5)
+  ctx.fillText('45° ALT', centerX + (bgRadius / 2) + 5, centerY - 5)
 
-  // 4. Sun's Path (Sunset Line)
+  // 4. Sun's Path
   if (skyStore.sunPath.length > 0) {
     ctx.beginPath()
     let isDrawingPath = false
@@ -191,18 +204,48 @@ function drawSky() {
   })
 }
 
-onMounted(() => preloadImages())
+// NEW: Setup the ResizeObserver when mounted
+onMounted(() => {
+  preloadImages()
+
+  if (containerRef.value) {
+    resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect
+        
+        CANVAS_WIDTH.value = width
+        CANVAS_HEIGHT.value = height
+        
+        // Dynamically size the dome based on the smaller screen dimension,
+        // leaving 80px of padding for the N/S/E/W labels so they don't clip.
+        BG_SIZE.value = Math.min(width, height) - 80
+
+        if (canvasRef.value) {
+          const dpr = window.devicePixelRatio || 1
+          // The actual HTML buffer is multiplied by DPR
+          canvasRef.value.width = width * dpr
+          canvasRef.value.height = height * dpr
+        }
+        drawSky()
+      }
+    })
+    resizeObserver.observe(containerRef.value)
+  }
+})
+
+// Clean up the observer if the component is ever destroyed
+onUnmounted(() => {
+  if (resizeObserver) resizeObserver.disconnect()
+})
 
 watch(() => skyStore.activeBodies, () => drawSky(), { deep: true })
 watch(() => skyStore.showAtmosphere, () => drawSky())
 </script>
 
 <template>
-  <div class="sky-container">
+  <div class="sky-container" ref="containerRef">
     <canvas 
       ref="canvasRef" 
-      :width="CANVAS_WIDTH" 
-      :height="CANVAS_HEIGHT"
       @mousemove="handleMouseMove"
       @mouseleave="handleMouseLeave"
     ></canvas>
@@ -219,8 +262,28 @@ watch(() => skyStore.showAtmosphere, () => drawSky())
 </template>
 
 <style scoped>
-.sky-container { display: flex; justify-content: center; align-items: center; position: relative; }
-canvas { background-color: #111; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); cursor: default; }
+/* NEW: Ensure the container forces itself to fill available space */
+.sky-container { 
+  position: absolute; /* Takes it out of document flow */
+  top: 0; left: 0;
+  width: 100vw; 
+  height: 100vh;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  overflow: hidden; 
+  background-color: #050505; /* Fallback deep space behind the canvas */
+}
+
+/* NEW: The canvas stretches 100% via CSS, but draws based on internal dpr buffer */
+canvas { 
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; 
+  cursor: default; 
+}
+
 .hover-tooltip { position: fixed; background: rgba(15, 15, 25, 0.95); border: 1px solid #444; border-radius: 6px; padding: 12px 16px; color: #fff; pointer-events: none; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: sans-serif; min-width: 180px; }
 .hover-tooltip h3 { margin: 0 0 8px 0; font-size: 1rem; color: #3a86ff; text-transform: capitalize; }
 .tooltip-data p { margin: 4px 0; font-size: 0.85rem; color: #ccc; }

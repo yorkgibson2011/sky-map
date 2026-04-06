@@ -55,9 +55,7 @@ const dateTimeInput = ref<string>(formatWithOffset(skyStore.targetDate, visualOf
 const isInputFocused = ref(false)
 
 watch([() => skyStore.targetDate, visualOffsetMs], ([newDate, newOffset]) => {
-  // THE SHIELD: Do NOT overwrite the input if the user is interacting with it!
   if (isInputFocused.value) return;
-  
   const newStr = formatWithOffset(newDate, newOffset)
   if (dateTimeInput.value !== newStr) dateTimeInput.value = newStr
 })
@@ -81,13 +79,40 @@ function onDateChange(event: Event) {
   const target = event.target as HTMLInputElement
   if (target.value) {
     const localDateAsUtc = new Date(target.value + 'Z')
-    
-    // Safely abort if the browser passes a corrupted string while typing
     if (isNaN(localDateAsUtc.getTime())) return; 
-    
     const trueOffsetMs = getTzOffsetMs(localDateAsUtc, skyStore.timezone)
     const absoluteDate = new Date(localDateAsUtc.getTime() - trueOffsetMs)
     skyStore.setDate(absoluteDate, 1500)
+  }
+}
+
+// ==========================================
+// NEW: Playback Speed Array & Methods
+// ==========================================
+const RATES = [
+  { label: '-1 Wk / s', val: -604800 },
+  { label: '-1 Day / s', val: -86400 },
+  { label: '-1 Hr / s', val: -3600 },
+  { label: '-1 Min / s', val: -60 },
+  { label: 'Realtime', val: 1 },
+  { label: '1 Min / s', val: 60 },
+  { label: '1 Hr / s', val: 3600 },
+  { label: '1 Day / s', val: 86400 },
+  { label: '1 Wk / s', val: 604800 }
+]
+const rateIndex = ref(6) // Default to "1 Hr / s"
+
+function slower() {
+  if (rateIndex.value > 0) {
+    rateIndex.value--
+    skyStore.playbackRate = RATES[rateIndex.value].val
+  }
+}
+
+function faster() {
+  if (rateIndex.value < RATES.length - 1) {
+    rateIndex.value++
+    skyStore.playbackRate = RATES[rateIndex.value].val
   }
 }
 </script>
@@ -122,8 +147,16 @@ function onDateChange(event: Event) {
     </div>
     
     <div class="control-group">
-      <label>Time Travel</label>
-      <button @click="stepForwardOneDay">+1 Day</button>
+      <label>Time Travel & Playback</label>
+      <button @click="stepForwardOneDay" class="full-btn">+1 Day Jump</button>
+      
+      <div class="playback-controls">
+        <button @click="slower" :disabled="rateIndex === 0" title="Slower" class="scrub-btn">⏪</button>
+        <button @click="skyStore.togglePlay" class="play-btn" :class="{ 'is-active': skyStore.isPlaying }">
+          {{ skyStore.isPlaying ? '⏸️ ' + RATES[rateIndex].label : '▶️ ' + RATES[rateIndex].label }}
+        </button>
+        <button @click="faster" :disabled="rateIndex === RATES.length - 1" title="Faster" class="scrub-btn">⏩</button>
+      </div>
     </div>
   </div>
 </template>
@@ -136,6 +169,16 @@ label { font-size: 0.85rem; color: #aaa; text-transform: uppercase; letter-spaci
 .checkbox-label { cursor: pointer; color: #fff; text-transform: none; letter-spacing: 0; font-size: 0.95rem;}
 select, input:not([type="checkbox"]) { padding: 8px; border-radius: 4px; border: 1px solid #555; background: #222; color: white; outline: none; font-size: 1rem; }
 input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; accent-color: #3a86ff;}
-button { padding: 8px 12px; background: #3a86ff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s; }
-button:hover { background: #2a66cc; }
+
+button { padding: 8px 12px; background: #3a86ff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s, transform 0.1s; }
+button:hover:not(:disabled) { background: #2a66cc; }
+button:active:not(:disabled) { transform: scale(0.97); }
+button:disabled { opacity: 0.5; cursor: not-allowed; background: #444; }
+
+.playback-controls { display: flex; gap: 5px; margin-top: 5px; }
+.scrub-btn { flex: 1; padding: 8px 0; background: #444; font-size: 1.1rem; }
+.scrub-btn:hover:not(:disabled) { background: #555; }
+.play-btn { flex: 3; display: flex; justify-content: center; align-items: center; gap: 5px; }
+.play-btn.is-active { background: #ff3a5e; }
+.play-btn.is-active:hover { background: #cc2a4a; }
 </style>

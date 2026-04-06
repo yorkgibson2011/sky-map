@@ -29,16 +29,59 @@ export const useSkyStore = defineStore('sky', () => {
   const visMagThreshold = ref<number>(5.5)
   
   const activeBodies = shallowRef<RenderableBody[]>([])
-  // NEW: Store the sunset line coordinates in state
-  // NEW: Allow null values to act as a "pen lift" break in the line
   const sunPath = shallowRef<({azimuth: number, altitude: number} | null)[]>([])
 
   let animationFrameId: number | null = null;
   const isLiveTime = ref(true)
   let interactionTimeout: number | null = null
 
+  const isPlaying = ref(false)
+  const playbackRate = ref(3600)
+  let lastPlaybackTime = 0
+  let playbackFrameId: number | null = null
+
+  function togglePlay() {
+    isPlaying.value = !isPlaying.value
+    if (isPlaying.value) {
+      isLiveTime.value = false
+      if (interactionTimeout) clearTimeout(interactionTimeout)
+      if (animationFrameId) cancelAnimationFrame(animationFrameId)
+      
+      lastPlaybackTime = Date.now()
+      playbackFrameId = requestAnimationFrame(playbackLoop)
+    } else {
+      if (playbackFrameId) {
+        cancelAnimationFrame(playbackFrameId)
+        playbackFrameId = null
+      }
+    }
+  }
+
+  function playbackLoop() {
+    if (!isPlaying.value) return
+    const now = Date.now()
+    const deltaMs = now - lastPlaybackTime
+    lastPlaybackTime = now
+
+    const cappedDelta = Math.min(deltaMs, 100)
+    const simDeltaMs = cappedDelta * playbackRate.value
+    const nextMs = targetDate.value.getTime() + simDeltaMs
+
+    const newDate = new Date(nextMs)
+    targetDate.value = newDate
+    currentDate.value = newDate 
+    
+    try {
+      recalculateSky()
+    } catch(e) {
+      console.error("Playback math error:", e)
+    }
+
+    playbackFrameId = requestAnimationFrame(playbackLoop)
+  }
+
   setInterval(() => {
-    if (isLiveTime.value && !animationFrameId) {
+    if (isLiveTime.value && !animationFrameId && !isPlaying.value) {
       const now = new Date()
       currentDate.value = now
       targetDate.value = now 
@@ -47,6 +90,7 @@ export const useSkyStore = defineStore('sky', () => {
   }, 1000)
 
   function setLocation(targetLat: number, targetLon: number, targetTz: string = 'Europe/London', durationMs = 1500) {
+    if (isPlaying.value) togglePlay()
     if (animationFrameId) cancelAnimationFrame(animationFrameId)
 
     timezone.value = targetTz;
@@ -87,6 +131,7 @@ export const useSkyStore = defineStore('sky', () => {
 
   function setDate(newTargetDate: Date, durationMs = 1500, isUserAction = true) {
     if (isNaN(newTargetDate.getTime())) return;
+    if (isPlaying.value) togglePlay();
 
     if (animationFrameId) cancelAnimationFrame(animationFrameId)
     targetDate.value = newTargetDate
@@ -124,12 +169,12 @@ export const useSkyStore = defineStore('sky', () => {
   }
 
   function recalculateSky() {
-    // 1. CALCULATE THE SUNSET LINE FIRST
+    const startOfDay = new Date(currentDate.value)
+    startOfDay.setHours(0, 0, 0, 0)
+    
     const path: ({azimuth: number, altitude: number} | null)[] = []
     let sunWasUp = false
     
-    // Check 12 hours before and 12 hours after the current time
-    // This ensures we capture the correct daylight arc for the timezone we are looking at!
     for (let hour = -12; hour <= 12; hour += 0.25) { 
       const testDate = new Date(currentDate.value.getTime() + hour * 60 * 60 * 1000)
       const tempSunPos = PlanetaryPositions.sun(testDate)
@@ -139,7 +184,6 @@ export const useSkyStore = defineStore('sky', () => {
           path.push({ azimuth: tempSunPos.azimuth, altitude: tempSunPos.altitude })
           sunWasUp = true
         } else if (sunWasUp) {
-          // The sun just went below the horizon! Push a null to break the line.
           path.push(null) 
           sunWasUp = false
         }
@@ -147,42 +191,17 @@ export const useSkyStore = defineStore('sky', () => {
     }
     sunPath.value = path
 
-    // 2. THE SHIELD: Instantly wipe the math cache clean!
-    // This stops the sunset line from corrupting the planets' geocentric coordinates.
     PlanetaryPositions.lastDate = new Date(0)
     PlanetaryPositions.lastSunDate = new Date(0)
     PlanetaryPositions.lastSun = null
 
-    // 3. NOW CALCULATE THE PLANETS
     const bodies: RenderableBody[] = []
     
-    PlanetaryPositions.PLANET_NAMES.forEach((planetName) => {
-      const calcFunction = (PlanetaryPositions as any)[planetName]
-      if (typeof calcFunction === 'function') {
-        const data: PositionData = calcFunction.call(PlanetaryPositions, currentDate.value)
-        bodies.push({
-          ...data,
-          id: planetName,
-          label: planetName.charAt(0).toUpperCase() + planetName.slice(1),
-          imageId: planetName === 'moon' ? 'moon_phases_38' : planetName,
-          isStar: false,
-          isInteractive: true,
-          moonPhase: planetName === 'moon' ? PlanetaryPositions.getAbsoluteMoonPhase(currentDate.value) : data.moonPhase
-        })
-      }
-    })
+    // ==========================================
+    // RENDERING ORDER (BACK TO FRONT)
+    // ==========================================
 
-    const sunData = PlanetaryPositions.sun(currentDate.value)
-    bodies.push({
-      ...sunData,
-      id: 'sun',
-      label: 'Sun',
-      imageId: 'sun',
-      isStar: true,
-      isInteractive: true,
-      visualMagnitude: -26.74
-    })
-
+    // 1. STARS (Farthest back)
     STAR_DATA.forEach(star => {
       if (star.VM <= visMagThreshold.value) {
         const aa = PlanetaryPositions.azimuthAltitude(star.RA, star.Dec, currentDate.value)
@@ -196,6 +215,50 @@ export const useSkyStore = defineStore('sky', () => {
           visualMagnitude: star.VM
         })
       }
+    })
+
+    // 2. SUN
+    const sunData = PlanetaryPositions.sun(currentDate.value)
+    bodies.push({
+      ...sunData,
+      id: 'sun',
+      label: 'Sun',
+      imageId: 'sun',
+      isStar: true,
+      isInteractive: true,
+      visualMagnitude: -26.74
+    })
+
+    // 3. PLANETS (Excluding Moon and Earth!)
+    PlanetaryPositions.PLANET_NAMES.forEach((planetName) => {
+      // THE FIX: Skip the moon (drawn last) AND Earth (we are standing on it!)
+      if (planetName === 'moon' || planetName === 'earth') return; 
+
+      const calcFunction = (PlanetaryPositions as any)[planetName]
+      if (typeof calcFunction === 'function') {
+        const data: PositionData = calcFunction.call(PlanetaryPositions, currentDate.value)
+        bodies.push({
+          ...data,
+          id: planetName,
+          label: planetName.charAt(0).toUpperCase() + planetName.slice(1),
+          imageId: planetName,
+          isStar: false,
+          isInteractive: true,
+          moonPhase: data.moonPhase
+        })
+      }
+    })
+
+    // 4. MOON (Closest to Earth, drawn absolutely last so it sits on top)
+    const moonData = PlanetaryPositions.moon(currentDate.value)
+    bodies.push({
+      ...moonData,
+      id: 'moon',
+      label: 'Moon',
+      imageId: 'moon_phases_38',
+      isStar: false,
+      isInteractive: true,
+      moonPhase: PlanetaryPositions.getAbsoluteMoonPhase(currentDate.value)
     })
 
     activeBodies.value = bodies
@@ -214,7 +277,10 @@ export const useSkyStore = defineStore('sky', () => {
     showAtmosphere,
     visMagThreshold,
     activeBodies,
-    sunPath, // Export the path to the component!
+    sunPath,
+    isPlaying,
+    playbackRate,
+    togglePlay,
     setLocation,
     setDate,
     recalculateSky
