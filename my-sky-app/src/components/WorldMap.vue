@@ -46,14 +46,11 @@ function handleMapMouseMove(e: MouseEvent) {
   hoveredCity.value = nearestCity
 }
 
-function handleMapMouseLeave() {
-  hoveredCity.value = null
-}
+function handleMapMouseLeave() { hoveredCity.value = null }
 
 function handleMapClick() {
   if (hoveredCity.value) {
     skyStore.setLocation(hoveredCity.value.lat, hoveredCity.value.lon, hoveredCity.value.tz)
-    // Instantly collapse back to the sidebar when a city is chosen!
     if (widgetState.value === 'maximized') widgetState.value = 'normal'
   }
 }
@@ -109,25 +106,9 @@ function handleMapClick() {
 </template>
 
 <style scoped>
-/* Notice: Position Absolute has been removed */
-.map-widget { position: relative; width: 100%; box-sizing: border-box; background: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); border: 1px solid #444; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 10; overflow: hidden; font-family: sans-serif;}
-
-/* Minimized shrinks it cleanly in the flex column */
+.map-widget { position: relative; width: 100%; box-sizing: border-box; background: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); border: 1px solid #444; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 10; overflow: hidden; font-family: sans-serif; flex-shrink: 0; }
 .map-widget.minimized { height: 42px; }
-
-/* THE MODAL TAKEOVER TRICK */
-.map-widget.maximized { 
-  position: fixed; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  width: 80vw; 
-  max-width: 1000px; 
-  z-index: 9999; 
-  /* A massive box-shadow acts as a darkened backdrop for the modal */
-  box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8), 0 4px 25px rgba(0, 0, 0, 0.7);
-}
-
+.map-widget.maximized { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80vw; max-width: 1000px; z-index: 9999; box-shadow: 0 0 0 100vmax rgba(0,0,0,0.8), 0 4px 25px rgba(0, 0, 0, 0.7); }
 .widget-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; background: rgba(20, 20, 20, 0.9); border-bottom: 1px solid #444; user-select: none; }
 .widget-header .title { color: #ccc; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .window-controls button { background: transparent; border: none; color: #888; cursor: pointer; padding: 0 5px; font-size: 1.1rem; transition: color 0.2s; }

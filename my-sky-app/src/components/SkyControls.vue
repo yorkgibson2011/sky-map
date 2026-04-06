@@ -86,9 +86,6 @@ function onDateChange(event: Event) {
   }
 }
 
-// ==========================================
-// Expanded Playback Rates
-// ==========================================
 const RATES = [
   { label: '-1 Wk/s', val: -604800 },
   { label: '-1 Day/s', val: -86400 },
@@ -106,7 +103,7 @@ const RATES = [
   { label: '1 Day/s', val: 86400 },
   { label: '1 Wk/s', val: 604800 }
 ]
-const rateIndex = ref(11) // Default to "1 Hr / s"
+const rateIndex = ref(11)
 
 function slower() {
   if (rateIndex.value > 0) {
@@ -176,8 +173,7 @@ function faster() {
 </template>
 
 <style scoped>
-/* Notice: Position Absolute has been removed so it flows in the sidebar */
-.controls-panel { background: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); padding: 15px 20px; border-radius: 8px; border: 1px solid #444; display: flex; flex-direction: column; gap: 15px; color: #fff; font-family: sans-serif; width: 100%; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); z-index: 10; }
+.controls-panel { background: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); padding: 15px 20px; border-radius: 8px; border: 1px solid #444; display: flex; flex-direction: column; gap: 15px; color: #fff; font-family: sans-serif; width: 100%; box-sizing: border-box; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); z-index: 10; flex-shrink: 0; }
 .control-group { display: flex; flex-direction: column; gap: 5px; }
 .row-group { flex-direction: row; align-items: center; gap: 10px; margin: 5px 0;}
 label { font-size: 0.85rem; color: #aaa; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -198,6 +194,5 @@ button:disabled { opacity: 0.5; cursor: not-allowed; background: #444; }
 .play-btn.is-active { background: #ff3a5e; }
 .play-btn.is-active:hover { background: #cc2a4a; }
 
-/* SVG Icon Sizing */
 .icon-btn svg, .play-btn svg { width: 18px; height: 18px; }
 </style>

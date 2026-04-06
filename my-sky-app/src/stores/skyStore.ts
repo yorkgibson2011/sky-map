@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, shallowRef } from 'vue'
+import { ref, shallowRef, computed } from 'vue'
 import { PlanetaryPositions, type PositionData } from '../utils/PlanetaryPositions'
 import { STAR_DATA } from '../utils/StarData'
 
@@ -17,6 +17,9 @@ function easeInOutCubic(x: number): number {
 }
 
 export const useSkyStore = defineStore('sky', () => {
+  // ==========================================
+  // CORE STATE
+  // ==========================================
   const currentDate = ref<Date>(new Date())
   const targetDate = ref<Date>(new Date()) 
   
@@ -25,12 +28,26 @@ export const useSkyStore = defineStore('sky', () => {
   const targetLatitude = ref<number>(51.467)
   const targetLongitude = ref<number>(-2.583)
   const timezone = ref<string>('Europe/London')
+  
   const showAtmosphere = ref<boolean>(true)
   const visMagThreshold = ref<number>(5.5)
   
   const activeBodies = shallowRef<RenderableBody[]>([])
   const sunPath = shallowRef<({azimuth: number, altitude: number} | null)[]>([])
 
+  // ==========================================
+  // TARGET LOCKING SYSTEM
+  // ==========================================
+  const selectedTargetId = ref<string | null>(null)
+  
+  const selectedBody = computed(() => {
+    if (!selectedTargetId.value) return null
+    return activeBodies.value.find(b => b.id === selectedTargetId.value) || null
+  })
+
+  // ==========================================
+  // INTERNAL TIMING & PLAYBACK STATE
+  // ==========================================
   let animationFrameId: number | null = null;
   const isLiveTime = ref(true)
   let interactionTimeout: number | null = null
@@ -40,6 +57,9 @@ export const useSkyStore = defineStore('sky', () => {
   let lastPlaybackTime = 0
   let playbackFrameId: number | null = null
 
+  // ==========================================
+  // PLAYBACK ENGINE
+  // ==========================================
   function togglePlay() {
     isPlaying.value = !isPlaying.value
     if (isPlaying.value) {
@@ -63,6 +83,7 @@ export const useSkyStore = defineStore('sky', () => {
     const deltaMs = now - lastPlaybackTime
     lastPlaybackTime = now
 
+    // Cap the delta to 100ms so the universe doesn't explode if the user switches browser tabs
     const cappedDelta = Math.min(deltaMs, 100)
     const simDeltaMs = cappedDelta * playbackRate.value
     const nextMs = targetDate.value.getTime() + simDeltaMs
@@ -80,6 +101,9 @@ export const useSkyStore = defineStore('sky', () => {
     playbackFrameId = requestAnimationFrame(playbackLoop)
   }
 
+  // ==========================================
+  // LIVE CLOCK SYNC
+  // ==========================================
   setInterval(() => {
     if (isLiveTime.value && !animationFrameId && !isPlaying.value) {
       const now = new Date()
@@ -89,6 +113,9 @@ export const useSkyStore = defineStore('sky', () => {
     }
   }, 1000)
 
+  // ==========================================
+  // LOCATION & TIME SETTERS (With Tweening)
+  // ==========================================
   function setLocation(targetLat: number, targetLon: number, targetTz: string = 'Europe/London', durationMs = 1500) {
     if (isPlaying.value) togglePlay()
     if (animationFrameId) cancelAnimationFrame(animationFrameId)
@@ -168,8 +195,11 @@ export const useSkyStore = defineStore('sky', () => {
     animationFrameId = requestAnimationFrame(step)
   }
 
+  // ==========================================
+  // ASTRONOMY MATH ENGINE
+  // ==========================================
   function recalculateSky() {
-    // Inside recalculateSky() in skyStore.ts
+    // 1. CALCULATE SUN'S 24-HOUR PATH (Full ring)
     const startOfDay = new Date(currentDate.value)
     startOfDay.setHours(0, 0, 0, 0)
     
@@ -180,23 +210,21 @@ export const useSkyStore = defineStore('sky', () => {
       const tempSunPos = PlanetaryPositions.sun(testDate)
       
       if (tempSunPos.altitude !== undefined && tempSunPos.azimuth !== undefined) {
-        // THE FIX: Push every single point to form a complete 24-hour ring!
         path.push({ azimuth: tempSunPos.azimuth, altitude: tempSunPos.altitude })
       }
     }
     sunPath.value = path
 
+    // Shield: Wipe the math cache so the path loop doesn't corrupt the planets
     PlanetaryPositions.lastDate = new Date(0)
     PlanetaryPositions.lastSunDate = new Date(0)
     PlanetaryPositions.lastSun = null
 
     const bodies: RenderableBody[] = []
     
-    // ==========================================
-    // RENDERING ORDER (BACK TO FRONT)
-    // ==========================================
-
-    // 1. STARS (Farthest back)
+    // 2. RENDERING ORDER (BACK TO FRONT)
+    
+    // --- STARS (Deep Background) ---
     STAR_DATA.forEach(star => {
       if (star.VM <= visMagThreshold.value) {
         const aa = PlanetaryPositions.azimuthAltitude(star.RA, star.Dec, currentDate.value)
@@ -212,7 +240,7 @@ export const useSkyStore = defineStore('sky', () => {
       }
     })
 
-    // 2. SUN
+    // --- SUN ---
     const sunData = PlanetaryPositions.sun(currentDate.value)
     bodies.push({
       ...sunData,
@@ -224,9 +252,9 @@ export const useSkyStore = defineStore('sky', () => {
       visualMagnitude: -26.74
     })
 
-    // 3. PLANETS (Excluding Moon and Earth!)
+    // --- PLANETS ---
     PlanetaryPositions.PLANET_NAMES.forEach((planetName) => {
-      // THE FIX: Skip the moon (drawn last) AND Earth (we are standing on it!)
+      // Ignore Earth (we are standing on it) and Moon (drawn last)
       if (planetName === 'moon' || planetName === 'earth') return; 
 
       const calcFunction = (PlanetaryPositions as any)[planetName]
@@ -244,7 +272,7 @@ export const useSkyStore = defineStore('sky', () => {
       }
     })
 
-    // 4. MOON (Closest to Earth, drawn absolutely last so it sits on top)
+    // --- MOON (Absolute Foreground) ---
     const moonData = PlanetaryPositions.moon(currentDate.value)
     bodies.push({
       ...moonData,
@@ -259,6 +287,7 @@ export const useSkyStore = defineStore('sky', () => {
     activeBodies.value = bodies
   }
 
+  // Initial calculation on load
   recalculateSky()
 
   return {
@@ -275,6 +304,8 @@ export const useSkyStore = defineStore('sky', () => {
     sunPath,
     isPlaying,
     playbackRate,
+    selectedTargetId,
+    selectedBody,
     togglePlay,
     setLocation,
     setDate,

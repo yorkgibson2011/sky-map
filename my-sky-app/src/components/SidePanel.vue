@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import TargetDetails from './TargetDetails.vue'
 import SkyControls from './SkyControls.vue'
 import WorldMap from './WorldMap.vue'
 
@@ -19,6 +20,7 @@ const isPanelOpen = ref(true)
     </div>
 
     <div class="sidebar-scroll-area">
+      <TargetDetails />
       <SkyControls />
       <WorldMap />
     </div>
@@ -27,60 +29,10 @@ const isPanelOpen = ref(true)
 </template>
 
 <style scoped>
-.dashboard-sidebar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 320px;
-  background: rgba(15, 15, 15, 0.6); /* Slightly darker track for the cards */
-  backdrop-filter: blur(10px);
-  border-right: 1px solid #444;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  z-index: 50; /* Sits above the canvas */
-}
-
-/* Slides entirely off screen to the left */
-.dashboard-sidebar.is-closed {
-  transform: translateX(-100%);
-}
-
-/* The little tab attached to the outside right edge */
-.sidebar-toggle {
-  position: absolute;
-  top: 20px;
-  right: -32px;
-  width: 32px;
-  height: 48px;
-  background: rgba(30, 30, 30, 0.85);
-  backdrop-filter: blur(5px);
-  border: 1px solid #444;
-  border-left: none;
-  border-radius: 0 8px 8px 0;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.sidebar-toggle:hover {
-  background: rgba(50, 50, 50, 0.95);
-}
-
-.sidebar-scroll-area {
-  padding: 20px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-/* Hide scrollbar for a cleaner look */
+.dashboard-sidebar { position: absolute; top: 0; left: 0; height: 100vh; width: 320px; background: rgba(15, 15, 15, 0.6); backdrop-filter: blur(10px); border-right: 1px solid #444; display: flex; flex-direction: column; transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 50; }
+.dashboard-sidebar.is-closed { transform: translateX(-100%); }
+.sidebar-toggle { position: absolute; top: 20px; right: -32px; width: 32px; height: 48px; background: rgba(30, 30, 30, 0.85); backdrop-filter: blur(5px); border: 1px solid #444; border-left: none; border-radius: 0 8px 8px 0; color: white; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s; }
+.sidebar-toggle:hover { background: rgba(50, 50, 50, 0.95); }
+.sidebar-scroll-area { padding: 20px; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; gap: 20px; height: 100%; box-sizing: border-box; }
 .sidebar-scroll-area::-webkit-scrollbar { width: 0; }
 </style>

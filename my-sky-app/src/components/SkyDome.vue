@@ -16,7 +16,6 @@ const hoveredBody = ref<RenderableBody | null>(null)
 const mouseX = ref(0)
 const mouseY = ref(0)
 
-// NEW: Reactive dimensions
 const CANVAS_WIDTH = ref(1000)
 const CANVAS_HEIGHT = ref(920)
 const BG_SIZE = ref(720)
@@ -52,8 +51,6 @@ function handleMouseMove(event: MouseEvent) {
   if (!canvas) return
   
   const rect = canvas.getBoundingClientRect()
-  
-  // Because we scale the canvas context by DPR, CSS pixels map exactly 1:1 to our logic!
   const x = event.clientX - rect.left
   const y = event.clientY - rect.top
   
@@ -82,6 +79,14 @@ function handleMouseMove(event: MouseEvent) {
 
 function handleMouseLeave() { hoveredBody.value = null }
 
+function handleMouseClick() {
+  if (hoveredBody.value) {
+    skyStore.selectedTargetId = hoveredBody.value.id
+  } else {
+    skyStore.selectedTargetId = null
+  }
+}
+
 function drawSky() {
   const canvas = canvasRef.value
   if (!canvas || !imagesLoaded.value) return
@@ -89,10 +94,8 @@ function drawSky() {
   if (!ctx) return
 
   const dpr = window.devicePixelRatio || 1
-  // Reset transform to identity before clearing and scaling
   ctx.resetTransform()
   ctx.clearRect(0, 0, canvas.width, canvas.height)
-  // Scale the context so our CSS pixel math draws perfectly crisp on Retina/4K screens
   ctx.scale(dpr, dpr)
 
   const centerX = CANVAS_WIDTH.value / 2
@@ -141,7 +144,7 @@ function drawSky() {
   ctx.fillStyle = 'rgba(58, 134, 255, 0.5)'; ctx.textAlign = 'left'
   ctx.fillText('45° ALT', centerX + (bgRadius / 2) + 5, centerY - 5)
 
-  // 4. Sun's Path
+  // 4. Sun's Path (Solid Ring)
   if (skyStore.sunPath.length > 0) {
     ctx.beginPath()
     let isDrawingPath = false
@@ -158,7 +161,6 @@ function drawSky() {
         }
       }
     })
-    // THE FIX: Solid line, and alpha dropped to 0.3
     ctx.strokeStyle = 'rgba(255, 165, 0, 0.15)'; 
     ctx.lineWidth = 2; 
     ctx.stroke(); 
@@ -205,9 +207,27 @@ function drawSky() {
 
     ctx.globalAlpha = 1.0
   })
+
+  // 6. Draw Targeting Reticle
+  if (skyStore.selectedBody && skyStore.selectedBody.azimuth !== undefined && skyStore.selectedBody.altitude !== undefined) {
+    const { x, y } = getCoordinates(skyStore.selectedBody.azimuth, skyStore.selectedBody.altitude)
+    ctx.beginPath()
+    
+    const r = 26 
+    const b = 8  
+    
+    ctx.strokeStyle = '#ff3a5e' 
+    ctx.lineWidth = 2
+
+    ctx.moveTo(x - r, y - r + b); ctx.lineTo(x - r, y - r); ctx.lineTo(x - r + b, y - r);
+    ctx.moveTo(x + r - b, y - r); ctx.lineTo(x + r, y - r); ctx.lineTo(x + r, y - r + b);
+    ctx.moveTo(x + r, y + r - b); ctx.lineTo(x + r, y + r); ctx.lineTo(x + r - b, y + r);
+    ctx.moveTo(x - r + b, y + r); ctx.lineTo(x - r, y + r); ctx.lineTo(x - r, y + r - b);
+
+    ctx.stroke()
+  }
 }
 
-// NEW: Setup the ResizeObserver when mounted
 onMounted(() => {
   preloadImages()
 
@@ -215,17 +235,12 @@ onMounted(() => {
     resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const { width, height } = entry.contentRect
-        
         CANVAS_WIDTH.value = width
         CANVAS_HEIGHT.value = height
-        
-        // Dynamically size the dome based on the smaller screen dimension,
-        // leaving 80px of padding for the N/S/E/W labels so they don't clip.
         BG_SIZE.value = Math.min(width, height) - 80
 
         if (canvasRef.value) {
           const dpr = window.devicePixelRatio || 1
-          // The actual HTML buffer is multiplied by DPR
           canvasRef.value.width = width * dpr
           canvasRef.value.height = height * dpr
         }
@@ -236,7 +251,6 @@ onMounted(() => {
   }
 })
 
-// Clean up the observer if the component is ever destroyed
 onUnmounted(() => {
   if (resizeObserver) resizeObserver.disconnect()
 })
@@ -251,9 +265,10 @@ watch(() => skyStore.showAtmosphere, () => drawSky())
       ref="canvasRef" 
       @mousemove="handleMouseMove"
       @mouseleave="handleMouseLeave"
+      @click="handleMouseClick"
     ></canvas>
 
-    <div v-if="hoveredBody" class="hover-tooltip" :style="{ left: mouseX + 15 + 'px', top: mouseY + 15 + 'px' }">
+    <div v-if="hoveredBody && !skyStore.isPlaying" class="hover-tooltip" :style="{ left: mouseX + 15 + 'px', top: mouseY + 15 + 'px' }">
       <h3>{{ hoveredBody.label }}</h3>
       <div class="tooltip-data">
         <p v-if="hoveredBody.RightAscension"><strong>RA:</strong> {{ hoveredBody.RightAscension }}</p>
@@ -265,28 +280,8 @@ watch(() => skyStore.showAtmosphere, () => drawSky())
 </template>
 
 <style scoped>
-/* NEW: Ensure the container forces itself to fill available space */
-.sky-container { 
-  position: absolute; /* Takes it out of document flow */
-  top: 0; left: 0;
-  width: 100vw; 
-  height: 100vh;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  overflow: hidden; 
-  background-color: #050505; /* Fallback deep space behind the canvas */
-}
-
-/* NEW: The canvas stretches 100% via CSS, but draws based on internal dpr buffer */
-canvas { 
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: transparent; 
-  cursor: default; 
-}
-
+.sky-container { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; background-color: #050505; }
+canvas { display: block; width: 100%; height: 100%; background-color: transparent; cursor: default; }
 .hover-tooltip { position: fixed; background: rgba(15, 15, 25, 0.95); border: 1px solid #444; border-radius: 6px; padding: 12px 16px; color: #fff; pointer-events: none; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: sans-serif; min-width: 180px; }
 .hover-tooltip h3 { margin: 0 0 8px 0; font-size: 1rem; color: #3a86ff; text-transform: capitalize; }
 .tooltip-data p { margin: 4px 0; font-size: 0.85rem; color: #ccc; }
