@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, shallowRef, computed } from 'vue'
+import { ref, shallowRef, computed, watch } from 'vue'
 import { PlanetaryPositions, type PositionData } from '../utils/PlanetaryPositions'
 import { STAR_DATA } from '../utils/StarData'
 
@@ -222,9 +222,11 @@ export const useSkyStore = defineStore('sky', () => {
 
     const bodies: RenderableBody[] = []
     
+    // ==========================================
     // 2. RENDERING ORDER (BACK TO FRONT)
-    
-    // --- STARS (Deep Background) ---
+    // ==========================================
+
+    // --- A. STARS (Deepest Background) ---
     STAR_DATA.forEach(star => {
       if (star.VM <= visMagThreshold.value) {
         const aa = PlanetaryPositions.azimuthAltitude(star.RA, star.Dec, currentDate.value)
@@ -240,52 +242,55 @@ export const useSkyStore = defineStore('sky', () => {
       }
     })
 
-    // --- SUN ---
-    const sunData = PlanetaryPositions.sun(currentDate.value)
-    bodies.push({
-      ...sunData,
-      id: 'sun',
-      label: 'Sun',
-      imageId: 'sun',
-      isStar: true,
-      isInteractive: true,
-      visualMagnitude: -26.74
-    })
-
-    // --- PLANETS ---
-    PlanetaryPositions.PLANET_NAMES.forEach((planetName) => {
-      // Ignore Earth (we are standing on it) and Moon (drawn last)
-      if (planetName === 'moon' || planetName === 'earth') return; 
-
+    // --- B. OUTER PLANETS (Drawn furthest to closest) ---
+    const outerPlanets = ['neptune', 'uranus', 'saturn', 'jupiter', 'mars']
+    outerPlanets.forEach((planetName) => {
       const calcFunction = (PlanetaryPositions as any)[planetName]
       if (typeof calcFunction === 'function') {
         const data: PositionData = calcFunction.call(PlanetaryPositions, currentDate.value)
         bodies.push({
-          ...data,
-          id: planetName,
-          label: planetName.charAt(0).toUpperCase() + planetName.slice(1),
-          imageId: planetName,
-          isStar: false,
-          isInteractive: true,
-          moonPhase: data.moonPhase
+          ...data, id: planetName, label: planetName.charAt(0).toUpperCase() + planetName.slice(1),
+          imageId: planetName, isStar: false, isInteractive: true, moonPhase: data.moonPhase
         })
       }
     })
 
-    // --- MOON (Absolute Foreground) ---
+    // --- C. THE SUN (Occludes the outer planets) ---
+    const sunData = PlanetaryPositions.sun(currentDate.value)
+    bodies.push({
+      ...sunData,
+      id: 'sun', label: 'Sun', imageId: 'sun',
+      isStar: true, isInteractive: true, visualMagnitude: -26.74
+    })
+
+    // --- D. INNER PLANETS (Drawn after the Sun so they can transit across it) ---
+    const innerPlanets = ['venus', 'mercury']
+    innerPlanets.forEach((planetName) => {
+      const calcFunction = (PlanetaryPositions as any)[planetName]
+      if (typeof calcFunction === 'function') {
+        const data: PositionData = calcFunction.call(PlanetaryPositions, currentDate.value)
+        bodies.push({
+          ...data, id: planetName, label: planetName.charAt(0).toUpperCase() + planetName.slice(1),
+          imageId: planetName, isStar: false, isInteractive: true, moonPhase: data.moonPhase
+        })
+      }
+    })
+
+    // --- E. THE MOON (Absolute Foreground - blocks the Sun for Eclipses) ---
     const moonData = PlanetaryPositions.moon(currentDate.value)
     bodies.push({
       ...moonData,
-      id: 'moon',
-      label: 'Moon',
-      imageId: 'moon_phases_38',
-      isStar: false,
-      isInteractive: true,
+      id: 'moon', label: 'Moon', imageId: 'moon_phases_38',
+      isStar: false, isInteractive: true, 
       moonPhase: PlanetaryPositions.getAbsoluteMoonPhase(currentDate.value)
     })
 
     activeBodies.value = bodies
   }
+
+  watch(visMagThreshold, () => {
+    recalculateSky()
+  })
 
   // Initial calculation on load
   recalculateSky()

@@ -3,7 +3,6 @@ import https from 'node:https';
 import fs from 'node:fs';
 import readline from 'node:readline';
 
-// A stable, raw GitHub mirror of the v3 database
 const CSV_URL = 'https://exploratoria.github.io/exhibits/astronomy/star-spotter/data/hygdata_v3.csv';
 
 async function processStars() {
@@ -27,14 +26,14 @@ async function processStars() {
       
       const columns = line.split(',');
       const properName = columns[6] ? columns[6].trim() : ""; 
-      const ra = parseFloat(columns[7]);     // Right Ascension (hours)
-      const dec = parseFloat(columns[8]);    // Declination (degrees)
-      const mag = parseFloat(columns[13]);   // Visual Magnitude
+      const ra = parseFloat(columns[7]);     
+      const dec = parseFloat(columns[8]);    
+      const mag = parseFloat(columns[13]);   
 
       if (properName === 'Sol') continue;
       
-      // Filter: Only keep stars brighter than Magnitude 5.5
-      if (!isNaN(mag) && mag <= 5.5) {
+      // THE FIX: Extract everything up to Magnitude 7.0!
+      if (!isNaN(mag) && mag <= 7.0) {
         stars.push({
           name: properName,
           RA: Number((ra).toFixed(3)), 
@@ -46,7 +45,6 @@ async function processStars() {
 
     console.log(`Extracted ${stars.length} visible stars. Writing to file...`);
 
-    // Create the TypeScript file string
     const tsContent = `// Auto-generated Star Data from HYG Database
 export interface StarDefinition {
   name: string;

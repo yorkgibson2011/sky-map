@@ -195,9 +195,12 @@ function drawSky() {
         ctx.lineWidth = 2; ctx.strokeStyle = '#ffffff'; ctx.stroke()
       } else {
         const mag = body.visualMagnitude || 0
-        const opacity = Math.max(0.1, 1 - (mag / 6))
+        // THE FIX: Adjusted the math so magnitude 7.0 stars still have 20-30% opacity!
+        const opacity = Math.max(0.2, 1.2 - (mag / 6.5))
         ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`
-        const size = mag > 4 ? 1 : 2
+        
+        // Slightly tweak the size threshold so it doesn't look too chunky
+        const size = mag > 4.5 ? 1 : 2 
         ctx.fillRect(x, y, size, size)
       }
     } else {

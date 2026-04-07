@@ -86,9 +86,13 @@ function onDateChange(event: Event) {
   }
 }
 
+// ==========================================
+// Expanded Playback Rates
+// ==========================================
 const RATES = [
   { label: '-1 Wk/s', val: -604800 },
   { label: '-1 Day/s', val: -86400 },
+  { label: '-8 Hr/s', val: -28800 },
   { label: '-4 Hr/s', val: -14400 },
   { label: '-1 Hr/s', val: -3600 },
   { label: '-30 Min/s', val: -1800 },
@@ -100,10 +104,11 @@ const RATES = [
   { label: '30 Min/s', val: 1800 },
   { label: '1 Hr/s', val: 3600 },
   { label: '4 Hr/s', val: 14400 },
+  { label: '8 Hr/s', val: 28800 },
   { label: '1 Day/s', val: 86400 },
   { label: '1 Wk/s', val: 604800 }
 ]
-const rateIndex = ref(11)
+const rateIndex = ref(12) // Default to "1 Hr / s"
 
 function slower() {
   if (rateIndex.value > 0) {
@@ -148,8 +153,23 @@ function faster() {
       <input type="checkbox" id="atmosphere-toggle" v-model="skyStore.showAtmosphere" />
       <label for="atmosphere-toggle" class="checkbox-label">Atmosphere & Daylight</label>
     </div>
-    
+
     <div class="control-group">
+      <div style="display: flex; justify-content: space-between;">
+        <label for="mag-slider">Star Density</label>
+        <label>Mag {{ skyStore.visMagThreshold.toFixed(1) }}</label>
+      </div>
+      <input 
+        type="range" 
+        id="mag-slider" 
+        v-model.number="skyStore.visMagThreshold" 
+        min="2" 
+        max="7" 
+        step="0.1" 
+      />
+    </div>
+    
+    <div class="control-group" style="margin-top: 5px;">
       <label>Time Travel & Playback</label>
       <button @click="stepForwardOneDay" class="full-btn">+1 Day Jump</button>
       
@@ -193,6 +213,32 @@ button:disabled { opacity: 0.5; cursor: not-allowed; background: #444; }
 .play-btn { flex: 3; display: flex; justify-content: center; align-items: center; gap: 8px; }
 .play-btn.is-active { background: #ff3a5e; }
 .play-btn.is-active:hover { background: #cc2a4a; }
-
 .icon-btn svg, .play-btn svg { width: 18px; height: 18px; }
+
+/* NEW: Custom Range Slider Styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  margin: 6px 0;
+}
+input[type="range"]:focus { outline: none; }
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background: #555;
+  border-radius: 2px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #3a86ff;
+  margin-top: -6px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 </style>
