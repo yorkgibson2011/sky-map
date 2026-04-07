@@ -79,10 +79,18 @@ function handleMouseMove(event: MouseEvent) {
 
 function handleMouseLeave() { hoveredBody.value = null }
 
+// THE FIX: Toggle targeting logic
 function handleMouseClick() {
   if (hoveredBody.value) {
-    skyStore.selectedTargetId = hoveredBody.value.id
+    if (skyStore.selectedTargetId === hoveredBody.value.id) {
+      // If clicking the currently selected body, toggle it off!
+      skyStore.selectedTargetId = null
+    } else {
+      // Otherwise lock onto the new body
+      skyStore.selectedTargetId = hoveredBody.value.id
+    }
   } else {
+    // Clicking empty space clears the target
     skyStore.selectedTargetId = null
   }
 }

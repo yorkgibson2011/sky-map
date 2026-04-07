@@ -4,7 +4,6 @@ import { useSkyStore } from '../stores/skyStore'
 import { CITIES, type City } from '../utils/CityData'
 
 const skyStore = useSkyStore()
-
 const initialCity = CITIES.find(c => c.name === 'Bristol') || CITIES[0]
 const selectedCity = ref<City>(initialCity)
 
@@ -39,11 +38,7 @@ watch(() => skyStore.timezone, (newTz) => {
   function step(currentTime: number) {
     const elapsed = currentTime - startTime
     let progress = elapsed / durationMs
-    if (progress >= 1) {
-      visualOffsetMs.value = targetOffset
-      tzTweenId = null
-      return
-    }
+    if (progress >= 1) { visualOffsetMs.value = targetOffset; tzTweenId = null; return; }
     const eased = easeInOutCubic(progress)
     visualOffsetMs.value = startOffset + (targetOffset - startOffset) * eased
     tzTweenId = requestAnimationFrame(step)
@@ -60,20 +55,12 @@ watch([() => skyStore.targetDate, visualOffsetMs], ([newDate, newOffset]) => {
   if (dateTimeInput.value !== newStr) dateTimeInput.value = newStr
 })
 
-watch(selectedCity, (newCity) => {
-  skyStore.setLocation(newCity.lat, newCity.lon, newCity.tz)
-})
+watch(selectedCity, (newCity) => skyStore.setLocation(newCity.lat, newCity.lon, newCity.tz))
 
 watch([() => skyStore.targetLatitude, () => skyStore.targetLongitude], ([targetLat, targetLon]) => {
   const matchedCity = CITIES.find(c => c.lat === targetLat && c.lon === targetLon)
   if (matchedCity && matchedCity.name !== selectedCity.value.name) selectedCity.value = matchedCity
 })
-
-function stepForwardOneDay() {
-  const nextDay = new Date(skyStore.targetDate)
-  nextDay.setDate(nextDay.getDate() + 1)
-  skyStore.setDate(nextDay)
-}
 
 function onDateChange(event: Event) {
   const target = event.target as HTMLInputElement
@@ -86,42 +73,21 @@ function onDateChange(event: Event) {
   }
 }
 
-// ==========================================
-// Expanded Playback Rates
-// ==========================================
 const RATES = [
-  { label: '-1 Wk/s', val: -604800 },
-  { label: '-1 Day/s', val: -86400 },
-  { label: '-8 Hr/s', val: -28800 },
-  { label: '-4 Hr/s', val: -14400 },
-  { label: '-1 Hr/s', val: -3600 },
-  { label: '-30 Min/s', val: -1800 },
-  { label: '-15 Min/s', val: -900 },
-  { label: '-1 Min/s', val: -60 },
-  { label: 'Realtime', val: 1 },
-  { label: '1 Min/s', val: 60 },
-  { label: '15 Min/s', val: 900 },
-  { label: '30 Min/s', val: 1800 },
-  { label: '1 Hr/s', val: 3600 },
-  { label: '4 Hr/s', val: 14400 },
-  { label: '8 Hr/s', val: 28800 },
-  { label: '1 Day/s', val: 86400 },
-  { label: '1 Wk/s', val: 604800 }
+  { label: '-1 Wk/s', val: -604800 }, { label: '-1 Day/s', val: -86400 }, { label: '-8 Hr/s', val: -28800 },
+  { label: '-4 Hr/s', val: -14400 }, { label: '-1 Hr/s', val: -3600 }, { label: '-30 Min/s', val: -1800 },
+  { label: '-15 Min/s', val: -900 }, { label: '-1 Min/s', val: -60 }, { label: 'Realtime', val: 1 },
+  { label: '1 Min/s', val: 60 }, { label: '15 Min/s', val: 900 }, { label: '30 Min/s', val: 1800 },
+  { label: '1 Hr/s', val: 3600 }, { label: '4 Hr/s', val: 14400 }, { label: '8 Hr/s', val: 28800 },
+  { label: '1 Day/s', val: 86400 }, { label: '1 Wk/s', val: 604800 }
 ]
-const rateIndex = ref(12) // Default to "1 Hr / s"
+const rateIndex = ref(12)
 
 function slower() {
-  if (rateIndex.value > 0) {
-    rateIndex.value--
-    skyStore.playbackRate = RATES[rateIndex.value].val
-  }
+  if (rateIndex.value > 0) { rateIndex.value--; skyStore.playbackRate = RATES[rateIndex.value].val; }
 }
-
 function faster() {
-  if (rateIndex.value < RATES.length - 1) {
-    rateIndex.value++
-    skyStore.playbackRate = RATES[rateIndex.value].val
-  }
+  if (rateIndex.value < RATES.length - 1) { rateIndex.value++; skyStore.playbackRate = RATES[rateIndex.value].val; }
 }
 </script>
 
@@ -130,23 +96,13 @@ function faster() {
     <div class="control-group">
       <label for="city-select">Location</label>
       <select id="city-select" v-model="selectedCity">
-        <option v-for="city in CITIES" :key="city.name + '-' + city.country" :value="city">
-          {{ city.name }}, {{ city.country }}
-        </option>
+        <option v-for="city in CITIES" :key="city.name + '-' + city.country" :value="city">{{ city.name }}, {{ city.country }}</option>
       </select>
     </div>
     
     <div class="control-group">
       <label for="date-time-select">Local Time ({{ skyStore.timezone.split('/')[1]?.replace('_', ' ') || 'UTC' }})</label>
-      <input 
-        id="date-time-select" 
-        type="datetime-local" 
-        :value="dateTimeInput" 
-        @input="onDateChange"
-        @change="onDateChange" 
-        @focus="isInputFocused = true"
-        @blur="isInputFocused = false"
-      />
+      <input id="date-time-select" type="datetime-local" :value="dateTimeInput" @input="onDateChange" @change="onDateChange" @focus="isInputFocused = true" @blur="isInputFocused = false" />
     </div>
 
     <div class="control-group row-group">
@@ -159,34 +115,29 @@ function faster() {
         <label for="mag-slider">Star Density</label>
         <label>Mag {{ skyStore.visMagThreshold.toFixed(1) }}</label>
       </div>
-      <input 
-        type="range" 
-        id="mag-slider" 
-        v-model.number="skyStore.visMagThreshold" 
-        min="2" 
-        max="7" 
-        step="0.1" 
-      />
+      <input type="range" id="mag-slider" v-model.number="skyStore.visMagThreshold" min="2" max="7" step="0.1" />
     </div>
     
     <div class="control-group" style="margin-top: 5px;">
       <label>Time Travel & Playback</label>
-      <button @click="stepForwardOneDay" class="full-btn">+1 Day Jump</button>
+      
+      <button 
+        @click="skyStore.resetToLive()" 
+        class="full-btn" 
+        :class="{ 'is-live': skyStore.isLiveTime }"
+        :disabled="skyStore.isLiveTime"
+      >
+        {{ skyStore.isLiveTime ? 'Syncing with Live Time...' : 'Return to Live Time' }}
+      </button>
       
       <div class="playback-controls">
-        <button @click="slower" :disabled="rateIndex === 0" title="Slower" class="scrub-btn icon-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z"/></svg>
-        </button>
-        
+        <button @click="slower" :disabled="rateIndex === 0" title="Slower" class="scrub-btn icon-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z"/></svg></button>
         <button @click="skyStore.togglePlay" class="play-btn" :class="{ 'is-active': skyStore.isPlaying }">
           <svg v-if="skyStore.isPlaying" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
           <svg v-else viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           <span>{{ RATES[rateIndex].label }}</span>
         </button>
-        
-        <button @click="faster" :disabled="rateIndex === RATES.length - 1" title="Faster" class="scrub-btn icon-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z"/></svg>
-        </button>
+        <button @click="faster" :disabled="rateIndex === RATES.length - 1" title="Faster" class="scrub-btn icon-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z"/></svg></button>
       </div>
     </div>
   </div>
@@ -200,45 +151,27 @@ label { font-size: 0.85rem; color: #aaa; text-transform: uppercase; letter-spaci
 .checkbox-label { cursor: pointer; color: #fff; text-transform: none; letter-spacing: 0; font-size: 0.95rem;}
 select, input:not([type="checkbox"]) { padding: 8px; border-radius: 4px; border: 1px solid #555; background: #222; color: white; outline: none; font-size: 1rem; }
 input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; accent-color: #3a86ff;}
-
-button { padding: 8px 12px; background: #3a86ff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s, transform 0.1s; }
+button { padding: 8px 12px; background: #3a86ff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; transition: background 0.2s, transform 0.1s, opacity 0.2s; }
 button:hover:not(:disabled) { background: #2a66cc; }
 button:active:not(:disabled) { transform: scale(0.97); }
-button:disabled { opacity: 0.5; cursor: not-allowed; background: #444; }
+button:disabled { cursor: default; }
 
-.full-btn { width: 100%; margin-bottom: 5px; }
+.full-btn { width: 100%; margin-bottom: 5px; background: #555; }
+.full-btn:hover:not(:disabled) { background: #666; }
+/* Green pulsing state when locked to live time */
+.full-btn.is-live { background: rgba(46, 204, 113, 0.2); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.4); opacity: 0.8; }
+
 .playback-controls { display: flex; gap: 5px; margin-top: 5px; }
 .scrub-btn { flex: 1; padding: 8px 0; background: #444; display: flex; justify-content: center; align-items: center; }
 .scrub-btn:hover:not(:disabled) { background: #555; }
-.play-btn { flex: 3; display: flex; justify-content: center; align-items: center; gap: 8px; }
+.play-btn { flex: 3; display: flex; justify-content: center; align-items: center; gap: 8px; background: #3a86ff; }
 .play-btn.is-active { background: #ff3a5e; }
 .play-btn.is-active:hover { background: #cc2a4a; }
 .icon-btn svg, .play-btn svg { width: 18px; height: 18px; }
 
-/* NEW: Custom Range Slider Styling */
-input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  background: transparent;
-  margin: 6px 0;
-}
+input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; background: transparent; margin: 6px 0; }
 input[type="range"]:focus { outline: none; }
-input[type="range"]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 4px;
-  background: #555;
-  border-radius: 2px;
-}
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  background: #3a86ff;
-  margin-top: -6px;
-  cursor: pointer;
-  transition: transform 0.1s;
-}
+input[type="range"]::-webkit-slider-runnable-track { width: 100%; height: 4px; background: #555; border-radius: 2px; }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #3a86ff; margin-top: -6px; cursor: pointer; transition: transform 0.1s; }
 input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 </style>

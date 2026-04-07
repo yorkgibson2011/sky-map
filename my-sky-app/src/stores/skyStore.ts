@@ -17,9 +17,6 @@ function easeInOutCubic(x: number): number {
 }
 
 export const useSkyStore = defineStore('sky', () => {
-  // ==========================================
-  // CORE STATE
-  // ==========================================
   const currentDate = ref<Date>(new Date())
   const targetDate = ref<Date>(new Date()) 
   
@@ -35,9 +32,6 @@ export const useSkyStore = defineStore('sky', () => {
   const activeBodies = shallowRef<RenderableBody[]>([])
   const sunPath = shallowRef<({azimuth: number, altitude: number} | null)[]>([])
 
-  // ==========================================
-  // TARGET LOCKING SYSTEM
-  // ==========================================
   const selectedTargetId = ref<string | null>(null)
   
   const selectedBody = computed(() => {
@@ -45,9 +39,6 @@ export const useSkyStore = defineStore('sky', () => {
     return activeBodies.value.find(b => b.id === selectedTargetId.value) || null
   })
 
-  // ==========================================
-  // INTERNAL TIMING & PLAYBACK STATE
-  // ==========================================
   let animationFrameId: number | null = null;
   const isLiveTime = ref(true)
   let interactionTimeout: number | null = null
@@ -58,8 +49,31 @@ export const useSkyStore = defineStore('sky', () => {
   let playbackFrameId: number | null = null
 
   // ==========================================
-  // PLAYBACK ENGINE
+  // UNIFIED TIME SYNC & AFK ENGINE
   // ==========================================
+  function resetToLive() {
+    if (isPlaying.value) togglePlay(); 
+    if (interactionTimeout) clearTimeout(interactionTimeout);
+    
+    // Tween smoothly back to the exact current second
+    setDate(new Date(), 1500, false);
+    
+    // Re-engage the live clock heartbeat after the animation finishes
+    setTimeout(() => { isLiveTime.value = true; }, 1500); 
+  }
+
+  function triggerInteraction() {
+    isLiveTime.value = false;
+    if (interactionTimeout) clearTimeout(interactionTimeout);
+    
+    // If the user pauses, start the 60-second AFK timer to auto-return to live time
+    if (!isPlaying.value) {
+      interactionTimeout = window.setTimeout(() => {
+        resetToLive();
+      }, 60000);
+    }
+  }
+
   function togglePlay() {
     isPlaying.value = !isPlaying.value
     if (isPlaying.value) {
@@ -74,6 +88,7 @@ export const useSkyStore = defineStore('sky', () => {
         cancelAnimationFrame(playbackFrameId)
         playbackFrameId = null
       }
+      triggerInteraction(); // Start AFK timer when paused
     }
   }
 
@@ -83,7 +98,6 @@ export const useSkyStore = defineStore('sky', () => {
     const deltaMs = now - lastPlaybackTime
     lastPlaybackTime = now
 
-    // Cap the delta to 100ms so the universe doesn't explode if the user switches browser tabs
     const cappedDelta = Math.min(deltaMs, 100)
     const simDeltaMs = cappedDelta * playbackRate.value
     const nextMs = targetDate.value.getTime() + simDeltaMs
@@ -92,18 +106,10 @@ export const useSkyStore = defineStore('sky', () => {
     targetDate.value = newDate
     currentDate.value = newDate 
     
-    try {
-      recalculateSky()
-    } catch(e) {
-      console.error("Playback math error:", e)
-    }
-
+    try { recalculateSky() } catch(e) { console.error(e) }
     playbackFrameId = requestAnimationFrame(playbackLoop)
   }
 
-  // ==========================================
-  // LIVE CLOCK SYNC
-  // ==========================================
   setInterval(() => {
     if (isLiveTime.value && !animationFrameId && !isPlaying.value) {
       const now = new Date()
@@ -114,11 +120,12 @@ export const useSkyStore = defineStore('sky', () => {
   }, 1000)
 
   // ==========================================
-  // LOCATION & TIME SETTERS (With Tweening)
+  // SETTERS
   // ==========================================
   function setLocation(targetLat: number, targetLon: number, targetTz: string = 'Europe/London', durationMs = 1500) {
     if (isPlaying.value) togglePlay()
     if (animationFrameId) cancelAnimationFrame(animationFrameId)
+    triggerInteraction()
 
     timezone.value = targetTz;
     targetLatitude.value = targetLat;
@@ -159,17 +166,12 @@ export const useSkyStore = defineStore('sky', () => {
   function setDate(newTargetDate: Date, durationMs = 1500, isUserAction = true) {
     if (isNaN(newTargetDate.getTime())) return;
     if (isPlaying.value) togglePlay();
-
     if (animationFrameId) cancelAnimationFrame(animationFrameId)
+
     targetDate.value = newTargetDate
 
     if (isUserAction) {
-      isLiveTime.value = false
-      if (interactionTimeout) clearTimeout(interactionTimeout)
-      interactionTimeout = window.setTimeout(() => {
-        setDate(new Date(), 1500, false)
-        setTimeout(() => { isLiveTime.value = true }, 1500)
-      }, 60000)
+      triggerInteraction()
     }
 
     const startTime = performance.now()
@@ -196,10 +198,9 @@ export const useSkyStore = defineStore('sky', () => {
   }
 
   // ==========================================
-  // ASTRONOMY MATH ENGINE
+  // RENDER LOGIC
   // ==========================================
   function recalculateSky() {
-    // 1. CALCULATE SUN'S 24-HOUR PATH (Full ring)
     const startOfDay = new Date(currentDate.value)
     startOfDay.setHours(0, 0, 0, 0)
     
@@ -215,34 +216,22 @@ export const useSkyStore = defineStore('sky', () => {
     }
     sunPath.value = path
 
-    // Shield: Wipe the math cache so the path loop doesn't corrupt the planets
     PlanetaryPositions.lastDate = new Date(0)
     PlanetaryPositions.lastSunDate = new Date(0)
     PlanetaryPositions.lastSun = null
 
     const bodies: RenderableBody[] = []
     
-    // ==========================================
-    // 2. RENDERING ORDER (BACK TO FRONT)
-    // ==========================================
-
-    // --- A. STARS (Deepest Background) ---
     STAR_DATA.forEach(star => {
       if (star.VM <= visMagThreshold.value) {
         const aa = PlanetaryPositions.azimuthAltitude(star.RA, star.Dec, currentDate.value)
         bodies.push({
-          ...aa,
-          id: star.name || `Star-${star.RA}`, 
-          label: star.name || 'Unknown Star',
-          imageId: 'star10',
-          isStar: true,
-          isInteractive: star.name.trim().length > 0, 
-          visualMagnitude: star.VM
+          ...aa, id: star.name || `Star-${star.RA}`, label: star.name || 'Unknown Star',
+          imageId: 'star10', isStar: true, isInteractive: star.name.trim().length > 0, visualMagnitude: star.VM
         })
       }
     })
 
-    // --- B. OUTER PLANETS (Drawn furthest to closest) ---
     const outerPlanets = ['neptune', 'uranus', 'saturn', 'jupiter', 'mars']
     outerPlanets.forEach((planetName) => {
       const calcFunction = (PlanetaryPositions as any)[planetName]
@@ -255,15 +244,12 @@ export const useSkyStore = defineStore('sky', () => {
       }
     })
 
-    // --- C. THE SUN (Occludes the outer planets) ---
     const sunData = PlanetaryPositions.sun(currentDate.value)
     bodies.push({
-      ...sunData,
-      id: 'sun', label: 'Sun', imageId: 'sun',
+      ...sunData, id: 'sun', label: 'Sun', imageId: 'sun',
       isStar: true, isInteractive: true, visualMagnitude: -26.74
     })
 
-    // --- D. INNER PLANETS (Drawn after the Sun so they can transit across it) ---
     const innerPlanets = ['venus', 'mercury']
     innerPlanets.forEach((planetName) => {
       const calcFunction = (PlanetaryPositions as any)[planetName]
@@ -276,44 +262,22 @@ export const useSkyStore = defineStore('sky', () => {
       }
     })
 
-    // --- E. THE MOON (Absolute Foreground - blocks the Sun for Eclipses) ---
     const moonData = PlanetaryPositions.moon(currentDate.value)
     bodies.push({
-      ...moonData,
-      id: 'moon', label: 'Moon', imageId: 'moon_phases_38',
-      isStar: false, isInteractive: true, 
-      moonPhase: PlanetaryPositions.getAbsoluteMoonPhase(currentDate.value)
+      ...moonData, id: 'moon', label: 'Moon', imageId: 'moon_phases_38',
+      isStar: false, isInteractive: true, moonPhase: PlanetaryPositions.getAbsoluteMoonPhase(currentDate.value)
     })
 
     activeBodies.value = bodies
   }
 
-  watch(visMagThreshold, () => {
-    recalculateSky()
-  })
-
-  // Initial calculation on load
+  watch(visMagThreshold, () => recalculateSky())
   recalculateSky()
 
   return {
-    currentDate,
-    targetDate,
-    latitude,
-    longitude,
-    targetLatitude,
-    targetLongitude,
-    timezone,
-    showAtmosphere,
-    visMagThreshold,
-    activeBodies,
-    sunPath,
-    isPlaying,
-    playbackRate,
-    selectedTargetId,
-    selectedBody,
-    togglePlay,
-    setLocation,
-    setDate,
-    recalculateSky
+    currentDate, targetDate, latitude, longitude, targetLatitude, targetLongitude, timezone,
+    showAtmosphere, visMagThreshold, activeBodies, sunPath,
+    isPlaying, playbackRate, isLiveTime, selectedTargetId, selectedBody,
+    togglePlay, setLocation, setDate, recalculateSky, resetToLive
   }
 })
